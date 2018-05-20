@@ -2,6 +2,7 @@ import boringmindmachine as bmm
 from unittest import TestCase
 from nose.tools import raises
 import os, subprocess, json
+import tempfile
 from .utils import captured_output
 
 
@@ -33,16 +34,20 @@ class TestBoringOAuthKeymaker(TestCase):
     """
     token_var = 'token'
     secret_var = 'secret'
-    keys_dir = "/tmp/tests/shepherd_test_keys/"
+    keys_dir = tempfile.gettempdir()
     keys_json = "apikeys.json"
 
     @classmethod
     def setUpClass(self):
-        # Create JSON file for JSON key-loading method
+        """
+        Set up JSON file for JSON key-loading method
+        """
+        self.keypath = os.path.join(self.keys_dir, self.keys_json)
+        subprocess.call(['mkdir','-p',self.keys_dir])
+
         d = {}
         d[self.token_var.lower()] = 'AAAAA'
         d[self.secret_var.lower()] = 'BBBBB'
-        self.keypath = os.path.join(self.keys_dir,self.keys_json)
         with open(self.keypath,'w') as f:
             json.dump(d,f)
 
@@ -59,17 +64,16 @@ class TestBoringOAuthKeymaker(TestCase):
         """
         Testing ability to create single key using consumer token from environment vars
         """
-        bk = bmm.BoringOAuthKeymaker(token=self.token_var,
-                                     secret=self.secret_var)
+        bk = bmm.BoringOAuthKeymaker(token=self.token_var, secret=self.secret_var)
 
         # Set application API keys
-        os.environ[self.token_var.upper()] = 'AAAAA'
-        os.environ[self.secret_var.upper()] = 'BBBBB'
+        os.environ[self.token_var.upper()] = 'CCCCC'
+        os.environ[self.secret_var.upper()] = 'DDDDD'
 
         bk.set_apikeys_env()
 
-        self.assertEqual(bk.credentials[self.token_var.lower()], 'AAAAA')
-        self.assertEqual(bk.credentials[self.secret_var.lower()],'BBBBB')
+        self.assertEqual(bk.credentials[self.token_var.lower()], 'CCCCC')
+        self.assertEqual(bk.credentials[self.secret_var.lower()],'DDDDD')
 
         # Clean up
         os.environ[self.token_var.upper()] = ''
@@ -85,6 +89,10 @@ class TestBoringOAuthKeymaker(TestCase):
 
         bk.set_apikeys_file(self.keypath)
 
+        # Note that we hard-code these key values in the setup method above...
+        self.assertEqual(bk.credentials[self.token_var.lower()], 'AAAAA')
+        self.assertEqual(bk.credentials[self.secret_var.lower()],'BBBBB')
+
 
     def test_boringoauthkeymaker_apikeys_dict(self):
         """
@@ -95,9 +103,12 @@ class TestBoringOAuthKeymaker(TestCase):
 
         # Set application API keys
         bk.set_apikeys_dict({ 
-            self.token_var.lower() : 'AAAAA',
-            self.secret_var.lower() : 'BBBBB'
+            self.token_var.lower() : 'EEEEE',
+            self.secret_var.lower() : 'FFFFF'
         })
+
+        self.assertEqual(bk.credentials[self.token_var.lower()], 'EEEEE')
+        self.assertEqual(bk.credentials[self.secret_var.lower()],'FFFFF')
 
 
     @classmethod
