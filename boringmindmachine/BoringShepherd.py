@@ -1,6 +1,6 @@
 from .BoringSheep import BoringSheep
 from .BoringLumberjack import BoringLumberjack
-import glob, os
+import glob, os, json
 
 """
 BoringShepherd class 
@@ -79,13 +79,17 @@ class BoringShepherd(object):
 
     def _validate_key(self, bot_key):
         """virtual method"""
-        err = "ERROR: _validate_key() method must be defined in derived class."
-        raise Exception(err)
-
+        self.virtual_method(bot_key)
 
     def _create_sheep(self, bot_key):
         """virtual method"""
-        err = "ERROR: _create_sheep() method must be defined in derived class."
+        self.virtual_method(bot_key)
+
+    def virtual_method(self):
+        err = "ERROR: BoringShepherd is a virtual class and should not be used.\n"
+        err += "Define a derived class that defines the following methods:\n"
+        err += "    _validate_key(self,bot_key)\n"
+        err += "    _create_sheep(self,bot_key)\n\n\n"
         raise Exception(err)
 
 
