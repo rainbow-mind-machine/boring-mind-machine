@@ -1,2 +1,0 @@
-simplejson>=3.13
-oauth2>=1.5
