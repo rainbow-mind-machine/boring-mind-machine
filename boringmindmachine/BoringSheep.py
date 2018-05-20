@@ -22,6 +22,7 @@ class BoringSheep(object):
             method = getattr(self, action)
             method(**kwargs)
 
+
     def dummy(self,**kwargs):
         """dummy method"""
         pass

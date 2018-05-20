@@ -24,7 +24,6 @@ one for serial and one for parallel.
 
 class BoringShepherd(object):
     """
-
     The Shepherd should behave the same for each API,
     since all APIs require keys and all keys will go
     in a JSON file. (Even if it is an empty one.)
@@ -62,7 +61,6 @@ class BoringShepherd(object):
         customize the sheep-key initialization
         behavior of the Keymaker.
         """
-
         # For each key:
         # - validate key
         # - set up sheep with key
