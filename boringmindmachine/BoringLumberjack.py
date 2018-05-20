@@ -44,10 +44,12 @@ LOGO = r'''
                                 here to configure your logs.
 '''
 
-class Lumberjack(object):
+class BoringLumberjack(object):
     """
     The Lumberjack class just configures the logs
     and then it's all finished.
+
+    Honestly, we'll almost never need to extend this.
     """
 
     def __init__(self, 
