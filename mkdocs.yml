@@ -3,6 +3,13 @@ site_url: https://pages.charlesreid1.com/boring-mind-machine
 repo_name: boring-mind-machine
 repo_url: https://github.com/rainbow-mind-machine/boring-mind-machine
 
+pages:
+  - 'Home':              'index.md'
+  - 'Boring Keymaker':   'keymaker.md'
+  - 'Boring Shepherd':   'shepherd.md'
+  - 'Boring Sheep':      'sheep.md'
+  - 'Boring Lumberjack': 'lumberjack.md'
+
 copyright: 'Copyright &copy; 2018 <a href="https://charlesreid1.com">Charles Reid</a>, released under the <a href="https://opensource.org/licenses/MIT">MIT License</a>. rainbowmindmachine@charlesreid1.com<br />Photo Credit: <a href="https://www.flickr.com/photos/russloar/">Russ Loar</a> under the <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND License</a><br /><br /><br />
   <div class="classictemplate template" style="display: block;">
     <style type="text/css"> \
@@ -57,12 +64,12 @@ theme:
   name: null
   custom_dir: 'mkdocs-material/material'
   palette:
-    primary: 'grey'
-    accent: 'grey'
+    primary: 'blue grey'
+    accent: 'blue grey'
   logo:
     icon: 'settings_input_component'
   font:
-    text: 'Ubuntu'
+    text: 'Roboto Slab'
     code: 'Ubuntu Mono'
 markdown_extensions:
   - admonition
@@ -70,8 +77,3 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
-pages:
-  - 'Home':            'index.md'
-  - 'Installing':      'installing.md'
-  - 'What To Do Next': 'whatnext.md'
-
