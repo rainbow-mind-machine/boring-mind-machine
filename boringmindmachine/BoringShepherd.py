@@ -1,6 +1,11 @@
+import glob, os, json, logging
+
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool 
+
 from .BoringSheep import BoringSheep
 from .BoringLumberjack import BoringLumberjack
-import glob, os, json
+
 
 """
 BoringShepherd class 
@@ -68,12 +73,19 @@ class BoringShepherd(object):
         # These methods need to be defined by 
         # the derived class.
 
+        logger = logging.getLogger('rainbowmindmachine')
+
+        logger.info("About to initialize sheep")
+        logger.info("Looking in %s"%(json_keys_dir))
         for json_file in glob.glob(os.path.join(json_keys_dir,'*')):
             bot_key = {}
+            logger.info("File %s"%(json_file))
             with open(json_file,'r') as f:
                 bot_key = json.load(f)
 
+            logger.info("Validate key")
             self._validate_key(bot_key)
+            logger.info("Create Sheep")
             self._create_sheep(bot_key)
 
 
@@ -100,7 +112,7 @@ class BoringShepherd(object):
         """
         if len(self.flock)>0:
             for sheep in self.flock:
-                sheep.perform_action(action, params)
+                sheep.perform_action(action, **kwargs)
         else:
             err = "ERROR: The shepherd has no sheep!"
             raise Exception(err)

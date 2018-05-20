@@ -97,18 +97,18 @@ class TestBoringShepherd(TestCase):
         """
 
         class LessBoringSheep(bmm.BoringSheep):
-            def __init__(self):
-                pass
+            def __init__(self, key):
+                self.key = key
 
         class LessBoringShepherd(bmm.BoringShepherd):
             def _validate_key(self, bot_key):
                 pass
             def _create_sheep(self, bot_key):
-                pass
+                self.flock.append(LessBoringSheep(bot_key))
 
         lbs = LessBoringShepherd(json_keys_dir = self.keys_dir,
                                  name = 'Less Boring Flock',
-                                 sheep = '',
+                                 sheep = LessBoringSheep,
                                  streamhandler = False)
         lbs.perform_serial_action('dummy', foo='bar')
         lbs.perform_parallel_action('dummy', foo='bar')

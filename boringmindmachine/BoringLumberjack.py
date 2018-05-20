@@ -44,6 +44,7 @@ LOGO = r'''
 
 '''
 
+
 class BoringLumberjack(object):
     """
     The Lumberjack class just configures the logs
