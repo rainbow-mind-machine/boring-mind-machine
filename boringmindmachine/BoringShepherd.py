@@ -1,5 +1,6 @@
 from .BoringSheep import BoringSheep
-import glob
+from .BoringLumberjack import BoringLumberjack
+import glob, os
 
 """
 BoringShepherd class 
@@ -45,7 +46,7 @@ class BoringShepherd(object):
             kwargs:             Logging parameters passed directly to Lumberjack logger
         """
         # Create a lumberjack to set up the logs
-        lumberjack = Lumberjack(**kwargs)
+        lumberjack = BoringLumberjack(**kwargs)
         # We won't need the lumberjack anymore
 
         # Shepherds have to keep watch over their flock
@@ -67,7 +68,7 @@ class BoringShepherd(object):
         # These methods need to be defined by 
         # the derived class.
 
-        for json_file in glob.glob(os.path.join(self.json_keys_dir,'*')):
+        for json_file in glob.glob(os.path.join(json_keys_dir,'*')):
             bot_key = {}
             with open(json_file,'r') as f:
                 bot_key = json.load(f)
@@ -76,13 +77,13 @@ class BoringShepherd(object):
             self._create_sheep(bot_key)
 
 
-    def _validate_key(self, key):
+    def _validate_key(self, bot_key):
         """virtual method"""
         err = "ERROR: _validate_key() method must be defined in derived class."
         raise Exception(err)
 
 
-    def _create_sheep(self, key):
+    def _create_sheep(self, bot_key):
         """virtual method"""
         err = "ERROR: _create_sheep() method must be defined in derived class."
         raise Exception(err)

@@ -14,34 +14,34 @@ But that's a little too fancy for our purposes.
 """
 
 LOGO = r'''
- ____    ____  ____  ____   ____    ___   __    __ 
-|    \  /    ||    ||    \ |    \  /   \ |  |__|  |
-|  D  )|  o  | |  | |  _  ||  o  )|     ||  |  |  |
-|    / |     | |  | |  |  ||     ||  O  ||  |  |  |
-|    \ |  _  | |  | |  |  ||  O  ||     ||  `  '  |
-|  .  \|  |  | |  | |  |  ||     ||     | \      / 
-|__|\_||__|__||____||__|__||_____| \___/   \_/\_/  
-                                                   
-         ___ ___  ____  ____   ___                 
-        |   |   ||    ||    \ |   \                
-        | _   _ | |  | |  _  ||    \               
-        |  \_/  | |  | |  |  ||  D  |              
-        |   |   | |  | |  |  ||     |              
-        |   |   | |  | |  |  ||     |              
-        |___|___||____||__|__||_____|              
-                                                   
- ___ ___   ____    __  __ __  ____  ____     ___   
+         ____    ___   ____   ____  ____    ____ 
+        |    \  /   \ |    \ |    ||    \  /    |
+        |  o  )|     ||  D  ) |  | |  _  ||   __|
+        |     ||  O  ||    /  |  | |  |  ||  |  |
+        |  O  ||     ||    \  |  | |  |  ||  |_ |
+        |     ||     ||  .  \ |  | |  |  ||     |
+        |_____| \___/ |__|\_||____||__|__||___,_|
+                                                 
+     ___ ___  ____  ____   ___                   
+    |   |   ||    ||    \ |   \                  
+    | _   _ | |  | |  _  ||    \                 
+    |  \_/  | |  | |  |  ||  D  |                
+    |   |   | |  | |  |  ||     |                
+    |   |   | |  | |  |  ||     |                
+    |___|___||____||__|__||_____|                
+                                                 
+ ___ ___   ____    __  __ __  ____  ____     ___ 
 |   |   | /    |  /  ]|  |  ||    ||    \   /  _]
-| _   _ ||  o  | /  / |  |  | |  | |  _  | /  [_   
+| _   _ ||  o  | /  / |  |  | |  | |  _  | /  [_ 
 |  \_/  ||     |/  /  |  _  | |  | |  |  ||    _]
-|   |   ||  _  /   \_ |  |  | |  | |  |  ||   [_
+|   |   ||  _  /   \_ |  |  | |  | |  |  ||   [_ 
 |   |   ||  |  \     ||  |  | |  | |  |  ||     |
 |___|___||__|__|\____||__|__||____||__|__||_____|
+                                                 
+                  Don't mind me -
+                    I'm the Lumberjack, 
+                        configuring your logs.
 
-
-                        Hello, darling,
-                            I'm the lumberjack logger,
-                                here to configure your logs.
 '''
 
 class BoringLumberjack(object):
@@ -79,13 +79,19 @@ class BoringLumberjack(object):
 
         logger = logging.getLogger('rainbowmindmachine')
 
-        fh = logging.FileHandler(log_file)
-        fh.setLevel(logging.INFO)
-        logger.addHandler(fh)
+        if 'filehandler' in kwargs and kwargs['filehandler']==False:
+            pass
+        else:
+            fh = logging.FileHandler(log_file)
+            fh.setLevel(logging.INFO)
+            logger.addHandler(fh)
 
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.INFO)
-        logger.addHandler(ch)
+        if 'streamhandler' in kwargs and kwargs['streamhandler']==False:
+            pass
+        else:
+            ch = logging.StreamHandler()
+            ch.setLevel(logging.INFO)
+            logger.addHandler(ch)
 
         logger.info(LOGO)
         logger.info("-"*40)

@@ -40,20 +40,26 @@ class BoringOAuthKeymaker(BoringKeymaker):
 
     (Why consumer? It consumes the API)
     """
+    
+    ct = "consumer_token"
+    cts = "consumer_token_secret"
 
     ###########################################
     # Load Application (Consumer) API Keys
 
     def set_apikeys_env(self, 
-                        consumer_token_variable="CONSUMER_TOKEN",
-                        consumer_token_secret_variable="CONSUMER_TOKEN_SECRET"):
+                        consumer_token_variable = ct,
+                        consumer_token_secret_variable = cts):
         """
         Set the API keys using environment variables
         """
-        if(os.environ[consumer_token_variable] and os.environ[consumer_token_secret_variable]):
+        consumer_token_variable = consumer_token_variable.lower()
+        consumer_token_secret_variable = consumer_token_secret_variable.lower()
+
+        if(os.environ[consumer_token_variable.upper()] and os.environ[consumer_token_secret_variable.upper()]):
             self.consumer_token = {}
-            self.consumer_token[consumer_token_variable] = os.environ[consumer_token_variable]
-            self.consumer_token[consumer_token_secret_variable] = os.environ[consumer_token_secret_variable]
+            self.consumer_token[consumer_token_variable]        = os.environ[consumer_token_variable.upper()]
+            self.consumer_token[consumer_token_secret_variable] = os.environ[consumer_token_secret_variable.upper()]
             self.apikeys_set = True
         else:
             err = "ERROR: environment variables %s and %s were not set."%(
@@ -63,8 +69,8 @@ class BoringOAuthKeymaker(BoringKeymaker):
 
     def set_apikeys_file(self, 
                          f_apikeys, 
-                         consumer_token_variable="CONSUMER_TOKEN",
-                         consumer_token_secret_variable="CONSUMER_TOKEN_SECRET"):
+                         consumer_token_variable = ct,
+                         consumer_token_secret_variable = cts):
         """
         Set the API keys using an external JSON file
         with the keys:
@@ -73,7 +79,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
             consumer_token_secret
         """
         if( not exists(f_apikeys) ):
-            err = "Error: could not find specified apikeys file %s"%(f_apikeys)
+            err = "Error: could not find specified API keys file %s"%(f_apikeys)
             raise Exception(err)
 
         elif( not isfile(f_apikeys) ):
@@ -82,14 +88,14 @@ class BoringOAuthKeymaker(BoringKeymaker):
             # check if it contains apikeys.json
             f_apikeys = join(f_apikeys,'apikeys.json')
             if( not isfile( f_apikeys ) ):
-                err = "ERROR: could not find specified apikeys file %s"%(f_apikeys)
+                err = "ERROR: could not find specified API keys file %s"%(f_apikeys)
                 raise Exception(err)
 
         try:
             with open(f_apikeys,'r') as f:
                 d = json.load(f)
         except (json.errors.JSONDecodeError):
-            err = "ERROR: given file %s is not valid JSON"%(f_apikeys)
+            err = "ERROR: given API keys file %s is not valid JSON"%(f_apikeys)
             raise Exception(err)
 
         self.set_apikeys_dict(  d, 
@@ -98,25 +104,28 @@ class BoringOAuthKeymaker(BoringKeymaker):
 
 
     def set_apikeys_dict(self,
-                         d_apikeys):
-                         consumer_token_variable="CONSUMER_TOKEN",
-                         consumer_token_secret_variable="CONSUMER_TOKEN_SECRET"):
+                         d_apikeys,
+                         consumer_token_variable = ct,
+                         consumer_token_secret_variable = cts):
         """
         Set the API keys by passing a dictionary with the keys
         """
-        if consumer_token_variable not in d.keys():
-            err = "ERROR: key %s not found in %s"%(
-                    consumer_token_variable, f_apikeys)
+        consumer_token_variable = consumer_token_variable.lower()
+        consumer_token_secret_variable = consumer_token_secret_variable.lower()
+
+        if consumer_token_variable not in d_apikeys.keys():
+            err = "ERROR: key %s not found in user-provided dictionary (key set: %s)"%(
+                    consumer_token_variable, ",".join(d_apikeys.keys()))
             raise Exception(err)
 
-        if consumer_token_secret_variable not in d.keys():
-            err = "ERROR: key %s not found in %s"%(
-                    consumer_token_secret_variable, f_apikeys)
+        if consumer_token_secret_variable not in d_apikeys.keys():
+            err = "ERROR: key %s not found in user-provided dictionary (key set: %s)"%(
+                    consumer_token_secret_variable, ",".join(d_apikeys.keys()))
             raise Exception(err)
 
         self.consumer_token = {}
-        self.consumer_token[consumer_token_variable] = d[consumer_token_variable]
-        self.consumer_token[consumer_token_secret_variable] = d[consumer_token_secret_variable]
+        self.consumer_token[consumer_token_variable] = d_apikeys[consumer_token_variable]
+        self.consumer_token[consumer_token_secret_variable] = d_apikeys[consumer_token_secret_variable]
         self.apikeys_set = True
 
 

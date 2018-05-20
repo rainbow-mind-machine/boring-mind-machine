@@ -8,6 +8,11 @@ class BoringSheep(object):
     the Sheep's API instance, and should 
     be defined at the package level.
     """
+    def __init__(self):
+        err = "ERROR: Sheep constructor initialiizes API instances "
+        err += "and should therefore be defined by the derived class."
+        raise Exception(Err)
+
     def perform_action(self,action,**kwargs):
         """
         The only thing the BoringSheep defines is 
