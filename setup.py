@@ -10,7 +10,7 @@ setup(  name='boringmindmachine',
         test_suite='nose.collector',
         tests_require=['nose'],
         license='MIT',
-        packages=['boringmindmachine'],
-        install_requires=['simplejson>=3.13'],
+        packages=['bmm'],
+        install_requires=[],
         zip_safe=False)
 
