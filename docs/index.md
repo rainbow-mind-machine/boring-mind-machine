@@ -4,22 +4,19 @@
 
 classes:
 
-* [BoringLumberjack](#lumberjack.md)
-* [BoringKeymaker](#keymaker.md)
-* [BoringShepherd](#shepherd.md)
-* [BoringSheep](#sheep.md)
+* [BoringLumberjack](lumberjack.md)
+* [BoringKeymaker](keymaker.md)
+* [BoringShepherd](shepherd.md)
+* [BoringSheep](sheep.md)
 
-The BoringLumberjack isn't really a class as much as a 
-one time call to the logging module to set logging preferences.
+(The BoringLumberjack is so boring, it doesn't count as a class.)
 
-This follows the mind machine architecuture:
+This follows the **mind machine** architecuture:
 
 * Keymaker
 * Shepherd
 * Sheep
 
-boring mind machine is not capable of much, 
-but being boring also makes boring mind machine 
-easier to understand.
-
+**boring mind machine** is not capable of much, 
+but being boring means you are easy to understand.
 
