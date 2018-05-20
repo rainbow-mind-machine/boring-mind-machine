@@ -64,7 +64,8 @@ class TestBoringOAuthKeymaker(TestCase):
         """
         Testing ability to create single key using consumer token from environment vars
         """
-        bk = bmm.BoringOAuthKeymaker(token=self.token_var, secret=self.secret_var)
+        bk = bmm.BoringOAuthKeymaker(token=self.token_var, 
+                                     secret=self.secret_var)
 
         # Set application API keys
         os.environ[self.token_var.upper()] = 'CCCCC'
