@@ -31,18 +31,19 @@ class TestBoringOAuthKeymaker(TestCase):
     This focuses on testing the constructors,
     and the API key init mechanisms.
     """
-    ct = 'CONSUMER_TOKEN'
-    cts = 'CONSUMER_TOKEN_SECRET'
+    token_var = 'token'
+    secret_var = 'secret'
+    keys_dir = "/tmp/tests/shepherd_test_keys/"
+    keys_json = "apikeys.json"
 
     @classmethod
     def setUpClass(self):
-        self.keys_dir = os.path.join( thisdir, "boringoauthkeymaker_keys" )
-        self.api_keys = os.path.join( thisdir, "apikeys.json" )
-
+        # Create JSON file for JSON key-loading method
         d = {}
-        d[self.ct.lower()] = 'AAAAA'
-        d[self.cts.lower()] = 'BBBBB'
-        with open(self.api_keys,'w') as f:
+        d[self.token_var.lower()] = 'AAAAA'
+        d[self.secret_var.lower()] = 'BBBBB'
+        self.keypath = os.path.join(self.keys_dir,self.keys_json)
+        with open(self.keypath,'w') as f:
             json.dump(d,f)
 
 
@@ -50,56 +51,57 @@ class TestBoringOAuthKeymaker(TestCase):
         """
         Running a smoke test for the BoringOAuthKeymaker class
         """
-        # it really is boring
-        bk = bmm.BoringOAuthKeymaker()
+        bk = bmm.BoringOAuthKeymaker(token=self.token_var,
+                                     secret=self.secret_var)
 
 
     def test_boringoauthkeymaker_apikeys_env(self):
         """
         Testing ability to create single key using consumer token from environment vars
         """
-        keymaker = bmm.BoringOAuthKeymaker()
+        bk = bmm.BoringOAuthKeymaker(token=self.token_var,
+                                     secret=self.secret_var)
 
         # Set application API keys
-        os.environ['CONSUMER_TOKEN'] = 'AAAAA'
-        os.environ['CONSUMER_TOKEN_SECRET'] = 'BBBBB'
+        os.environ[self.token_var.upper()] = 'AAAAA'
+        os.environ[self.secret_var.upper()] = 'BBBBB'
 
-        keymaker.set_apikeys_env()
+        bk.set_apikeys_env()
+
+        self.assertEqual(bk.credentials[self.token_var.lower()], 'AAAAA')
+        self.assertEqual(bk.credentials[self.secret_var.lower()],'BBBBB')
 
         # Clean up
-        os.environ['CONSUMER_TOKEN'] = ''
-        os.environ['CONSUMER_TOKEN_SECRET'] = ''
+        os.environ[self.token_var.upper()] = ''
+        os.environ[self.secret_var.upper()] = ''
 
 
     def test_boringoauthkeymaker_apikeys_file(self):
         """
         Testing ability to create single key using consumer token/secret from JSON file
         """
-        keymaker = bmm.BoringOAuthKeymaker()
+        bk = bmm.BoringOAuthKeymaker(token=self.token_var,
+                                     secret=self.secret_var)
 
-        # Set application API keys
-        apikeys = os.path.join(thisdir,'apikeys.json')
-
-        keymaker.set_apikeys_file(apikeys)
+        bk.set_apikeys_file(self.keypath)
 
 
     def test_boringoauthkeymaker_apikeys_dict(self):
         """
         Testing ability to create single key using consumer token/secret from dictionary
         """
-        keymaker = bmm.BoringOAuthKeymaker()
+        bk = bmm.BoringOAuthKeymaker(token=self.token_var,
+                                     secret=self.secret_var)
 
         # Set application API keys
-        keymaker.set_apikeys_dict({ 
-            self.ct.lower() : 'AAAAA',
-            self.cts.lower() : 'BBBBB'
+        bk.set_apikeys_dict({ 
+            self.token_var.lower() : 'AAAAA',
+            self.secret_var.lower() : 'BBBBB'
         })
 
 
     @classmethod
     def tearDownClass(self):
         # Remove the keys directory we created
-        subprocess.call(['rm','-rf',self.keys_dir])
-
-
+        subprocess.call(['rm','-rf',self.keypath])
 
