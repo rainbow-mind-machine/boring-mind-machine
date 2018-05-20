@@ -247,9 +247,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Home
+      </label>
+    
     <a href="." title="Home" class="md-nav__link md-nav__link--active">
       Home
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boring-classes" title="boring classes" class="md-nav__link">
+    boring classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-workflow" title="developer workflow" class="md-nav__link">
+    developer workflow
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -319,6 +355,29 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boring-classes" title="boring classes" class="md-nav__link">
+    boring classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-workflow" title="developer workflow" class="md-nav__link">
+    developer workflow
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -334,7 +393,8 @@
                 
                 <h1 id="boring-mind-machine">boring-mind-machine<a class="headerlink" href="#boring-mind-machine" title="Permanent link">&para;</a></h1>
 <p><strong>boring mind machine</strong> is a set of boring base classes for building awesome bot flocks.</p>
-<p>classes:</p>
+<h2 id="boring-classes">boring classes<a class="headerlink" href="#boring-classes" title="Permanent link">&para;</a></h2>
+<p>here are all of the boring classes:</p>
 <ul>
 <li><a href="lumberjack/">BoringLumberjack</a></li>
 <li><a href="keymaker/">BoringKeymaker</a></li>
@@ -344,12 +404,28 @@
 <p>(The BoringLumberjack is so boring, it doesn't count as a class.)</p>
 <p>This follows the <strong>mind machine</strong> architecuture:</p>
 <ul>
-<li>Keymaker</li>
-<li>Shepherd</li>
-<li>Sheep</li>
+<li>Keymaker - takes care of authentication</li>
+<li>Shepherd - constructs each sheep with keys</li>
+<li>Sheep - uses keys to create API instance</li>
 </ul>
-<p><strong>boring mind machine</strong> is not capable of much, 
-but being boring means you are easy to understand.</p>
+<p><strong>boring mind machine</strong> is not capable of much.
+sometimes though, boring means easy to understand.</p>
+<h2 id="developer-workflow">developer workflow<a class="headerlink" href="#developer-workflow" title="Permanent link">&para;</a></h2>
+<p>This simple repo helps provide a barebones example of tooling and infrastructure.</p>
+<p>Tooling woorkflow:</p>
+<ul>
+<li><a href="dev/github.md">Github</a> - setup for workflow and project management on github</li>
+<li><a href="dev/circleci.md">CircleCI</a> - continuous integration + deployment to pypi with circle ci</li>
+<li><a href="dev/pypi.md">Pypi</a> - uploading project to pypi</li>
+<li><a href="dev/dockerhub.md">Dockerhub</a> - pushing container to dockerhub</li>
+</ul>
+<p>Project infrastructure:</p>
+<ul>
+<li><a href="dev/mailing.md">Mailing List</a></li>
+<li><a href="dev/website.md">Website</a></li>
+<li><a href="dev/issues_prs.md">Issues and PRs</a></li>
+<li><a href="dev/contributing.md">Contributing</a></li>
+</ul>
                 
                   
                 

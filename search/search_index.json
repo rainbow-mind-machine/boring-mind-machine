@@ -2,13 +2,23 @@
     "docs": [
         {
             "location": "/",
-            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nclasses:\n\n\n\n\nBoringLumberjack\n\n\nBoringKeymaker\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\n\n\n(The BoringLumberjack is so boring, it doesn't count as a class.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker\n\n\nShepherd\n\n\nSheep\n\n\n\n\nboring mind machine\n is not capable of much, \nbut being boring means you are easy to understand.",
+            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nboring classes\n\u00b6\n\n\nhere are all of the boring classes:\n\n\n\n\nBoringLumberjack\n\n\nBoringKeymaker\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\n\n\n(The BoringLumberjack is so boring, it doesn't count as a class.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nboring mind machine\n is not capable of much.\nsometimes though, boring means easy to understand.\n\n\ndeveloper workflow\n\u00b6\n\n\nThis simple repo helps provide a barebones example of tooling and infrastructure.\n\n\nTooling woorkflow:\n\n\n\n\nGithub\n - setup for workflow and project management on github\n\n\nCircleCI\n - continuous integration + deployment to pypi with circle ci\n\n\nPypi\n - uploading project to pypi\n\n\nDockerhub\n - pushing container to dockerhub\n\n\n\n\nProject infrastructure:\n\n\n\n\nMailing List\n\n\nWebsite\n\n\nIssues and PRs\n\n\nContributing",
             "title": "Home"
         },
         {
             "location": "/#boring-mind-machine",
-            "text": "boring mind machine  is a set of boring base classes for building awesome bot flocks.  classes:   BoringLumberjack  BoringKeymaker  BoringShepherd  BoringSheep   (The BoringLumberjack is so boring, it doesn't count as a class.)  This follows the  mind machine  architecuture:   Keymaker  Shepherd  Sheep   boring mind machine  is not capable of much, \nbut being boring means you are easy to understand.",
+            "text": "boring mind machine  is a set of boring base classes for building awesome bot flocks.",
             "title": "boring-mind-machine"
+        },
+        {
+            "location": "/#boring-classes",
+            "text": "here are all of the boring classes:   BoringLumberjack  BoringKeymaker  BoringShepherd  BoringSheep   (The BoringLumberjack is so boring, it doesn't count as a class.)  This follows the  mind machine  architecuture:   Keymaker - takes care of authentication  Shepherd - constructs each sheep with keys  Sheep - uses keys to create API instance   boring mind machine  is not capable of much.\nsometimes though, boring means easy to understand.",
+            "title": "boring classes"
+        },
+        {
+            "location": "/#developer-workflow",
+            "text": "This simple repo helps provide a barebones example of tooling and infrastructure.  Tooling woorkflow:   Github  - setup for workflow and project management on github  CircleCI  - continuous integration + deployment to pypi with circle ci  Pypi  - uploading project to pypi  Dockerhub  - pushing container to dockerhub   Project infrastructure:   Mailing List  Website  Issues and PRs  Contributing",
+            "title": "developer workflow"
         },
         {
             "location": "/keymaker/",
