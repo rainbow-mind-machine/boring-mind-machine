@@ -16,12 +16,10 @@ thisdir = os.path.abspath(os.path.dirname(__file__))
 class TestBoringKeymaker(TestCase):
     """
     Test the BoringKeymaker class.
-    This focuses on testing the constructors,
-    and the API key init mechanisms.
     """
     def test_boringkeymaker(self):
         """
-        Smoke test for BoringKeymaker
+        Running a smoke test for the BoringKeymaker class
         """
         # it really is boring
         bk = bmm.BoringKeymaker()
@@ -50,7 +48,7 @@ class TestBoringOAuthKeymaker(TestCase):
 
     def test_boringoauthkeymaker(self):
         """
-        Smoke test for BoringOAuthKeymaker
+        Running a smoke test for the BoringOAuthKeymaker class
         """
         # it really is boring
         bk = bmm.BoringOAuthKeymaker()
@@ -58,7 +56,7 @@ class TestBoringOAuthKeymaker(TestCase):
 
     def test_boringoauthkeymaker_apikeys_env(self):
         """
-        Test ability to create single key using consumer token from environment vars
+        Testing ability to create single key using consumer token from environment vars
         """
         keymaker = bmm.BoringOAuthKeymaker()
 
@@ -75,7 +73,7 @@ class TestBoringOAuthKeymaker(TestCase):
 
     def test_boringoauthkeymaker_apikeys_file(self):
         """
-        Test ability to create single key using consumer token/secret from JSON file
+        Testing ability to create single key using consumer token/secret from JSON file
         """
         keymaker = bmm.BoringOAuthKeymaker()
 
@@ -87,7 +85,7 @@ class TestBoringOAuthKeymaker(TestCase):
 
     def test_boringoauthkeymaker_apikeys_dict(self):
         """
-        Test ability to create single key using consumer token/secret from dictionary
+        Testing ability to create single key using consumer token/secret from dictionary
         """
         keymaker = bmm.BoringOAuthKeymaker()
 

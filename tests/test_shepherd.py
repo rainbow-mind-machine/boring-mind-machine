@@ -12,9 +12,13 @@ Test Shepherd classes
 
 thisdir = os.path.abspath(os.path.dirname(__file__))
 
-class TestShepherd(TestCase):
+class TestBoringShepherd(TestCase):
     """
-    Test the Shepherd class.
+    Test the BoringShepherd class.
+
+    BoringShepherd is a virtual class,
+    so we should verify it can't be used,
+    then define our own version.
     """
     keys_dir = "/tmp/tests/shepherd_test_keys/"
 
@@ -54,10 +58,13 @@ class TestShepherd(TestCase):
                 json.dump(bot_key, f)
 
 
-    #@raises(Exception)
+    @raises(Exception)
     def test_boringshepherd(self):
         """
-        Create a BoringShepherd.
+        Verifying that BoringShepherd is a virtual class that cannot be used directly.
+
+        Test Notes:
+        -------------
 
         The BoringShepherd expects keys to exist already (that's the Keymaker's job).
         It will create one Sheep per key.
@@ -78,15 +85,16 @@ class TestShepherd(TestCase):
         """
         # This should raise an Exception
         result, _ = subprocess.Popen(['ls',self.keys_dir], stdout=subprocess.PIPE).communicate()
-        with open('/tmp/somefile','w') as f:
-            f.write(result.decode('utf-8'))
-        #bs = bmm.BoringShepherd(json_keys_dir = self.keys_dir,
-        #                        name = 'Boring Flock',
-        #                        streamhandler = False)
+        bs = bmm.BoringShepherd(json_keys_dir = self.keys_dir,
+                                name = 'Boring Flock',
+                                streamhandler = False)
 
 
-        '''
+
     def test_lessboringshepherd(self):
+        """
+        Testing functionality of BoringShepherd via derived class LessBoringShepherd
+        """
 
         class LessBoringSheep(bmm.BoringSheep):
             def __init__(self):
@@ -98,34 +106,13 @@ class TestShepherd(TestCase):
             def _create_sheep(self, bot_key):
                 pass
 
-        lbs = bmm.BoringShepherd(json_keys_dir = self.keys_dir,
-                                 name = 'Boring Flock')
+        lbs = LessBoringShepherd(json_keys_dir = self.keys_dir,
+                                 name = 'Less Boring Flock',
+                                 sheep = '',
+                                 streamhandler = False)
         lbs.perform_serial_action('dummy', foo='bar')
         lbs.perform_parallel_action('dummy', foo='bar')
-        '''
 
-
-
-###        logger = logging.getLogger('rainbowmindmachine')
-###        h = logging.StreamHandler(sys.stdout)
-###
-###        # this "with" block ensures logs print to stdout
-###        with LoggingContext(logger, level=logging.INFO, handler=h, close=True):
-###
-###            # this "with" block ensures we capture stdout
-###            with captured_output() as (out, err):
-###
-###                # Create the Shepherd (this starts the logger)
-###                s = rmm.Shepherd(
-###                    flock_name = 'test flock',
-###                    json_keys_dir = 'tests/shepherd_test_keys',
-###                    sheep_class = rmm.Sheep
-###                )
-###
-###            stderrlog = err.getvalue().strip()
-###            self.assertIn('Creating flock', stderrlog)
-###            self.assertIn('Successfully created', stderrlog)
-###            self.assertEqual('test flock',s.name)
 
 
     @classmethod

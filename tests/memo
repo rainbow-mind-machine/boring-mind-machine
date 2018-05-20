@@ -1,0 +1,24 @@
+
+
+###        logger = logging.getLogger('rainbowmindmachine')
+###        h = logging.StreamHandler(sys.stdout)
+###
+###        # this "with" block ensures logs print to stdout
+###        with LoggingContext(logger, level=logging.INFO, handler=h, close=True):
+###
+###            # this "with" block ensures we capture stdout
+###            with captured_output() as (out, err):
+###
+###                # Create the Shepherd (this starts the logger)
+###                s = rmm.Shepherd(
+###                    flock_name = 'test flock',
+###                    json_keys_dir = 'tests/shepherd_test_keys',
+###                    sheep_class = rmm.Sheep
+###                )
+###
+###            stderrlog = err.getvalue().strip()
+###            self.assertIn('Creating flock', stderrlog)
+###            self.assertIn('Successfully created', stderrlog)
+###            self.assertEqual('test flock',s.name)
+
+
