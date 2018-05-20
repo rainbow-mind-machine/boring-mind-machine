@@ -21,9 +21,6 @@ input.input-group-lg {
 #groupsio_embed_signup input {border:1px solid #999; -webkit-appearance:none;}
 #groupsio_embed_signup label {display:block; font-size:16px; padding-bottom:10px; font-weight:bold;}
 #groupsio_embed_signup .email {display:block; padding:8px 0; margin:0 4% 10px 0; text-indent:5px; width:58%; min-width:130px;}
-#groupsio_embed_signup {
-  background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;
-}
 #groupsio_embed_signup .button {
     width:25%; margin:0 0 10px 0; min-width:90px;
     background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
