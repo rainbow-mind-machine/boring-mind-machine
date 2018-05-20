@@ -2,63 +2,53 @@
     "docs": [
         {
             "location": "/",
-            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nboring classes\n\u00b6\n\n\nhere are all of the boring classes:\n\n\n\n\nBoringLumberjack\n\n\nBoringKeymaker\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\n\n\n(The BoringLumberjack is so boring, it doesn't count as a class.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nboring mind machine\n is not capable of much.\nsometimes though, boring means easy to understand.\n\n\ndeveloper workflow\n\u00b6\n\n\nThis simple repo helps provide a barebones example of tooling and infrastructure.\n\n\nTooling woorkflow:\n\n\n\n\nGithub\n - setup for workflow and project management on github\n\n\nCircleCI\n - continuous integration + deployment to pypi with circle ci\n\n\nPypi\n - uploading project to pypi\n\n\nDockerhub\n - pushing container to dockerhub\n\n\n\n\nProject infrastructure:\n\n\n\n\nMailing List\n\n\nWebsite\n\n\nIssues and PRs\n\n\nContributing",
+            "text": "embarcadero-mind-machine\n\u00b6\n\n\nembarcadero mind machine\n is the extensible framework for building Github bot flocks.\n\n\nembarcadero classes\n\u00b6\n\n\nhere are all of the embarcadero classes:\n\n\n\n\nGithubKeymaker\n\n\nShepherd\n\n\nSheep\n\n\n\n\n(No Lumberjack method is needed.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nembarcadero mind machine\n is a work in progress.\n\n\ndeveloper workflow\n\u00b6\n\n\nsee boring mind machine for info about the infrastructure.",
             "title": "Home"
         },
         {
-            "location": "/#boring-mind-machine",
-            "text": "boring mind machine  is a set of boring base classes for building awesome bot flocks.",
-            "title": "boring-mind-machine"
+            "location": "/#embarcadero-mind-machine",
+            "text": "embarcadero mind machine  is the extensible framework for building Github bot flocks.",
+            "title": "embarcadero-mind-machine"
         },
         {
-            "location": "/#boring-classes",
-            "text": "here are all of the boring classes:   BoringLumberjack  BoringKeymaker  BoringShepherd  BoringSheep   (The BoringLumberjack is so boring, it doesn't count as a class.)  This follows the  mind machine  architecuture:   Keymaker - takes care of authentication  Shepherd - constructs each sheep with keys  Sheep - uses keys to create API instance   boring mind machine  is not capable of much.\nsometimes though, boring means easy to understand.",
-            "title": "boring classes"
+            "location": "/#embarcadero-classes",
+            "text": "here are all of the embarcadero classes:   GithubKeymaker  Shepherd  Sheep   (No Lumberjack method is needed.)  This follows the  mind machine  architecuture:   Keymaker - takes care of authentication  Shepherd - constructs each sheep with keys  Sheep - uses keys to create API instance   embarcadero mind machine  is a work in progress.",
+            "title": "embarcadero classes"
         },
         {
             "location": "/#developer-workflow",
-            "text": "This simple repo helps provide a barebones example of tooling and infrastructure.  Tooling woorkflow:   Github  - setup for workflow and project management on github  CircleCI  - continuous integration + deployment to pypi with circle ci  Pypi  - uploading project to pypi  Dockerhub  - pushing container to dockerhub   Project infrastructure:   Mailing List  Website  Issues and PRs  Contributing",
+            "text": "see boring mind machine for info about the infrastructure.",
             "title": "developer workflow"
         },
         {
             "location": "/keymaker/",
-            "text": "BoringKeymaker\n\u00b6\n\n\nThere are two boring Keymaker classes:\n\n\n\n\nBoringKeymaker - super boring \n\n\nBoringOAuthKeymaker - takes two arguments, \ntoken\n and \nsecret\n, \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.\n\n\n\n\nThat's all, folks!\n\n\nThe BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.\n\n\nThe BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
-            "title": "Boring Keymaker"
+            "text": "Github Keymaker\n\u00b6\n\n\nembarcadero mind machine defines a Keymaker object for authenticating\nwith the Github API via OAuth.",
+            "title": "Github Keymaker"
         },
         {
-            "location": "/keymaker/#boringkeymaker",
-            "text": "There are two boring Keymaker classes:   BoringKeymaker - super boring   BoringOAuthKeymaker - takes two arguments,  token  and  secret , \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.   That's all, folks!  The BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.  The BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
-            "title": "BoringKeymaker"
+            "location": "/keymaker/#github-keymaker",
+            "text": "embarcadero mind machine defines a Keymaker object for authenticating\nwith the Github API via OAuth.",
+            "title": "Github Keymaker"
         },
         {
             "location": "/shepherd/",
-            "text": "BoringShepherd\n\u00b6\n\n\nThe BoringShepherd class is a base class for \nall Shepherds, who are the keepers (and constructors)\nof the flock.\n\n\nThe BoringShepherd class leaves the details of \ncreating the sheep to the user, but it defines\na few useful methods.\n\n\nThe BoringSheep constructor calls a method to set up \nthe flock. The method to set up the flock loops over \neach key. For each key, it:\n\n\n\n\nvalidates the key\n\n\ncreates a Sheep from the key\n\n\n\n\nThere are also two methods to perform actions with the flock:\none for serial and one for parallel.",
-            "title": "Boring Shepherd"
+            "text": "Shepherd\n\u00b6\n\n\nThe embarcadero mind machine shepherd is not much different from \nyour typical shepherd, it's basically there to initialize the \nflock by creating one sheep per key.\n\n\nAs described in boring mind machine, any mind machine that\nwants to use the boring shepherd base class should define \ntwo methods, each taking a key:\n\n\n\n\nvalidate the key\n\n\ncreate a Sheep from the key",
+            "title": "Shepherd"
         },
         {
-            "location": "/shepherd/#boringshepherd",
-            "text": "The BoringShepherd class is a base class for \nall Shepherds, who are the keepers (and constructors)\nof the flock.  The BoringShepherd class leaves the details of \ncreating the sheep to the user, but it defines\na few useful methods.  The BoringSheep constructor calls a method to set up \nthe flock. The method to set up the flock loops over \neach key. For each key, it:   validates the key  creates a Sheep from the key   There are also two methods to perform actions with the flock:\none for serial and one for parallel.",
-            "title": "BoringShepherd"
+            "location": "/shepherd/#shepherd",
+            "text": "The embarcadero mind machine shepherd is not much different from \nyour typical shepherd, it's basically there to initialize the \nflock by creating one sheep per key.  As described in boring mind machine, any mind machine that\nwants to use the boring shepherd base class should define \ntwo methods, each taking a key:   validate the key  create a Sheep from the key",
+            "title": "Shepherd"
         },
         {
             "location": "/sheep/",
-            "text": "BoringSheep\n\u00b6\n\n\nThe BoringSheep class is left intentionally non-functional,\nto keep from imposing any restrictions. All it does is \nimplement a virtual constructor, and a \nperform_action()\n\nmethod (along with one dummy action).\n\n\nThe \nperform_action()\n method is the decision-making center\nof the Sheep's brain. It uses the dispatcher method to look\nfor a method with a name matching the requested action.\n\n\nSheep classes are typically filled with long litanies of\nshort functions that call various API endpoints.",
-            "title": "Boring Sheep"
+            "text": "Sheep\n\u00b6\n\n\nembarcadero mind machine Sheep have basic functionality described by the Github API.\n\n\nIdeas:\n\n\n\n\n\n\nping pong pair - simple ping pong on an issue (no, it's your problem. :reassign:)\n\n\n\n\n\n\nfavestar bots\n\n\n\n\nto_fave = []; faved = [];",
+            "title": "Sheep"
         },
         {
-            "location": "/sheep/#boringsheep",
-            "text": "The BoringSheep class is left intentionally non-functional,\nto keep from imposing any restrictions. All it does is \nimplement a virtual constructor, and a  perform_action() \nmethod (along with one dummy action).  The  perform_action()  method is the decision-making center\nof the Sheep's brain. It uses the dispatcher method to look\nfor a method with a name matching the requested action.  Sheep classes are typically filled with long litanies of\nshort functions that call various API endpoints.",
-            "title": "BoringSheep"
-        },
-        {
-            "location": "/lumberjack/",
-            "text": "BoringLumberjack\n\u00b6\n\n\nThe BoringLumberjack is less of a class than a call to \nconfigure the logging module.",
-            "title": "Boring Lumberjack"
-        },
-        {
-            "location": "/lumberjack/#boringlumberjack",
-            "text": "The BoringLumberjack is less of a class than a call to \nconfigure the logging module.",
-            "title": "BoringLumberjack"
+            "location": "/sheep/#sheep",
+            "text": "embarcadero mind machine Sheep have basic functionality described by the Github API.  Ideas:    ping pong pair - simple ping pong on an issue (no, it's your problem. :reassign:)    favestar bots   to_fave = []; faved = [];",
+            "title": "Sheep"
         }
     ]
 }
