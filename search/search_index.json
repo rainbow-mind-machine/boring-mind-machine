@@ -1,0 +1,54 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nclasses:\n\n\n\n\nBoringLumberjack\n\n\nBoringKeymaker\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\n\n\n(The BoringLumberjack is so boring, it doesn't count as a class.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker\n\n\nShepherd\n\n\nSheep\n\n\n\n\nboring mind machine\n is not capable of much, \nbut being boring means you are easy to understand.",
+            "title": "Home"
+        },
+        {
+            "location": "/#boring-mind-machine",
+            "text": "boring mind machine  is a set of boring base classes for building awesome bot flocks.  classes:   BoringLumberjack  BoringKeymaker  BoringShepherd  BoringSheep   (The BoringLumberjack is so boring, it doesn't count as a class.)  This follows the  mind machine  architecuture:   Keymaker  Shepherd  Sheep   boring mind machine  is not capable of much, \nbut being boring means you are easy to understand.",
+            "title": "boring-mind-machine"
+        },
+        {
+            "location": "/keymaker/",
+            "text": "BoringKeymaker\n\u00b6\n\n\nThere are two boring Keymaker classes:\n\n\n\n\nBoringKeymaker - super boring \n\n\nBoringOAuthKeymaker - takes two arguments, \ntoken\n and \nsecret\n, \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.\n\n\n\n\nThat's all, folks!\n\n\nThe BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.\n\n\nThe BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
+            "title": "Boring Keymaker"
+        },
+        {
+            "location": "/keymaker/#boringkeymaker",
+            "text": "There are two boring Keymaker classes:   BoringKeymaker - super boring   BoringOAuthKeymaker - takes two arguments,  token  and  secret , \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.   That's all, folks!  The BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.  The BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
+            "title": "BoringKeymaker"
+        },
+        {
+            "location": "/shepherd/",
+            "text": "BoringShepherd\n\u00b6\n\n\nThe BoringShepherd class is a base class for \nall Shepherds, who are the keepers (and constructors)\nof the flock.\n\n\nThe BoringShepherd class leaves the details of \ncreating the sheep to the user, but it defines\na few useful methods.\n\n\nThe BoringSheep constructor calls a method to set up \nthe flock. The method to set up the flock loops over \neach key. For each key, it:\n\n\n\n\nvalidates the key\n\n\ncreates a Sheep from the key\n\n\n\n\nThere are also two methods to perform actions with the flock:\none for serial and one for parallel.",
+            "title": "Boring Shepherd"
+        },
+        {
+            "location": "/shepherd/#boringshepherd",
+            "text": "The BoringShepherd class is a base class for \nall Shepherds, who are the keepers (and constructors)\nof the flock.  The BoringShepherd class leaves the details of \ncreating the sheep to the user, but it defines\na few useful methods.  The BoringSheep constructor calls a method to set up \nthe flock. The method to set up the flock loops over \neach key. For each key, it:   validates the key  creates a Sheep from the key   There are also two methods to perform actions with the flock:\none for serial and one for parallel.",
+            "title": "BoringShepherd"
+        },
+        {
+            "location": "/sheep/",
+            "text": "BoringSheep\n\u00b6\n\n\nThe BoringSheep class is left intentionally non-functional,\nto keep from imposing any restrictions. All it does is \nimplement a virtual constructor, and a \nperform_action()\n\nmethod (along with one dummy action).\n\n\nThe \nperform_action()\n method is the decision-making center\nof the Sheep's brain. It uses the dispatcher method to look\nfor a method with a name matching the requested action.\n\n\nSheep classes are typically filled with long litanies of\nshort functions that call various API endpoints.",
+            "title": "Boring Sheep"
+        },
+        {
+            "location": "/sheep/#boringsheep",
+            "text": "The BoringSheep class is left intentionally non-functional,\nto keep from imposing any restrictions. All it does is \nimplement a virtual constructor, and a  perform_action() \nmethod (along with one dummy action).  The  perform_action()  method is the decision-making center\nof the Sheep's brain. It uses the dispatcher method to look\nfor a method with a name matching the requested action.  Sheep classes are typically filled with long litanies of\nshort functions that call various API endpoints.",
+            "title": "BoringSheep"
+        },
+        {
+            "location": "/lumberjack/",
+            "text": "BoringLumberjack\n\u00b6\n\n\nThe BoringLumberjack is less of a class than a call to \nconfigure the logging module.",
+            "title": "Boring Lumberjack"
+        },
+        {
+            "location": "/lumberjack/#boringlumberjack",
+            "text": "The BoringLumberjack is less of a class than a call to \nconfigure the logging module.",
+            "title": "BoringLumberjack"
+        }
+    ]
+}
