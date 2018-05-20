@@ -9,3 +9,6 @@ deploy: site
 site:
 	git clone -b gh-pages $(BMM_GH) site
 	cd site; git remote add cmr $(BMM_CMR)
+
+test:
+	nosetests -v
