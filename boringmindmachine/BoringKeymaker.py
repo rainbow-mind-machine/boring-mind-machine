@@ -88,7 +88,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
         try:
             with open(f_apikeys,'r') as f:
                 d = json.load(f)
-        except (json.errors.JSONDecodeError):
+        except ValueError:
             err = "ERROR: given API keys file %s is not valid JSON"%(f_apikeys)
             raise Exception(err)
 
