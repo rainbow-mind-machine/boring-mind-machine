@@ -55,6 +55,7 @@ class BoringShepherd(object):
         # We won't need the lumberjack anymore
 
         # Shepherds have to keep watch over their flock
+        self.sheep_class = sheep_class
         self.flock = []
         self.create_flock(json_keys_dir)
 
@@ -80,8 +81,13 @@ class BoringShepherd(object):
         for json_file in glob.glob(os.path.join(json_keys_dir,'*')):
             bot_key = {}
             logger.info("File %s"%(json_file))
-            with open(json_file,'r') as f:
-                bot_key = json.load(f)
+            try:
+                with open(json_file,'r') as f:
+                    bot_key = json.load(f)
+            except JSONDecodeError:
+                err = "ERROR: Invalid JSON key in %s"%(json_file)
+                raise Exception(err)
+
 
             logger.info("Validate key")
             self._validate_key(bot_key)
