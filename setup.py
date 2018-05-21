@@ -1,5 +1,5 @@
 from setuptools import setup
-from bmm import __version__
+from boringmindmachine import __version__
 
 setup(  name='boringmindmachine',
         version=__version__,
