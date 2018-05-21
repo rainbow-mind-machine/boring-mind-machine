@@ -78,13 +78,24 @@ class BoringShepherd(object):
 
         logger.info("About to initialize sheep")
         logger.info("Looking in %s"%(json_keys_dir))
-        for json_file in glob.glob(os.path.join(json_keys_dir,'*')):
+
+        if os.path.isdir(json_keys_dir) is False:
+            err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
+            err += "that does not exist!"
+            raise Exception(err)
+
+        if len(glob.glob(os.path.join(json_keys_dir,'*.json')))==0:
+            err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
+            err += "that contains no .json files!"
+            raise Exception(err)
+
+        for json_file in glob.glob(os.path.join(json_keys_dir,'*.json')):
             bot_key = {}
             logger.info("File %s"%(json_file))
             try:
                 with open(json_file,'r') as f:
                     bot_key = json.load(f)
-            except JSONDecodeError:
+            except ValueError:
                 err = "ERROR: Invalid JSON key in %s"%(json_file)
                 raise Exception(err)
 
