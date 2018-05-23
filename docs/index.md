@@ -28,17 +28,17 @@ This simple repo helps provide a barebones example of tooling and infrastructure
 
 Tooling woorkflow:
 
-* [Github](dev/github.md) - setup for workflow and project management on github
-* [CircleCI](dev/circleci.md) - continuous integration + deployment to pypi with circle ci
-* [Pypi](dev/pypi.md) - uploading project to pypi
-* [Dockerhub](dev/dockerhub.md) - pushing container to dockerhub
+* [Github](#dev/github.md) - setup for workflow and project management on github
+* [CircleCI](#dev/circleci.md) - continuous integration + deployment to pypi with circle ci
+* [Pypi](#dev/pypi.md) - uploading project to pypi
+* [Dockerhub](#dev/dockerhub.md) - pushing container to dockerhub
 
 Project infrastructure:
 
-* [Mailing List](dev/mailing.md)
-* [Website](dev/website.md)
-* [Issues and PRs](dev/issues_prs.md)
-* [Contributing](dev/contributing.md)
+* [Mailing List](#dev/mailing.md)
+* [Website](#dev/website.md)
+* [Issues and PRs](#dev/issues_prs.md)
+* [Contributing](#dev/contributing.md)
 
 
 
