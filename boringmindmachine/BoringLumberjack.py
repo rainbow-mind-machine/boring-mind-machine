@@ -13,7 +13,15 @@ as .yaml files, in addition to json, etc.
 But that's a little too fancy for our purposes.
 """
 
-LOGO = r'''
+class BoringLumberjack(object):
+    """
+    The Lumberjack class just configures the logs
+    and then it's all finished.
+
+    Honestly, we'll almost never need to extend this.
+    """
+
+    LOGO = r'''
          ____    ___   ____   ____  ____    ____ 
         |    \  /   \ |    \ |    ||    \  /    |
         |  o  )|     ||  D  ) |  | |  _  ||   __|
@@ -43,15 +51,6 @@ LOGO = r'''
                         configuring your logs.
 
 '''
-
-
-class BoringLumberjack(object):
-    """
-    The Lumberjack class just configures the logs
-    and then it's all finished.
-
-    Honestly, we'll almost never need to extend this.
-    """
 
     def __init__(self, 
                  flock_name = 'Anonymous Flock of Cowards',
@@ -87,14 +86,7 @@ class BoringLumberjack(object):
             fh.setLevel(logging.INFO)
             logger.addHandler(fh)
 
-        if 'streamhandler' in kwargs and kwargs['streamhandler']==False:
-            pass
-        else:
-            ch = logging.StreamHandler()
-            ch.setLevel(logging.INFO)
-            logger.addHandler(ch)
-
-        logger.info(LOGO)
+        logger.info(self.LOGO)
         logger.info("-"*40)
         logger.info("Flock name: %s"%(flock_name))
         logger.info("Flock log file: %s"%(log_file))
