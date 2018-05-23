@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "embarcadero-mind-machine\n\u00b6\n\n\nembarcadero mind machine\n is the extensible framework for building Github bot flocks.\n\n\nembarcadero classes\n\u00b6\n\n\nhere are all of the embarcadero classes:\n\n\n\n\nGithubKeymaker\n\n\nShepherd\n\n\nSheep\n\n\n\n\n(No Lumberjack method is needed.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nembarcadero mind machine\n is a work in progress.\n\n\ndeveloper workflow\n\u00b6\n\n\nsee boring mind machine for info about the infrastructure.",
+            "text": "embarcadero-mind-machine\n\u00b6\n\n\nembarcadero mind machine\n is the extensible framework for building Github bot flocks.\n\n\n\n\nembarcadero classes\n\u00b6\n\n\nhere are all of the embarcadero classes:\n\n\n\n\nGithubKeymaker\n\n\nShepherd\n\n\nSheep\n\n\n\n\n(No Lumberjack method is needed.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nembarcadero mind machine\n is a work in progress.\n\n\ndeveloper workflow\n\u00b6\n\n\nsee boring mind machine for info about the infrastructure.",
             "title": "Home"
         },
         {
@@ -22,13 +22,23 @@
         },
         {
             "location": "/keymaker/",
-            "text": "Github Keymaker\n\u00b6\n\n\nembarcadero mind machine defines a Keymaker object for authenticating\nwith the Github API via OAuth.",
+            "text": "Github Keymaker\n\u00b6\n\n\nembarcadero mind machine defines a Keymaker object for authenticating\nwith the Github API via OAuth.\n\n\nA Quick One-Bot Example\n\u00b6\n\n\nHere is a quick demo to authenticate a bot account\nand create a JSON key:\n\n\nexamples/quick_start/one_bot.py\n\n\nimport embarcaderomindmachine as emm\ngk = emm.GithubKeymaker()\ngk.set_apikeys_env()\ngk.make_a_key('dummy','dummy.json','/tmp/keys')\n\n\n\n\n\nThe Github Keymaker object is what walks you through\nthe OAuth2 process.\n\n\nThe \ngk.set_apikeys_env()\n method gets the application's\nconsumer ID and consumer secret from environment\nvariables (\nCONSUMER_ID\n and \nCONSUMER_SECRET\n, \nrespectively). The Keymaker also has methods to set\nthe API keys from a JSON file or from a dictionary.\n\n\nLast, we run the \nmake_a_key()\n method to actually\ngenerate the key. Note that this is not the normal\nworkflow, we usually pass a list of items to the \nKeymaker and ask it to generate one key (i.e., \nauthenticate one bot account) per item.\n\n\nIn this case, we force the Keymaker to create a \nsingle key named \"dummy\" that will be stored in\n\n/tmp/keys/dummy.json\n.\n\n\nA Two-Bot Example\n\u00b6",
             "title": "Github Keymaker"
         },
         {
             "location": "/keymaker/#github-keymaker",
             "text": "embarcadero mind machine defines a Keymaker object for authenticating\nwith the Github API via OAuth.",
             "title": "Github Keymaker"
+        },
+        {
+            "location": "/keymaker/#a-quick-one-bot-example",
+            "text": "Here is a quick demo to authenticate a bot account\nand create a JSON key:  examples/quick_start/one_bot.py  import embarcaderomindmachine as emm\ngk = emm.GithubKeymaker()\ngk.set_apikeys_env()\ngk.make_a_key('dummy','dummy.json','/tmp/keys')  The Github Keymaker object is what walks you through\nthe OAuth2 process.  The  gk.set_apikeys_env()  method gets the application's\nconsumer ID and consumer secret from environment\nvariables ( CONSUMER_ID  and  CONSUMER_SECRET , \nrespectively). The Keymaker also has methods to set\nthe API keys from a JSON file or from a dictionary.  Last, we run the  make_a_key()  method to actually\ngenerate the key. Note that this is not the normal\nworkflow, we usually pass a list of items to the \nKeymaker and ask it to generate one key (i.e., \nauthenticate one bot account) per item.  In this case, we force the Keymaker to create a \nsingle key named \"dummy\" that will be stored in /tmp/keys/dummy.json .",
+            "title": "A Quick One-Bot Example"
+        },
+        {
+            "location": "/keymaker/#a-two-bot-example",
+            "text": "",
+            "title": "A Two-Bot Example"
         },
         {
             "location": "/shepherd/",

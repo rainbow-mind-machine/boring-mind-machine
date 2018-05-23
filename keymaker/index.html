@@ -66,7 +66,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="purple" data-md-color-accent="purple">
+    <body dir="ltr" data-md-color-primary="dark-orange" data-md-color-accent="dark-orange">
   
     <svg class="md-svg">
       <defs>
@@ -256,6 +256,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="toc">
         Github Keymaker
@@ -269,13 +271,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#github-keymaker" title="Github Keymaker" class="md-nav__link">
-    Github Keymaker
+  <a href="#a-quick-one-bot-example" title="A Quick One-Bot Example" class="md-nav__link">
+    A Quick One-Bot Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-two-bot-example" title="A Two-Bot Example" class="md-nav__link">
+    A Two-Bot Example
   </a>
   
 </li>
@@ -329,13 +340,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#github-keymaker" title="Github Keymaker" class="md-nav__link">
-    Github Keymaker
+  <a href="#a-quick-one-bot-example" title="A Quick One-Bot Example" class="md-nav__link">
+    A Quick One-Bot Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-two-bot-example" title="A Two-Bot Example" class="md-nav__link">
+    A Two-Bot Example
   </a>
   
 </li>
@@ -359,11 +379,36 @@
                   <a href="https://github.com/rainbow-mind-machine/embarcadero-mind-machine/edit/master/docs/keymaker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Github Keymaker</h1>
-                
-                <h2 id="github-keymaker">Github Keymaker<a class="headerlink" href="#github-keymaker" title="Permanent link">&para;</a></h2>
+                <h1 id="github-keymaker">Github Keymaker<a class="headerlink" href="#github-keymaker" title="Permanent link">&para;</a></h1>
 <p>embarcadero mind machine defines a Keymaker object for authenticating
 with the Github API via OAuth.</p>
+<h2 id="a-quick-one-bot-example">A Quick One-Bot Example<a class="headerlink" href="#a-quick-one-bot-example" title="Permanent link">&para;</a></h2>
+<p>Here is a quick demo to authenticate a bot account
+and create a JSON key:</p>
+<p><strong><code>examples/quick_start/one_bot.py</code></strong></p>
+<div class="codehilite"><pre><span></span>import embarcaderomindmachine as emm
+gk = emm.GithubKeymaker()
+gk.set_apikeys_env()
+gk.make_a_key(&#39;dummy&#39;,&#39;dummy.json&#39;,&#39;/tmp/keys&#39;)
+</pre></div>
+
+
+<p>The Github Keymaker object is what walks you through
+the OAuth2 process.</p>
+<p>The <code>gk.set_apikeys_env()</code> method gets the application's
+consumer ID and consumer secret from environment
+variables (<code>CONSUMER_ID</code> and <code>CONSUMER_SECRET</code>, 
+respectively). The Keymaker also has methods to set
+the API keys from a JSON file or from a dictionary.</p>
+<p>Last, we run the <code>make_a_key()</code> method to actually
+generate the key. Note that this is not the normal
+workflow, we usually pass a list of items to the 
+Keymaker and ask it to generate one key (i.e., 
+authenticate one bot account) per item.</p>
+<p>In this case, we force the Keymaker to create a 
+single key named "dummy" that will be stored in
+<code>/tmp/keys/dummy.json</code>.</p>
+<h2 id="a-two-bot-example">A Two-Bot Example<a class="headerlink" href="#a-two-bot-example" title="Permanent link">&para;</a></h2>
                 
                   
                 
