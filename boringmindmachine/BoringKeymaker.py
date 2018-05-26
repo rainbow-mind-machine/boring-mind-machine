@@ -12,11 +12,62 @@ class BoringKeymaker(object):
     if they would like to create a key from each item.
 
     This is completely dependent on the API, so much so
-    that there is no common functionality that would be
+    that there is not much common functionality that is 
     useful to share across all Keymakers.
     """
     def __init__(self):
         self.apikeys_set = False
+
+    def slugify(self, value):
+        """
+        Slugify a string (make it safe for filenames and bot names)
+        """
+        slug = re.sub(r'[^\w-]', '', value).strip().lower()
+        return slug 
+
+
+    # ---
+    # Bulk Key Methods:
+    # Given a set of items, make one key per item.
+    # These all call the single key method (not defined here).
+
+    def make_keys_from_strings(self, names, keys_out_dir):
+        """
+        Just pass in a list of strings (bot names),
+        and let the Keymaker do the OAuth dance once
+        for each bot name. Simple as that.
+        """
+        for name in names:
+            bot_name = self.slugify(name)
+            json_target = bot_name + ".json"
+            self.make_a_key(name, json_target, keys_out_dir)
+
+
+    def make_keys_from_dict(self, d, keys_out_dir):
+        """
+        Pass in a list of key-value pairs, and use the keys 
+        as the bot name.
+            
+            {
+                'super_bot' :   '...arbitrary...',
+                'spider_bot' :  '...',
+                'bat_bot' :     '...'
+            }
+
+        The key is the bot name, the value is arbitrary.
+        This key-value pair is preserved in the key file.
+        """
+        for name in d.keys():
+            bot_name = self.slugify(name)
+            json_target = bot_name + ".json"
+            make_a_key(bot_name, json_target, keys_out_dir, bot_name=d[bot_name])
+
+
+    def make_a_key(self):
+        err = "ERROR: BoringKeymaker does not define a "
+        err += "make_a_key() method. Perhaps you created "
+        err += "the wrong kind of Sheep.\n"
+        raise Exception(err)
 
 
 class BoringOAuthKeymaker(BoringKeymaker):
