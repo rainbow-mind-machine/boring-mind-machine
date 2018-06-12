@@ -37,6 +37,10 @@ class BoringKeymaker(object):
         and let the Keymaker do the OAuth dance once
         for each bot name. Simple as that.
         """
+        if not self.apikeys_set:
+            err = "ERROR: Could not make bot keys, no API keys set!"
+            raise Exception(err)
+
         for name in names:
             bot_name = self.slugify(name)
             json_target = bot_name + ".json"
@@ -57,6 +61,10 @@ class BoringKeymaker(object):
         The key is the bot name, the value is arbitrary.
         This key-value pair is preserved in the key file.
         """
+        if not self.apikeys_set:
+            err = "ERROR: Could not make bot keys, no API keys set!"
+            raise Exception(err)
+
         for name in d.keys():
             bot_name = self.slugify(name)
             json_target = bot_name + ".json"
@@ -114,7 +122,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
             self.apikeys_set = True
         else:
             err = "ERROR: environment variables %s and %s were not set."%(
-                    token_var, secret_var)
+                    token_var.upper(), secret_var.upper())
             raise Exception(err)
 
 
