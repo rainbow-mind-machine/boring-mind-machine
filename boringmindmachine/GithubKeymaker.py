@@ -1,7 +1,6 @@
 from BoringKeymaker import BoringOAuthKeymaker
 import os, re, json
 import tempfile, subprocess
-
 from github import Github
 from requests_oauthlib import OAuth2Session
 
@@ -13,46 +12,8 @@ class GithubKeymaker(BoringOAuthKeymaker):
     def __init__(self):
         super().__init__('client_id','client_secret')
 
-
-    # ---
-    # Make Bot OAuth Keys
-
-    # Bulk Key Methods:
-    # These all call the single key method.
-
     
-    def make_keys_from_strings(self, names, keys_out_dir):
-        """
-        Just pass in a list of strings (bot names),
-        and let the Keymaker do the OAuth dance once
-        for each bot name. Simple as that.
-        """
-        for name in names:
-            bot_name = self.slugify(name)
-            json_target = bot_name + ".json"
-            self.make_a_key(name, json_target, keys_out_dir)
-
-
-    def make_keys_from_dict(self, d, keys_out_dir):
-        """
-        Pass in a list of key-value pairs, and use the keys 
-        as the bot name.
-            
-            {
-                'super_bot' :   '...arbitrary...',
-                'spider_bot' :  '...',
-                'bat_bot' :     '...'
-            }
-
-        The key is the bot name, the value is arbitrary.
-        This key-value pair is preserved in the key file.
-        """
-        for name in d.keys():
-            bot_name = self.slugify(name)
-            json_target = bot_name + ".json"
-            make_a_key(bot_name, json_target, keys_out_dir, bot_name=d[bot_name])
-
-
+    # ------
     # Single Key Method:
     # The workhorse.
 
@@ -77,6 +38,10 @@ class GithubKeymaker(BoringOAuthKeymaker):
             interactive :   Go through the interactive three-legged OAuth process
                             (only set to False for testing)
         """
+        if not self.apikeys_set:
+            err = "ERROR: Could not make a bot key, no API keys set!"
+            raise Exception(err)
+
         if os.path.isdir(keys_out_dir) is False:
             subprocess.call(['mkdir','-p',keys_out_dir])
 

@@ -6,49 +6,12 @@ from apiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
-
 class GoogleKeymaker(BoringOAuthKeymaker):
     """
     Do the OAuth dance with Github.
     """
     def __init__(self):
         super().__init__('client_id','client_secret')
-
-
-    def set_apikeys_env(self):
-        warn = "WARNING: The GoogleKeymaker cannot accept API keys "
-        warn += "passed via environment variables. You must obtain "
-        warn += "a JSON file with your API keys. See the "
-        warn += "cheeseburger-mind-machine documentation for details."
-        warn += "Remove set_apikeys_env() to remove this warning.\n"
-        print(warn)
-
-
-    def set_apikeys_file(self, f_apikeys):
-        """
-        Set the API keys using an external JSON file.
-        Unlike the parent class, we don't parse the 
-        key-value pairs ourselves, we pass it straight
-        to the OAuth object.
-        """
-        if( not exists(f_apikeys) ):
-            err = "Error: could not find specified API keys file %s"%(f_apikeys)
-            raise Exception(err)
-
-        elif( not isfile(f_apikeys) ):
-            err = "ERROR: specified API keys file %s is not a file"%(f_apikeys)
-            raise Exception(err)
-
-        self.apikeys_file = f_apikeys
-
-
-    def set_apikeys_dict(self, d_apikeys):
-        warn = "WARNING: The GoogleKeymaker cannot accept API keys "
-        warn += "passed via dictionary. You must obtain "
-        warn += "a JSON file with your API keys. See the "
-        warn += "cheeseburger-mind-machine documentation for details."
-        warn += "Remove set_apikeys_dict() to remove this warning.\n"
-        print(warn)
 
 
     # ---
@@ -59,7 +22,6 @@ class GoogleKeymaker(BoringOAuthKeymaker):
                     name,
                     json_target,
                     keys_out_dir='keys/',
-                    interactive=True,
                     **kwargs):
         """
         Public method to make a single key from a single item.
@@ -72,9 +34,6 @@ class GoogleKeymaker(BoringOAuthKeymaker):
 
             keys_out_dir :  Directory in which to place final JSON keys
                             containing OAuth tokens and other bot info
-
-            interactive :   Go through the interactive three-legged OAuth process
-                            (only set to False for testing)
         """
         if os.path.isdir(keys_out_dir) is False:
             subprocess.call(['mkdir','-p',keys_out_dir])
@@ -152,6 +111,8 @@ class GoogleKeymaker(BoringOAuthKeymaker):
                 full_json_target,full_json_target))
             print("")
             ui = input("Press enter when you have moved the file.")
+
+        # Need to add params to json file
 
         print("\n\nCreated key for %s at %s\n\n"%(name,keyloc))
 
