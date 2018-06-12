@@ -25,6 +25,13 @@ class TestBoringKeymaker(TestCase):
         # it really is boring
         bk = bmm.BoringKeymaker()
 
+    def test_slugify(self):
+        """
+        Running a test of the slugify function
+        """
+        bk = bmm.BoringKeymaker()
+        self.assertEquals("asdf",bk.slugify("a-s-df-"))
+
 
 class TestBoringOAuthKeymaker(TestCase):
     """
@@ -116,4 +123,8 @@ class TestBoringOAuthKeymaker(TestCase):
     def tearDownClass(self):
         # Remove the keys directory we created
         subprocess.call(['rm','-rf',self.keypath])
+
+
+
+
 
