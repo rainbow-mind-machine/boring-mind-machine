@@ -1,4 +1,4 @@
-import os, json, glob
+import os, re, json, glob
 from os.path import \
     isfile, isdir, exists, join, basename, splitext
 
