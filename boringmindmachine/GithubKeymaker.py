@@ -1,4 +1,4 @@
-from BoringKeymaker import BoringOAuthKeymaker
+from .BoringKeymaker import BoringOAuthKeymaker
 import os, re, json
 import tempfile, subprocess
 from github import Github
