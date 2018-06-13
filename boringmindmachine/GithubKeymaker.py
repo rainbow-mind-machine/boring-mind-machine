@@ -3,6 +3,8 @@ import os, re, json
 import tempfile, subprocess
 from github import Github
 from requests_oauthlib import OAuth2Session
+import urllib3
+urllib3.disable_warnings()
 
 
 class GithubKeymaker(BoringOAuthKeymaker):
@@ -66,7 +68,7 @@ class GithubKeymaker(BoringOAuthKeymaker):
         # Begin Github-Specific Section
 
         # NOTE: This assumes you have set up your webapp
-        # to have a callback url of `localhost:8000`
+        # to have a callback url of `http://localhost:8000`
         #
         # This is going to get a bit complicated.
         # Here's what we do:
