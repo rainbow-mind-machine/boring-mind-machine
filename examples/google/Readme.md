@@ -14,7 +14,7 @@ of the Google account, specify the location of the Google OAuth
 application's API keys.
 
 ```
-$ GOOGLE_APPLICATION_CREDENTIALS=${PWD}/google_keys/client_credentials.json \
+$ GOOGLE_APPLICATION_CREDENTIALS=${PWD}/client_secret.json \
     python google_auth.py
 ```
 
