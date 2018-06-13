@@ -30,7 +30,7 @@ class TestBoringKeymaker(TestCase):
         Running a test of the slugify function
         """
         bk = bmm.BoringKeymaker()
-        self.assertEquals("asdf",bk.slugify("a-s-df-"))
+        self.assertEquals("a-s-df",bk.slugify("a-?s-$!d(f"))
 
 
 class TestBoringOAuthKeymaker(TestCase):
@@ -42,7 +42,7 @@ class TestBoringOAuthKeymaker(TestCase):
     token_var = 'token'
     secret_var = 'secret'
     keys_dir = tempfile.gettempdir()
-    keys_json = "apikeys.json"
+    keys_json = "fake_apikeys.json"
 
     @classmethod
     def setUpClass(self):
@@ -53,8 +53,13 @@ class TestBoringOAuthKeymaker(TestCase):
         subprocess.call(['mkdir','-p',self.keys_dir])
 
         d = {}
-        d[self.token_var.lower()] = 'AAAAA'
-        d[self.secret_var.lower()] = 'BBBBB'
+
+        self.token_var = self.token_var.lower()
+        self.secret_var = self.secret_var.lower()
+
+        d[self.token_var] = 'AAAAA'
+        d[self.secret_var] = 'BBBBB'
+
         with open(self.keypath,'w') as f:
             json.dump(d,f)
 
@@ -80,8 +85,8 @@ class TestBoringOAuthKeymaker(TestCase):
 
         bk.set_apikeys_env()
 
-        self.assertEqual(bk.credentials[self.token_var.lower()], 'CCCCC')
-        self.assertEqual(bk.credentials[self.secret_var.lower()],'DDDDD')
+        self.assertEqual(bk.credentials[self.token_var], 'CCCCC')
+        self.assertEqual(bk.credentials[self.secret_var],'DDDDD')
 
         # Clean up
         os.environ[self.token_var.upper()] = ''
@@ -98,8 +103,8 @@ class TestBoringOAuthKeymaker(TestCase):
         bk.set_apikeys_file(self.keypath)
 
         # Note that we hard-code these key values in the setup method above...
-        self.assertEqual(bk.credentials[self.token_var.lower()], 'AAAAA')
-        self.assertEqual(bk.credentials[self.secret_var.lower()],'BBBBB')
+        self.assertEqual(bk.credentials[self.token_var], 'AAAAA')
+        self.assertEqual(bk.credentials[self.secret_var],'BBBBB')
 
 
     def test_boringoauthkeymaker_apikeys_dict(self):
@@ -111,20 +116,16 @@ class TestBoringOAuthKeymaker(TestCase):
 
         # Set application API keys
         bk.set_apikeys_dict({ 
-            self.token_var.lower() : 'EEEEE',
-            self.secret_var.lower() : 'FFFFF'
+            self.token_var : 'EEEEE',
+            self.secret_var : 'FFFFF'
         })
 
-        self.assertEqual(bk.credentials[self.token_var.lower()], 'EEEEE')
-        self.assertEqual(bk.credentials[self.secret_var.lower()],'FFFFF')
+        self.assertEqual(bk.credentials[self.token_var], 'EEEEE')
+        self.assertEqual(bk.credentials[self.secret_var],'FFFFF')
 
 
     @classmethod
     def tearDownClass(self):
         # Remove the keys directory we created
         subprocess.call(['rm','-rf',self.keypath])
-
-
-
-
 

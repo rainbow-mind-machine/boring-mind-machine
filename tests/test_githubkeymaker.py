@@ -22,15 +22,22 @@ class TestGithubKeymaker(TestCase):
     Test the Github Keymaker class.
     """
     keys_dir = tempfile.gettempdir()
+    real_tests = False
 
     @classmethod
     def setUpClass(self):
         """
-        Create a key directory.
-        (Don't know why - we don't actually make anything anyway...)
+        Look for CLIENT_ID and CLIENT_SECRET environment variables.
+        If we find them, run the real tests.
         """
-        self.keypath = os.path.join(self.keys_dir, self.keys_json)
-        subprocess.call(['mkdir','-p',self.keys_dir])
+        try:
+            self.id = os.environ['CLIENT_ID']
+            self.secret = os.environ['CLIENT_SECRET']
+            self.real_tests = True
+        except KeyError:
+            self.id = ''
+            self.secret = ''
+            self.real_tests = False
 
 
     def test_github_keymaker(self):
@@ -44,10 +51,6 @@ class TestGithubKeymaker(TestCase):
         gk = bmm.GithubKeymaker()
 
         with captured_output() as (out, err):
-            make_keys_from_strings(['asdf','qwerty'], 'keys/')
-
-
-
-
+            gk.make_a_key('dummy','dummy.json',self.keys_dir)
 
 
