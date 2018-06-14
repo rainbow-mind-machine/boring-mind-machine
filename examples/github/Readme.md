@@ -1,6 +1,12 @@
-# basic example
+# Github Keymaker Example
 
-A simple example of creating an OAuth keymaker.
+An example of creating a Github OAuth keymaker.
+
+## Creating a Github App
+
+See [Setup](Setup.md).
+
+## Authorizing
 
 To run this, you will need your client ID and client secret.
 These can be found by logging in as the user that created the
@@ -14,7 +20,7 @@ Once you have them, set the `CLIENT_ID` and `CLIENT_SECRET` environment
 variables when you run the program, like this:
 
 ```
-CLIENT_ID="..." CLIENT_SECRET="..." python basic_auth.py
+CLIENT_ID="..." CLIENT_SECRET="..." python github_auth.py
 ```
 
 This will create an authorization link, which you can log in to with
