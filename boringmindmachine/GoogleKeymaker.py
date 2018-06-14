@@ -1,7 +1,8 @@
 from .BoringKeymaker import BoringOAuthKeymaker
-import os, re, json
+import os, re, json, time
+from os.path import \
+    isfile, isdir, exists, join, basename, splitext
 import tempfile, subprocess
-
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
@@ -12,6 +13,51 @@ class GoogleKeymaker(BoringOAuthKeymaker):
     """
     def __init__(self):
         super().__init__('client_id','client_secret')
+
+
+    # ---
+    # Google will only allow
+    # api keys to be set by file.
+    def set_apikeys_env(self):
+        err = "ERROR: Google Keymaker cannot create "
+        err += "API keys from environment variables. "
+        err += "Set the name of the API keys file instead, "
+        err += "using set_apikeys_file()"
+        raise Exception(err)
+
+    def set_apikeys_dict(self):
+        err = "ERROR: Google Keymaker cannot create "
+        err += "API keys from a Python dictionary. "
+        err += "Set the name of the API keys file instead, "
+        err += "using set_apikeys_file()"
+        raise Exception(err)
+
+    def set_apikeys_file(self, f_apikeys):
+        """
+        Set the API keys using an external JSON file.
+        This stores the file name in self.apikeys_file,
+        since Google auth likes to be given a file name.
+        """
+        token_var = self.token.lower()
+
+        secret_var = self.secret.lower()
+
+        if( not exists(f_apikeys) ):
+            err = "Error: could not find specified API keys file %s"%(f_apikeys)
+            raise Exception(err)
+
+        elif( not isfile(f_apikeys) ):
+            err = "ERROR: specified API keys file %s is not a file"%(f_apikeys)
+            raise Exception(err)
+
+        try:
+            with open(f_apikeys,'r') as f:
+                d = json.load(f)
+        except ValueError:
+            err = "ERROR: given API keys file %s is not valid JSON"%(f_apikeys)
+            raise Exception(err)
+
+        self.apikeys_file = f_apikeys
 
 
     # ---
@@ -87,34 +133,24 @@ class GoogleKeymaker(BoringOAuthKeymaker):
         # cheeseburger mind machine access the 
         # bot account.
         # 
-        # Once you say yes, it will download a JSON file
-        # which you will need to move to the present
-        # directory. 
-        #
-        # Unfortunately, this cannot be automated 
-        # because Google. Fortunately, it's a one
-        # time process.
+        # When you say yes, it will return the necessary
+        # credentials to this process (which is listening).
+        # The service will take care of populating the
+        # json key.
 
-        print(" ~"*40)
-        print("IMPORTANT:")
-        print("Once you have gone through the Google authentication process,")
-        print("you will be asked to download a file.")
-        print("")
-
-        print("You must copy the file you download to the following location:")
-        print("%s"%(full_json_target))
-        print("")
-        ui = input("Press enter when you have moved the file.")
-
-        while os.path.isdir(full_json_target) is False:
-            print("Unable to find %s, copy the JSON file that you downloaded to %s."%(
-                full_json_target,full_json_target))
-            print("")
-            ui = input("Press enter when you have moved the file.")
+        count = 0
+        while os.path.isfile(full_json_target) is False:
+            count += 1
+            print("Waiting for auth process to create JSON file %s..."%(
+                full_json_target))
+            time.sleep(3) 
+            if count>10:
+                print("No JSON file detected after 30 seconds. Abort!")
+                exit(1)
 
         # Need to add params to json file
 
-        print("\n\nCreated key for %s at %s\n\n"%(name,keyloc))
+        print("\n\nCreated key for %s at %s\n\n"%(name,full_json_target))
 
         ### # Create a new OAuth2Session and test it:
         ### del github
