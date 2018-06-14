@@ -2,10 +2,9 @@
 
 The brief summary of what we cover here:
 
-We need to create an application (something that will 
-consume the API endpoints, i.e., Simple Simon), 
-and we need to grant the application access to 
-at least one Google Account.
+We need to create an application (something that will consume the API
+endpoints), and we need to grant the application access to at least one Google
+account.
 
 ### Set Up API and Create App
 
@@ -49,24 +48,18 @@ Rename it `client_secret.json`.
 
 ### End Result
 
-In the end you should have one of two things, depending on how you want
-to authenticate your application's credentials with Google:
+In the end you will have a JSON file with your OAuth application credentials
+in it, and these will be used to authenticate with the user. The Google
+OAuth process will load the keys from `client_secret.json`, and will
+open a login link for the user to authenticate with their Google account.
 
-1. Copy and paste the values of the client ID and client secret
-    API keys on the command line, pass them into boring mind machine
-    as environment variables
+The Google OAuth process also takes care of recieving the callback URL
+and the token contained in it, so the bot account keys are also stored in
+a JSON file.
 
-2. Pass the location of the client credentials JSON file directly to
-    the Google authentication library using the enviroinment variable
-    `$GOOGLE_APPLICATION_CREDENTIALS` (which points to the location of
-    the credentials files).
-
-To authenticate calls to the API, we will use an environment variable to 
-tell the Google API client library where the credentials JSON file lives.
-
-**NOTE:** This credentials JSON file will also enable you to call 
-all of the other APIs that Google Cloud offers (e.g., Google Cloud
-Translate, or the Vision API).
+No environment variables need to be set, the only thing that needs to be set
+is the name of the JSON file containing the OAuth application's API credentials
+(should be `client_secret.json`).
 
 Once you have `client_secret.json` in the current directory, you're set to go.
 

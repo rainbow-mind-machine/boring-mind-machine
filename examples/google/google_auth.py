@@ -3,25 +3,40 @@ import subprocess
 
 """
 Run this example like:
+    
+    $ python google_auth.py
 
-$ CONSUMER_TOKEN="XXXXX" \
-  CONSUMER_TOKEN_SECRET="XXXXXXXX" \
-  python google_auth.py
-
-Where CLIENT_ID and CLIENT_SECRET are 
-from your app page on Github.
+This requires that you set up API keys
+using a JSON file, downloaded from the
+Google API Credentials page in the
+Google Cloud Platform Console.
 """
 
-keydir = 'keys'
+def usage():
+    print('''
+        google_auth.py
 
-gk = bmm.GithubKeymaker()
-gk.set_apikeys_env()
+        This script creates a Google Keymaker using
+        boring mind machine. To use this script,
+        set the API key file usng set_apikeys_file()
+    ''')
+    exit(1)
 
-print("Creating a dummy key...")
-gk.make_a_key('dummy','dummy.json',keydir)
-print("Success.")
 
-print("Cleaning up...")
-subprocess.call(['rm','-rf',keydir])
-print("Done.")
+def main():
+    keydir = 'keys'
+    
+    gk = bmm.GoogleKeymaker()
+    gk.set_apikeys_file('client_secret.json')
+    
+    print("Creating a dummy key...")
+    gk.make_a_key('dummy','dummy.json',keydir)
+    print("Success.")
+    
+    #print("Cleaning up...")
+    #subprocess.call(['rm','-rf',keydir])
+    #print("Done.")
+
+if __name__=="__main__":
+    main()
 
