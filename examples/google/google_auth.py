@@ -18,7 +18,7 @@ def usage():
 
         This script creates a Google Keymaker using
         boring mind machine. To use this script,
-        set the API key file usng set_apikeys_file()
+        set the API key file using set_apikeys_file()
     ''')
     exit(1)
 
@@ -33,9 +33,9 @@ def main():
     gk.make_a_key('dummy','dummy.json',keydir)
     print("Success.")
     
-    #print("Cleaning up...")
-    #subprocess.call(['rm','-rf',keydir])
-    #print("Done.")
+    print("Cleaning up...")
+    subprocess.call(['rm','-rf',keydir])
+    print("Done.")
 
 if __name__=="__main__":
     main()

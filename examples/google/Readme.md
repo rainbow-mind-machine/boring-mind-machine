@@ -8,13 +8,18 @@ See [Setup](Setup.md).
 
 ## Authorizing
 
-To perform the authorization step, where the Keymaker generates a login
-link for the user and asks for permission to perform actions on behalf
-of the Google account, specify the location of the Google OAuth
-application's API keys.
+In the authorization step the Keymaker generates a login link/token
+for the user to visit and log in with their Google account. The user
+is then redirected back to the application with a token that can be
+used to perform actions on behalf of the account.
+
+Google requires the application's API keys to be provided via
+a JSON file on disk.
+
+To run the Google Keymaker example, specify the API key name in the
+`google_auth.py` script (`client_secret.json` by default):
 
 ```
-$ GOOGLE_APPLICATION_CREDENTIALS=${PWD}/client_secret.json \
-    python google_auth.py
+$ python google_auth.py
 ```
 
