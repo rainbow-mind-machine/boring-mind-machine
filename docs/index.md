@@ -2,16 +2,21 @@
 
 **boring mind machine** is a set of boring base classes for building awesome bot flocks.
 
+The main job of **boring mind machine** is to take care of the boring stuff.
+Specifically, (1) provide base classes for all other mind machines, and
+(2) provide Keymakers for different services (Github, Google, Twitter, etc.).
+
 ## boring classes
 
-here are all of the boring classes:
+here are all of the classes implemented in boring mind machine:
 
-* [BoringLumberjack](lumberjack.md)
 * [BoringKeymaker](keymaker.md)
+    * [GithubKeymaker](github.md)
+    * [GoogleKeymaker](google.md)
+    * [TwitterKeymaker](twitter.md)
 * [BoringShepherd](shepherd.md)
 * [BoringSheep](sheep.md)
-
-(The BoringLumberjack is so boring, it doesn't count as a class.)
+* [BoringLumberjack](lumberjack.md)
 
 This follows the **mind machine** architecuture:
 
@@ -39,12 +44,6 @@ Project infrastructure:
 * [Website](#dev/website.md)
 * [Issues and PRs](#dev/issues_prs.md)
 * [Contributing](#dev/contributing.md)
-
-
-
-
-
-
 
 
 

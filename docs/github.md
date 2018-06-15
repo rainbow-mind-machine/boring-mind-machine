@@ -79,4 +79,3 @@ This will create an authorization link, which you can log in to with
 any Github account. The Keymaker will create bot keys in `keys/`,
 and will then clean up and remove the `keys/` directory.
 
-
