@@ -115,12 +115,12 @@ class BoringOAuthKeymaker(BoringKeymaker):
         secret_var = self.secret
         secret_var = secret_var.lower()
 
-        if(os.environ[token_var.upper()] and os.environ[secret_var.upper()]):
+        try:
             self.credentials = {}
             self.credentials[token_var]        = os.environ[token_var.upper()]
             self.credentials[secret_var] = os.environ[secret_var.upper()]
             self.apikeys_set = True
-        else:
+        except KeyError:
             err = "ERROR: environment variables %s and %s were not set."%(
                     token_var.upper(), secret_var.upper())
             raise Exception(err)
