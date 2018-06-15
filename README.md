@@ -1,5 +1,7 @@
 # boring-mind-machine
 
+![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
+
 Boring base classes for building awesome bot flocks!
 
 This package contains bot flock building blocks for 
