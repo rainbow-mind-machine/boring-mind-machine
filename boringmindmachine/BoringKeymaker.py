@@ -165,13 +165,19 @@ class BoringOAuthKeymaker(BoringKeymaker):
         secret_var = secret_var.lower()
 
         if token_var not in d_apikeys.keys():
-            err = "ERROR: key %s not found in user-provided dictionary (key set: %s)"%(
-                    token_var, ",".join(d_apikeys.keys()))
+            err = "ERROR: API token key \"%s\" not found in user-provided dictionary\n"%(token_var)
+            err += "API keys file had key set: %s\n"%(
+                    ",".join(d_apikeys.keys()))
+            err += "API keys file needs key set: %s\n"%(
+                    ", ".join([token_var, secret_var]))
             raise Exception(err)
 
         if secret_var not in d_apikeys.keys():
-            err = "ERROR: key %s not found in user-provided dictionary (key set: %s)"%(
-                    secret_var, ",".join(d_apikeys.keys()))
+            err = "ERROR: API secret key \"%s\" not found in user-provided dictionary\n"%(token_var)
+            err += "API keys file had key set: %s\n"%(
+                    ", ".join(d_apikeys.keys()))
+            err += "API keys file needs key set: %s\n"%(
+                    ", ".join([token_var, secret_var]))
             raise Exception(err)
 
         self.credentials = {}

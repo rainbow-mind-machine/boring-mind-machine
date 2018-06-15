@@ -7,6 +7,10 @@ from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
+"""
+This is the least canonical of all the OAuth Keymakers.
+"""
+
 class GoogleKeymaker(BoringOAuthKeymaker):
     """
     Do the OAuth dance with Github.
