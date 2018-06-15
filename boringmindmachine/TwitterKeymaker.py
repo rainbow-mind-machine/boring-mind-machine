@@ -89,18 +89,22 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
 
         if make_key=='n':
             print("Skipping keymaking for %s"%name)
-            return {}
+            return
 
         print("Starting keymaking for %s"%name)
 
-        consumer = oauth.Consumer(self.consumer_token['consumer_token'], 
-                                  self.consumer_token['consumer_token_secret'])
+        consumer = oauth.Consumer(self.credentials[self.token],
+                                  self.credentials[self.secret])
         client = oauth.Client(consumer)
+
+        request_token_url = 'https://api.twitter.com/oauth/request_token'
+        authorize_url = 'https://api.twitter.com/oauth/authorize'
+        access_token_url = 'https://api.twitter.com/oauth/access_token'
 
         # Step 2.1: Get a request token. 
         # App uses this to give user a login link.
         # https://dev.twitter.com/docs/api/1/get/oauth/authenticate
-        resp, content = client.request(self.request_token_url,"GET")
+        resp, content = client.request(request_token_url,"GET")
         if resp['status'] != '200':
             raise Exception("Invalid response %s. If apikeys.py is present, your keys may be invalid." % resp['status'])
 
@@ -110,9 +114,9 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
 
         print("Request token received.")
         print("Visit the following app authorization link:")
-        print("%s?oauth_token=%s" % (self.authorize_url, oauth_token ))
+        print("%s?oauth_token=%s" % (authorize_url, oauth_token ))
         print("")
-        print("Sign in as the user to be associated with %s"%item_)
+        print("Sign in as the user to be associated with %s"%name)
         print("")
 
         # After the user has granted access to you, the consumer, the provider will
@@ -137,7 +141,10 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
         elif oauth_verifier == 'r':
 
             # go through the oauth dance again
-            self.make_a_key(name)
+            self.make_a_key(name,
+                            json_target,
+                            keys_out_dir,
+                            **kwargs)
         
         else:
 
@@ -153,7 +160,7 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
             token.set_verifier(oauth_verifier)
             client = oauth.Client(consumer, token)
             
-            resp, content = client.request(self.access_token_url, "POST")
+            resp, content = client.request(access_token_url, "POST")
             access_token = dict(urllib.parse.parse_qsl(content))
 
             def strip(mystr):
@@ -162,9 +169,10 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
                 return mystr
 
             # Step 2.4: Make a dict with all relevant Sheep info
+            # (twitter - y u use binary strings??)
             d = {}
-            for key in self.consumer_token.keys():
-                value = self.consumer_token[key]
+            for key in self.credentials.keys():
+                value = self.credentials[key]
                 d[strip(key)] = strip(value)
 
             for key in access_token.keys():
@@ -177,8 +185,7 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
             # Make a key dir
             subprocess.call(["mkdir","-p",keys_out_dir])
 
-            keys_file = basename(json_name)
-            keys_out = join(keys_out_dir,keys_file)
+            keys_out = join(keys_out_dir,json_target)
 
             with open(keys_out,'w') as outfile:
                 json.dump(d,outfile)
