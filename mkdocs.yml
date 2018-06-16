@@ -6,7 +6,11 @@ edit_uri: ""
 
 pages:
   - 'Home':              'index.md'
-  - 'Boring Keymaker':   'keymaker.md'
+  - Keymakers:
+    - 'Boring Keymaker':   'keymaker.md'
+    - 'Github Keymaker':   'github.md'
+    - 'Google Keymaker':   'google.md'
+    - 'Twitter Keymaker':  'twitter.md'
   - 'Boring Shepherd':   'shepherd.md'
   - 'Boring Sheep':      'sheep.md'
   - 'Boring Lumberjack': 'lumberjack.md'

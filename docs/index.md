@@ -10,7 +10,8 @@ Specifically, (1) provide base classes for all other mind machines, and
 
 here are all of the classes implemented in boring mind machine:
 
-* [BoringKeymaker](keymaker.md)
+* Keymakers:
+    * [BoringKeymaker](keymaker.md)
     * [GithubKeymaker](github.md)
     * [GoogleKeymaker](google.md)
     * [TwitterKeymaker](twitter.md)
