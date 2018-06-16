@@ -22,7 +22,7 @@ so **the callback URL for your OAuth application should be
 set to `http://localhost:8000`**.
 
 
-## Getting App Credentials
+### Getting App Credentials
 
 Once you have created your application, the application's
 description page will contain the client ID and client secret
