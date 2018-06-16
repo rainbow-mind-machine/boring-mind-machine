@@ -295,10 +295,70 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Keymakers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Keymakers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
     <a href="keymaker/" title="Boring Keymaker" class="md-nav__link">
       Boring Keymaker
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="github/" title="Github Keymaker" class="md-nav__link">
+      Github Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="google/" title="Google Keymaker" class="md-nav__link">
+      Google Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="twitter/" title="Twitter Keymaker" class="md-nav__link">
+      Twitter Keymaker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -391,15 +451,23 @@
                 
                 <h1 id="boring-mind-machine">boring-mind-machine<a class="headerlink" href="#boring-mind-machine" title="Permanent link">&para;</a></h1>
 <p><strong>boring mind machine</strong> is a set of boring base classes for building awesome bot flocks.</p>
+<p>The main job of <strong>boring mind machine</strong> is to take care of the boring stuff.
+Specifically, (1) provide base classes for all other mind machines, and
+(2) provide Keymakers for different services (Github, Google, Twitter, etc.).</p>
 <h2 id="boring-classes">boring classes<a class="headerlink" href="#boring-classes" title="Permanent link">&para;</a></h2>
-<p>here are all of the boring classes:</p>
+<p>here are all of the classes implemented in boring mind machine:</p>
 <ul>
-<li><a href="lumberjack/">BoringLumberjack</a></li>
+<li>Keymakers:<ul>
 <li><a href="keymaker/">BoringKeymaker</a></li>
+<li><a href="github/">GithubKeymaker</a></li>
+<li><a href="google/">GoogleKeymaker</a></li>
+<li><a href="twitter/">TwitterKeymaker</a></li>
+</ul>
+</li>
 <li><a href="shepherd/">BoringShepherd</a></li>
 <li><a href="sheep/">BoringSheep</a></li>
+<li><a href="lumberjack/">BoringLumberjack</a></li>
 </ul>
-<p>(The BoringLumberjack is so boring, it doesn't count as a class.)</p>
 <p>This follows the <strong>mind machine</strong> architecuture:</p>
 <ul>
 <li>Keymaker - takes care of authentication</li>

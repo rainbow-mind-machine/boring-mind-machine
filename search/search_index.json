@@ -2,17 +2,17 @@
     "docs": [
         {
             "location": "/",
-            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nboring classes\n\u00b6\n\n\nhere are all of the boring classes:\n\n\n\n\nBoringLumberjack\n\n\nBoringKeymaker\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\n\n\n(The BoringLumberjack is so boring, it doesn't count as a class.)\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nboring mind machine\n is not capable of much.\nsometimes though, boring means easy to understand.\n\n\ndeveloper workflow\n\u00b6\n\n\nThis simple repo helps provide a barebones example of tooling and infrastructure.\n\n\nTooling woorkflow:\n\n\n\n\nGithub\n - setup for workflow and project management on github\n\n\nCircleCI\n - continuous integration + deployment to pypi with circle ci\n\n\nPypi\n - uploading project to pypi\n\n\nDockerhub\n - pushing container to dockerhub\n\n\n\n\nProject infrastructure:\n\n\n\n\nMailing List\n\n\nWebsite\n\n\nIssues and PRs\n\n\nContributing",
+            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nThe main job of \nboring mind machine\n is to take care of the boring stuff.\nSpecifically, (1) provide base classes for all other mind machines, and\n(2) provide Keymakers for different services (Github, Google, Twitter, etc.).\n\n\nboring classes\n\u00b6\n\n\nhere are all of the classes implemented in boring mind machine:\n\n\n\n\nKeymakers:\n\n\nBoringKeymaker\n\n\nGithubKeymaker\n\n\nGoogleKeymaker\n\n\nTwitterKeymaker\n\n\n\n\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\nBoringLumberjack\n\n\n\n\nThis follows the \nmind machine\n architecuture:\n\n\n\n\nKeymaker - takes care of authentication\n\n\nShepherd - constructs each sheep with keys\n\n\nSheep - uses keys to create API instance\n\n\n\n\nboring mind machine\n is not capable of much.\nsometimes though, boring means easy to understand.\n\n\ndeveloper workflow\n\u00b6\n\n\nThis simple repo helps provide a barebones example of tooling and infrastructure.\n\n\nTooling woorkflow:\n\n\n\n\nGithub\n - setup for workflow and project management on github\n\n\nCircleCI\n - continuous integration + deployment to pypi with circle ci\n\n\nPypi\n - uploading project to pypi\n\n\nDockerhub\n - pushing container to dockerhub\n\n\n\n\nProject infrastructure:\n\n\n\n\nMailing List\n\n\nWebsite\n\n\nIssues and PRs\n\n\nContributing",
             "title": "Home"
         },
         {
             "location": "/#boring-mind-machine",
-            "text": "boring mind machine  is a set of boring base classes for building awesome bot flocks.",
+            "text": "boring mind machine  is a set of boring base classes for building awesome bot flocks.  The main job of  boring mind machine  is to take care of the boring stuff.\nSpecifically, (1) provide base classes for all other mind machines, and\n(2) provide Keymakers for different services (Github, Google, Twitter, etc.).",
             "title": "boring-mind-machine"
         },
         {
             "location": "/#boring-classes",
-            "text": "here are all of the boring classes:   BoringLumberjack  BoringKeymaker  BoringShepherd  BoringSheep   (The BoringLumberjack is so boring, it doesn't count as a class.)  This follows the  mind machine  architecuture:   Keymaker - takes care of authentication  Shepherd - constructs each sheep with keys  Sheep - uses keys to create API instance   boring mind machine  is not capable of much.\nsometimes though, boring means easy to understand.",
+            "text": "here are all of the classes implemented in boring mind machine:   Keymakers:  BoringKeymaker  GithubKeymaker  GoogleKeymaker  TwitterKeymaker    BoringShepherd  BoringSheep  BoringLumberjack   This follows the  mind machine  architecuture:   Keymaker - takes care of authentication  Shepherd - constructs each sheep with keys  Sheep - uses keys to create API instance   boring mind machine  is not capable of much.\nsometimes though, boring means easy to understand.",
             "title": "boring classes"
         },
         {
@@ -22,13 +22,133 @@
         },
         {
             "location": "/keymaker/",
-            "text": "BoringKeymaker\n\u00b6\n\n\nThere are two boring Keymaker classes:\n\n\n\n\nBoringKeymaker - super boring \n\n\nBoringOAuthKeymaker - takes two arguments, \ntoken\n and \nsecret\n, \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.\n\n\n\n\nThat's all, folks!\n\n\nThe BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.\n\n\nThe BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
+            "text": "Keymakers\n\u00b6\n\n\nBase (Boring) Keymaker Classes\n\u00b6\n\n\nThere are two base (boring) Keymaker classes:\n\n\n\n\nBoringKeymaker - super boring \n\n\nBoringOAuthKeymaker - takes two arguments, \ntoken\n and \nsecret\n, \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.\n\n\n\n\nThe BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.\n\n\nThe BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.\n\n\nSpecialty Keymaker Classes\n\u00b6\n\n\nServices like Github, Google, and Twitter have their own Keymakers\nto guide the user through the process of authentication with each\nservice. Current services implemented are:\n\n\n\n\nGithubKeymaker\n - used by embarcadero-mind-machine\n\n\nGoogleKeymaker\n - used by cheeseburger-mind-machine (drive), papyrus-mind-machine\n  (docs), and waxing-gibbous-mind-machine (calendar)\n\n\nTwitterKeymaker\n - used by rainbow-mind-machine\n\n\n\n\nSee the \nexamples/\n\ndirectory for examples using each service.",
             "title": "Boring Keymaker"
         },
         {
-            "location": "/keymaker/#boringkeymaker",
-            "text": "There are two boring Keymaker classes:   BoringKeymaker - super boring   BoringOAuthKeymaker - takes two arguments,  token  and  secret , \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.   That's all, folks!  The BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.  The BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
-            "title": "BoringKeymaker"
+            "location": "/keymaker/#keymakers",
+            "text": "",
+            "title": "Keymakers"
+        },
+        {
+            "location": "/keymaker/#base-boring-keymaker-classes",
+            "text": "There are two base (boring) Keymaker classes:   BoringKeymaker - super boring   BoringOAuthKeymaker - takes two arguments,  token  and  secret , \n    and defines methods to extract these two tokens from JSON files,\n    dictionaries, or environment variables.   The BoringKeymaker should be used as the base class when building\nbot flocks that use non-OAuth authentication measures.  The BoringOAuthKeymaker should be used as the base class in the \nmore common case of bot flocks that use OAuth.",
+            "title": "Base (Boring) Keymaker Classes"
+        },
+        {
+            "location": "/keymaker/#specialty-keymaker-classes",
+            "text": "Services like Github, Google, and Twitter have their own Keymakers\nto guide the user through the process of authentication with each\nservice. Current services implemented are:   GithubKeymaker  - used by embarcadero-mind-machine  GoogleKeymaker  - used by cheeseburger-mind-machine (drive), papyrus-mind-machine\n  (docs), and waxing-gibbous-mind-machine (calendar)  TwitterKeymaker  - used by rainbow-mind-machine   See the  examples/ \ndirectory for examples using each service.",
+            "title": "Specialty Keymaker Classes"
+        },
+        {
+            "location": "/github/",
+            "text": "Github Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/github\n.\n\n\nAn example of creating a Github OAuth keymaker.\n\n\nCreating a Github App\n\u00b6\n\n\nThe brief summary of what we cover here:\n\n\nWe need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nGithub account.\n\n\nSet Up API and Create App\n\u00b6\n\n\nTo create an OAuth app as a user, see \n\nthese detailed instructions\n\nfrom Github.\n\n\nWhen you create your OAuth app, the one crucial\npiece of information is the callback URL. This is\nwhere the magic token is sent once the user logs in\nwith their Github account.\n\n\nThe Github Keymaker runs a server on localhost port 8000,\nso \nthe callback URL for your OAuth application should be \nset to \nhttp://localhost:8000\n.\n\n\nGetting App Credentials\n\u00b6\n\n\nOnce you have created your application, the application's\ndescription page will contain the client ID and client secret\nneeded to use this application to run mind machine bots\nusing Github.\n\n\nEnd Result\n\u00b6\n\n\nIn the end you should have a pair of API keys (a client ID and\na client secret), which you will pass to the keymaker using\none of the three methods provided (via a dictionary, a JSON\nfile, or environment variables).\n\n\nTo run the Github Keymaker example, you need to pass the API\nkeys to the keymaker using one of three methods:\n\n\n\n\nUsing a dictionary\n\n\nUsing a JSON file\n\n\nUsing environment variables\n\n\n\n\nTo use the latter option, you can run the Github Keymaker program\nlike this:\n\n\n$ CLIENT_ID=\"...\" CLIENT_SECRET=\"...\" python github_auth.py\n\n\n\n\n\nAuthorizing\n\u00b6\n\n\nTo run this, you will need your client ID and client secret.\nThese can be found by logging in as the user that created the\nOAuth application you will be using, or that is an admin on the\norganization that owns the OAuth account. Go to the settings page\nand find the OAuth Applications listing on the left side. The\nOAuth application page will list the client ID and client secret\nat the top of the page.\n\n\nOnce you have them, set the \nCLIENT_ID\n and \nCLIENT_SECRET\n environment\nvariables when you run the program, like this:\n\n\n$ CLIENT_ID=\"...\" \\\n  CLIENT_SECRET=\"...\" \\\n  python github_auth.py\n\n\n\n\n\nThis will create an authorization link, which you can log in to with\nany Github account. The Keymaker will create bot keys in \nkeys/\n,\nand will then clean up and remove the \nkeys/\n directory.",
+            "title": "Github Keymaker"
+        },
+        {
+            "location": "/github/#github-keymaker-example",
+            "text": "See  boring-mind-machine/examples/github .  An example of creating a Github OAuth keymaker.",
+            "title": "Github Keymaker Example"
+        },
+        {
+            "location": "/github/#creating-a-github-app",
+            "text": "The brief summary of what we cover here:  We need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nGithub account.",
+            "title": "Creating a Github App"
+        },
+        {
+            "location": "/github/#set-up-api-and-create-app",
+            "text": "To create an OAuth app as a user, see  these detailed instructions \nfrom Github.  When you create your OAuth app, the one crucial\npiece of information is the callback URL. This is\nwhere the magic token is sent once the user logs in\nwith their Github account.  The Github Keymaker runs a server on localhost port 8000,\nso  the callback URL for your OAuth application should be \nset to  http://localhost:8000 .",
+            "title": "Set Up API and Create App"
+        },
+        {
+            "location": "/github/#getting-app-credentials",
+            "text": "Once you have created your application, the application's\ndescription page will contain the client ID and client secret\nneeded to use this application to run mind machine bots\nusing Github.",
+            "title": "Getting App Credentials"
+        },
+        {
+            "location": "/github/#end-result",
+            "text": "In the end you should have a pair of API keys (a client ID and\na client secret), which you will pass to the keymaker using\none of the three methods provided (via a dictionary, a JSON\nfile, or environment variables).  To run the Github Keymaker example, you need to pass the API\nkeys to the keymaker using one of three methods:   Using a dictionary  Using a JSON file  Using environment variables   To use the latter option, you can run the Github Keymaker program\nlike this:  $ CLIENT_ID=\"...\" CLIENT_SECRET=\"...\" python github_auth.py",
+            "title": "End Result"
+        },
+        {
+            "location": "/github/#authorizing",
+            "text": "To run this, you will need your client ID and client secret.\nThese can be found by logging in as the user that created the\nOAuth application you will be using, or that is an admin on the\norganization that owns the OAuth account. Go to the settings page\nand find the OAuth Applications listing on the left side. The\nOAuth application page will list the client ID and client secret\nat the top of the page.  Once you have them, set the  CLIENT_ID  and  CLIENT_SECRET  environment\nvariables when you run the program, like this:  $ CLIENT_ID=\"...\" \\\n  CLIENT_SECRET=\"...\" \\\n  python github_auth.py  This will create an authorization link, which you can log in to with\nany Github account. The Keymaker will create bot keys in  keys/ ,\nand will then clean up and remove the  keys/  directory.",
+            "title": "Authorizing"
+        },
+        {
+            "location": "/google/",
+            "text": "Google Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/google\n.\n\n\nAn example of creating a Google OAuth keymaker.\n\n\nCreating a Google App\n\u00b6\n\n\nThe brief summary of what we cover here:\n\n\nWe need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one Google\naccount.\n\n\nSet Up API and Create App\n\u00b6\n\n\nThe first thing you must do is enable the APIs that you need.\nThis may include the Drive, Calendar, or other APIs.\nYou do this in the \nGoogle Cloud Platform (GCP) console\n.\n\n\nGo to the \nenable APIs\n\npage and select a project from the drop down menu.  If you do not already have\na project, go to the \nGCP console\n to create\na new one before visiting the enable APIs link above.\n\n\nCreating App Credentials\n\u00b6\n\n\nNow you will need to create OAuth credentials for your application. You can do this\non the API Credentials page. To get there, click the three-stack menu (a.k.a. the \n\"hamburger\" menu) and scroll down to the Products section and click \"APIs and Services\".\nNow click the \"Credentials\" option on the left side.\n\n\nNow create your credentials. Create \"OAuth Client ID\" credentials.\nUse application type \"Other\".\n\n\nWhen you create the credentials, you will be given a client ID and a client secret.\nCopy these into a password manager or other location.\n\n\nGetting the App Credentials\n\u00b6\n\n\nOnce you've created the credentials, you can either copy-and-paste the\nclient ID and client secret, or you can download them as a JSON file.\n\n\nTo copy-and-paste, find the OAuth client credentials you created in the\nprior step and click the pencil icon on the right side. This will take\nyou to a page with the client ID and client secret.\n\n\nTo download as a JSON file, download credentials using the download button\n(down-arrow icon) on the right side. This JSON file contains all credential\ninformation (client ID and client secret).\n\n\nRename it \nclient_secret.json\n.\n\n\nEnd Result\n\u00b6\n\n\nIn the end you will have a JSON file with your OAuth application credentials\nin it, and these will be used to authenticate with the user. The Google\nOAuth process will load the keys from \nclient_secret.json\n, and will\nopen a login link for the user to authenticate with their Google account.\n\n\nThe Google OAuth process also takes care of recieving the callback URL\nand the token contained in it, so the bot account keys are also stored in\na JSON file.\n\n\nNo environment variables need to be set, the only thing that needs to be set\nis the name of the JSON file containing the OAuth application's API credentials\n(should be \nclient_secret.json\n).\n\n\nOnce you have \nclient_secret.json\n in the current directory, you're set to go.\n\n\nAuthorizing\n\u00b6\n\n\nIn the authorization step the Keymaker generates a login link/token\nfor the user to visit and log in with their Google account. The user\nis then redirected back to the application with a token that can be\nused to perform actions on behalf of the account.\n\n\nGoogle requires the application's API keys to be provided via\na JSON file on disk.\n\n\nTo run the Google Keymaker example, specify the API key name in the\n\ngoogle_auth.py\n script (\nclient_secret.json\n by default):\n\n\n$ python google_auth.py",
+            "title": "Google Keymaker"
+        },
+        {
+            "location": "/google/#google-keymaker-example",
+            "text": "See  boring-mind-machine/examples/google .  An example of creating a Google OAuth keymaker.",
+            "title": "Google Keymaker Example"
+        },
+        {
+            "location": "/google/#creating-a-google-app",
+            "text": "The brief summary of what we cover here:  We need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one Google\naccount.",
+            "title": "Creating a Google App"
+        },
+        {
+            "location": "/google/#set-up-api-and-create-app",
+            "text": "The first thing you must do is enable the APIs that you need.\nThis may include the Drive, Calendar, or other APIs.\nYou do this in the  Google Cloud Platform (GCP) console .  Go to the  enable APIs \npage and select a project from the drop down menu.  If you do not already have\na project, go to the  GCP console  to create\na new one before visiting the enable APIs link above.",
+            "title": "Set Up API and Create App"
+        },
+        {
+            "location": "/google/#creating-app-credentials",
+            "text": "Now you will need to create OAuth credentials for your application. You can do this\non the API Credentials page. To get there, click the three-stack menu (a.k.a. the \n\"hamburger\" menu) and scroll down to the Products section and click \"APIs and Services\".\nNow click the \"Credentials\" option on the left side.  Now create your credentials. Create \"OAuth Client ID\" credentials.\nUse application type \"Other\".  When you create the credentials, you will be given a client ID and a client secret.\nCopy these into a password manager or other location.",
+            "title": "Creating App Credentials"
+        },
+        {
+            "location": "/google/#getting-the-app-credentials",
+            "text": "Once you've created the credentials, you can either copy-and-paste the\nclient ID and client secret, or you can download them as a JSON file.  To copy-and-paste, find the OAuth client credentials you created in the\nprior step and click the pencil icon on the right side. This will take\nyou to a page with the client ID and client secret.  To download as a JSON file, download credentials using the download button\n(down-arrow icon) on the right side. This JSON file contains all credential\ninformation (client ID and client secret).  Rename it  client_secret.json .",
+            "title": "Getting the App Credentials"
+        },
+        {
+            "location": "/google/#end-result",
+            "text": "In the end you will have a JSON file with your OAuth application credentials\nin it, and these will be used to authenticate with the user. The Google\nOAuth process will load the keys from  client_secret.json , and will\nopen a login link for the user to authenticate with their Google account.  The Google OAuth process also takes care of recieving the callback URL\nand the token contained in it, so the bot account keys are also stored in\na JSON file.  No environment variables need to be set, the only thing that needs to be set\nis the name of the JSON file containing the OAuth application's API credentials\n(should be  client_secret.json ).  Once you have  client_secret.json  in the current directory, you're set to go.",
+            "title": "End Result"
+        },
+        {
+            "location": "/google/#authorizing",
+            "text": "In the authorization step the Keymaker generates a login link/token\nfor the user to visit and log in with their Google account. The user\nis then redirected back to the application with a token that can be\nused to perform actions on behalf of the account.  Google requires the application's API keys to be provided via\na JSON file on disk.  To run the Google Keymaker example, specify the API key name in the google_auth.py  script ( client_secret.json  by default):  $ python google_auth.py",
+            "title": "Authorizing"
+        },
+        {
+            "location": "/twitter/",
+            "text": "Twitter Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/twitter\n.\n\n\nAn example of creating a Twitter OAuth keymaker.\n\n\nCreating a Twitter App\n\u00b6\n\n\nThe brief summary of creating a Twitter App.\n\n\nSet Up API and Create App\n\u00b6\n\n\nTurn on the API (takes a day?). Create an app using your bot master account.\n\n\nCreating/Getting App Credentials\n\u00b6\n\n\nGet consumer token and consumer token secret.\n\n\nEnd Result\n\u00b6\n\n\nEnd result is you should have two pieces of information,\nwhich you can pass to the program using environment variables\n(easiest) or other methods.\n\n\nAuthorizing\n\u00b6\n\n\nIn the authorization step, the Keymaker generates a login link/token\nfor the user to visit and log in using their account. This then sends\nthe user back to the application with a token.\n\n\nThe user can provide the application API keys to the Keymaker via file,\nenvironment variable, or dictionary. The Keymaker will use the application\nAPI credentials and will guide the user through the process of authenticating.\nThis uses Twitter's PIN-based authentication method.\n\n\n$ CONSUMER_TOKEN=\"...\" \\\n  CONSUMER_TOKEN_SECRET=\"...\" \\\n  python twitter_auth.py",
+            "title": "Twitter Keymaker"
+        },
+        {
+            "location": "/twitter/#twitter-keymaker-example",
+            "text": "See  boring-mind-machine/examples/twitter .  An example of creating a Twitter OAuth keymaker.",
+            "title": "Twitter Keymaker Example"
+        },
+        {
+            "location": "/twitter/#creating-a-twitter-app",
+            "text": "The brief summary of creating a Twitter App.",
+            "title": "Creating a Twitter App"
+        },
+        {
+            "location": "/twitter/#set-up-api-and-create-app",
+            "text": "Turn on the API (takes a day?). Create an app using your bot master account.",
+            "title": "Set Up API and Create App"
+        },
+        {
+            "location": "/twitter/#creatinggetting-app-credentials",
+            "text": "Get consumer token and consumer token secret.",
+            "title": "Creating/Getting App Credentials"
+        },
+        {
+            "location": "/twitter/#end-result",
+            "text": "End result is you should have two pieces of information,\nwhich you can pass to the program using environment variables\n(easiest) or other methods.",
+            "title": "End Result"
+        },
+        {
+            "location": "/twitter/#authorizing",
+            "text": "In the authorization step, the Keymaker generates a login link/token\nfor the user to visit and log in using their account. This then sends\nthe user back to the application with a token.  The user can provide the application API keys to the Keymaker via file,\nenvironment variable, or dictionary. The Keymaker will use the application\nAPI credentials and will guide the user through the process of authenticating.\nThis uses Twitter's PIN-based authentication method.  $ CONSUMER_TOKEN=\"...\" \\\n  CONSUMER_TOKEN_SECRET=\"...\" \\\n  python twitter_auth.py",
+            "title": "Authorizing"
         },
         {
             "location": "/shepherd/",
@@ -52,12 +172,12 @@
         },
         {
             "location": "/lumberjack/",
-            "text": "BoringLumberjack\n\u00b6\n\n\nThe BoringLumberjack is less of a class than a call to \nconfigure the logging module.",
+            "text": "BoringLumberjack\n\u00b6\n\n\nThe BoringLumberjack is hardly a class.\nIt just configures the logging module\nand that's it.",
             "title": "Boring Lumberjack"
         },
         {
             "location": "/lumberjack/#boringlumberjack",
-            "text": "The BoringLumberjack is less of a class than a call to \nconfigure the logging module.",
+            "text": "The BoringLumberjack is hardly a class.\nIt just configures the logging module\nand that's it.",
             "title": "BoringLumberjack"
         }
     ]

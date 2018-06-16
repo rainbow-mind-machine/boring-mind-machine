@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#boringkeymaker" tabindex="1" class="md-skip">
+      <a href="#keymakers" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -252,9 +252,32 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Keymakers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Keymakers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
@@ -269,13 +292,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#boringkeymaker" title="BoringKeymaker" class="md-nav__link">
-    BoringKeymaker
+  <a href="#base-boring-keymaker-classes" title="Base (Boring) Keymaker Classes" class="md-nav__link">
+    Base (Boring) Keymaker Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialty-keymaker-classes" title="Specialty Keymaker Classes" class="md-nav__link">
+    Specialty Keymaker Classes
   </a>
   
 </li>
@@ -288,6 +320,47 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../github/" title="Github Keymaker" class="md-nav__link">
+      Github Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../google/" title="Google Keymaker" class="md-nav__link">
+      Google Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../twitter/" title="Twitter Keymaker" class="md-nav__link">
+      Twitter Keymaker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -341,13 +414,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#boringkeymaker" title="BoringKeymaker" class="md-nav__link">
-    BoringKeymaker
+  <a href="#base-boring-keymaker-classes" title="Base (Boring) Keymaker Classes" class="md-nav__link">
+    Base (Boring) Keymaker Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialty-keymaker-classes" title="Specialty Keymaker Classes" class="md-nav__link">
+    Specialty Keymaker Classes
   </a>
   
 </li>
@@ -369,21 +451,31 @@
               
                 
                 
-                  <h1>Boring Keymaker</h1>
-                
-                <h2 id="boringkeymaker">BoringKeymaker<a class="headerlink" href="#boringkeymaker" title="Permanent link">&para;</a></h2>
-<p>There are two boring Keymaker classes:</p>
+                <h1 id="keymakers">Keymakers<a class="headerlink" href="#keymakers" title="Permanent link">&para;</a></h1>
+<h2 id="base-boring-keymaker-classes">Base (Boring) Keymaker Classes<a class="headerlink" href="#base-boring-keymaker-classes" title="Permanent link">&para;</a></h2>
+<p>There are two base (boring) Keymaker classes:</p>
 <ul>
 <li>BoringKeymaker - super boring </li>
 <li>BoringOAuthKeymaker - takes two arguments, <code>token</code> and <code>secret</code>, 
     and defines methods to extract these two tokens from JSON files,
     dictionaries, or environment variables.</li>
 </ul>
-<p>That's all, folks!</p>
 <p>The BoringKeymaker should be used as the base class when building
 bot flocks that use non-OAuth authentication measures.</p>
 <p>The BoringOAuthKeymaker should be used as the base class in the 
 more common case of bot flocks that use OAuth.</p>
+<h2 id="specialty-keymaker-classes">Specialty Keymaker Classes<a class="headerlink" href="#specialty-keymaker-classes" title="Permanent link">&para;</a></h2>
+<p>Services like Github, Google, and Twitter have their own Keymakers
+to guide the user through the process of authentication with each
+service. Current services implemented are:</p>
+<ul>
+<li><a href="../github/">GithubKeymaker</a> - used by embarcadero-mind-machine</li>
+<li><a href="../google/">GoogleKeymaker</a> - used by cheeseburger-mind-machine (drive), papyrus-mind-machine
+  (docs), and waxing-gibbous-mind-machine (calendar)</li>
+<li><a href="../twitter/">TwitterKeymaker</a> - used by rainbow-mind-machine</li>
+</ul>
+<p>See the <a href="https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples"><code>examples/</code></a>
+directory for examples using each service.</p>
                 
                   
                 
@@ -419,13 +511,13 @@ more common case of bot flocks that use OAuth.</p>
           </a>
         
         
-          <a href="../shepherd/" title="Boring Shepherd" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../github/" title="Github Keymaker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Boring Shepherd
+                Github Keymaker
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
