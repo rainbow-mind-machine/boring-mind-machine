@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://pages.charlesreid1.com/boring-mind-machine/</loc>
-     <lastmod>2018-06-15</lastmod>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,53 +12,73 @@
     
         
     <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/keymaker/</loc>
-     <lastmod>2018-06-15</lastmod>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/mind-machine-docs/about/</loc>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/github/</loc>
-     <lastmod>2018-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/google/</loc>
-     <lastmod>2018-06-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/twitter/</loc>
-     <lastmod>2018-06-15</lastmod>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     
 
     
+        
     <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/shepherd/</loc>
-     <lastmod>2018-06-15</lastmod>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/about/</loc>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/installing/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/quickstart/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/future/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/credits/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/sheep/</loc>
-     <lastmod>2018-06-15</lastmod>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/contributing/</loc>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>https://pages.charlesreid1.com/boring-mind-machine/lumberjack/</loc>
-     <lastmod>2018-06-15</lastmod>
+     <loc>https://pages.charlesreid1.com/boring-mind-machine/mind-machine-docs/dev/</loc>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
 </urlset>
