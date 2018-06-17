@@ -497,22 +497,35 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#end-result" title="End Result" class="md-nav__link">
-    End Result
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authorizing" title="Authorizing" class="md-nav__link">
-    Authorizing
+  <a href="#setting-github-credentials" title="Setting Github Credentials" class="md-nav__link">
+    Setting Github Credentials
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-example" title="Environment Variables Example" class="md-nav__link">
+    Environment Variables Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -699,22 +712,35 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#end-result" title="End Result" class="md-nav__link">
-    End Result
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#authorizing" title="Authorizing" class="md-nav__link">
-    Authorizing
+  <a href="#setting-github-credentials" title="Setting Github Credentials" class="md-nav__link">
+    Setting Github Credentials
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables-example" title="Environment Variables Example" class="md-nav__link">
+    Environment Variables Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -759,7 +785,7 @@ set to <code>http://localhost:8000</code></strong>.</p>
 description page will contain the client ID and client secret
 needed to use this application to run mind machine bots
 using Github.</p>
-<h3 id="end-result">End Result<a class="headerlink" href="#end-result" title="Permanent link">&para;</a></h3>
+<h2 id="setting-github-credentials">Setting Github Credentials<a class="headerlink" href="#setting-github-credentials" title="Permanent link">&para;</a></h2>
 <p>In the end you should have a pair of API keys (a client ID and
 a client secret), which you will pass to the keymaker using
 one of the three methods provided (via a dictionary, a JSON
@@ -771,31 +797,36 @@ keys to the keymaker using one of three methods:</p>
 <li>Using a JSON file</li>
 <li>Using environment variables</li>
 </ol>
-<p>To use the latter option, you can run the Github Keymaker program
-like this:</p>
-<div class="codehilite"><pre><span></span>$ CLIENT_ID=&quot;...&quot; CLIENT_SECRET=&quot;...&quot; python github_auth.py
-</pre></div>
-
-
-<h2 id="authorizing">Authorizing<a class="headerlink" href="#authorizing" title="Permanent link">&para;</a></h2>
-<p>To run this, you will need your client ID and client secret.
-These can be found by logging in as the user that created the
-OAuth application you will be using, or that is an admin on the
-organization that owns the OAuth account. Go to the settings page
-and find the OAuth Applications listing on the left side. The
-OAuth application page will list the client ID and client secret
-at the top of the page.</p>
-<p>Once you have them, set the <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> environment
-variables when you run the program, like this:</p>
+<h3 id="environment-variables-example">Environment Variables Example<a class="headerlink" href="#environment-variables-example" title="Permanent link">&para;</a></h3>
+<p>To use the environment variables option, you can run the Github
+Keymaker example program in <code>examples/github/</code> like this:</p>
 <div class="codehilite"><pre><span></span>$ CLIENT_ID=&quot;...&quot; \
   CLIENT_SECRET=&quot;...&quot; \
   python github_auth.py
 </pre></div>
 
 
-<p>This will create an authorization link, which you can log in to with
-any Github account. The Keymaker will create bot keys in <code>keys/</code>,
-and will then clean up and remove the <code>keys/</code> directory.</p>
+<h3 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h3>
+<p><strong><code>github_auth.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">keydir</span> <span class="o">=</span> <span class="s1">&#39;keys&#39;</span>
+
+<span class="n">gk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">GithubKeymaker</span><span class="p">()</span>
+<span class="n">gk</span><span class="o">.</span><span class="n">set_apikeys_env</span><span class="p">()</span>
+
+<span class="c1"># make the Github key</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Creating a dummy key...&quot;</span><span class="p">)</span>
+<span class="n">gk</span><span class="o">.</span><span class="n">make_a_key</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">,</span><span class="s1">&#39;dummy.json&#39;</span><span class="p">,</span><span class="n">keydir</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Success.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Clean up the key</span>
+<span class="c1"># (remove this bit to keep the key around)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cleaning up...&quot;</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s1">&#39;rm&#39;</span><span class="p">,</span><span class="s1">&#39;-rf&#39;</span><span class="p">,</span><span class="n">keydir</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Done.&quot;</span><span class="p">)</span>
+</pre></div>
                 
                   
                 

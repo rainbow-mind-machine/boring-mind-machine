@@ -500,14 +500,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#creating-a-twitter-app" title="Creating a Twitter App" class="md-nav__link">
+    Creating a Twitter App
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#set-up-api" title="Set Up API" class="md-nav__link">
     Set Up API
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-twitter-app" title="Creating a Twitter App" class="md-nav__link">
+  <a href="#creating-a-twitter-app_1" title="Creating a Twitter App" class="md-nav__link">
     Creating a Twitter App
   </a>
   
@@ -524,6 +537,19 @@
   <a href="#authorizing" title="Authorizing" class="md-nav__link">
     Authorizing
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -665,14 +691,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#creating-a-twitter-app" title="Creating a Twitter App" class="md-nav__link">
+    Creating a Twitter App
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#set-up-api" title="Set Up API" class="md-nav__link">
     Set Up API
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-twitter-app" title="Creating a Twitter App" class="md-nav__link">
+  <a href="#creating-a-twitter-app_1" title="Creating a Twitter App" class="md-nav__link">
     Creating a Twitter App
   </a>
   
@@ -689,6 +728,19 @@
   <a href="#authorizing" title="Authorizing" class="md-nav__link">
     Authorizing
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -712,12 +764,17 @@
                 <h1 id="twitter-keymaker-example">Twitter Keymaker Example<a class="headerlink" href="#twitter-keymaker-example" title="Permanent link">&para;</a></h1>
 <p>See <a href="https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/twitter">boring-mind-machine/examples/twitter</a>.</p>
 <p>An example of creating a Twitter OAuth keymaker.</p>
-<h3 id="set-up-api">Set Up API<a class="headerlink" href="#set-up-api" title="Permanent link">&para;</a></h3>
-<p>(TODO: Instructions on turning on the API and how long it takes.)</p>
 <h2 id="creating-a-twitter-app">Creating a Twitter App<a class="headerlink" href="#creating-a-twitter-app" title="Permanent link">&para;</a></h2>
-<p>(TODO: The brief summary of creating a Twitter App.)</p>
+<p>The brief summary of what we cover here:</p>
+<p>We need to create an application (something that will consume the API
+endpoints), and we need to grant the application access to at least one 
+Twitter account.</p>
+<h3 id="set-up-api">Set Up API<a class="headerlink" href="#set-up-api" title="Permanent link">&para;</a></h3>
+<p>See <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-twitter-app">Digital Ocean instructions on creating a Twitter app</a>.</p>
+<h2 id="creating-a-twitter-app_1">Creating a Twitter App<a class="headerlink" href="#creating-a-twitter-app_1" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-twitter-app">Digital Ocean instructions on creating a Twitter app</a>.</p>
 <h2 id="getting-app-credentials">Getting App Credentials<a class="headerlink" href="#getting-app-credentials" title="Permanent link">&para;</a></h2>
-<p>Get consumer token and consumer token secret.</p>
+<p>Get the consumer token and consumer token secret from your application page.</p>
 <p>End result is you should have two pieces of information,
 which you can pass to the program using environment variables
 (easiest) or other methods.</p>
@@ -729,9 +786,30 @@ to the application with a token.</p>
 environment variable, or dictionary. The TwitterKeymaker will use the
 application API credentials and will guide the user through the process of
 authenticating.  This uses Twitter's PIN-based authentication method.</p>
-<div class="codehilite"><pre><span></span>$ CONSUMER_TOKEN=&quot;...&quot; \
-  CONSUMER_TOKEN_SECRET=&quot;...&quot; \
-  python twitter_auth.py
+<div class="codehilite"><pre><span></span>$ python twitter_auth.py
+</pre></div>
+
+
+<h3 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h3>
+<p><strong><code>twitter_auth.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">keydir</span> <span class="o">=</span> <span class="s1">&#39;keys&#39;</span>
+
+<span class="n">gk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">TwitterKeymaker</span><span class="p">()</span>
+<span class="n">gk</span><span class="o">.</span><span class="n">set_apikeys_file</span><span class="p">(</span><span class="s1">&#39;apikeys.json&#39;</span><span class="p">)</span>
+
+<span class="c1"># make the Twitter key</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Creating a dummy key...&quot;</span><span class="p">)</span>
+<span class="n">gk</span><span class="o">.</span><span class="n">make_a_key</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">,</span><span class="s1">&#39;dummy.json&#39;</span><span class="p">,</span><span class="n">keydir</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Success.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Clean up the key</span>
+<span class="c1"># (remove this bit to keep the key around)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cleaning up...&quot;</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s1">&#39;rm&#39;</span><span class="p">,</span><span class="s1">&#39;-rf&#39;</span><span class="p">,</span><span class="n">keydir</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Done.&quot;</span><span class="p">)</span>
 </pre></div>
                 
                   
