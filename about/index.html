@@ -376,9 +376,72 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        About bmm
+      </label>
+    
     <a href="./" title="About bmm" class="md-nav__link md-nav__link--active">
       About bmm
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-boring-mind-machine-extend-or-do" title="What does boring mind machine extend or do?" class="md-nav__link">
+    What does boring mind machine extend or do?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-classes" title="Base classes" class="md-nav__link">
+    Base classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-keymakers" title="OAuth Keymakers" class="md-nav__link">
+    OAuth Keymakers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-boring-mind-machine-simple" title="How is boring mind machine simple?" class="md-nav__link">
+    How is boring mind machine simple?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-boring-mind-machine-poop-y" title="How is boring mind machine POOP-y?" class="md-nav__link">
+    How is boring mind machine POOP-y?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -609,6 +672,56 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-boring-mind-machine-extend-or-do" title="What does boring mind machine extend or do?" class="md-nav__link">
+    What does boring mind machine extend or do?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-classes" title="Base classes" class="md-nav__link">
+    Base classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-keymakers" title="OAuth Keymakers" class="md-nav__link">
+    OAuth Keymakers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-boring-mind-machine-simple" title="How is boring mind machine simple?" class="md-nav__link">
+    How is boring mind machine simple?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-boring-mind-machine-poop-y" title="How is boring mind machine POOP-y?" class="md-nav__link">
+    How is boring mind machine POOP-y?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -621,9 +734,45 @@
                 
                 
                 <h1 id="about-boring-mind-machine">About Boring Mind Machine<a class="headerlink" href="#about-boring-mind-machine" title="Permanent link">&para;</a></h1>
+<p><strong>boring mind machine (bmm)</strong> is part of the mind machine suite of software,
+run by the <a href="https://github.com/rainbow-mind-machine">rainbow-mind-machine</a>
+organization on Github.</p>
+<p>Like all mind machines, <strong>boring mind machine</strong> is simple and extensible.</p>
+<h2 id="what-does-boring-mind-machine-extend-or-do">What does boring mind machine extend or do?<a class="headerlink" href="#what-does-boring-mind-machine-extend-or-do" title="Permanent link">&para;</a></h2>
 <p>The main job of <strong>boring mind machine</strong> is to take care of the boring stuff.
-Specifically, (1) provide base classes for all other mind machines, and
-(2) provide Keymakers for different services (Github, Google, Twitter, etc.).</p>
+That means two things:</p>
+<ol>
+<li>Setting up boring base classes that are designed to be extended by
+    all of the other mind machine libraries; and</li>
+<li>Providing working OAuth Keymakers for every third-party service provider
+    that has its own mind machine library. (Github, Google, Twitter, etc.)</li>
+</ol>
+<h3 id="base-classes">Base classes<a class="headerlink" href="#base-classes" title="Permanent link">&para;</a></h3>
+<p>Because <strong>boring mind machine</strong> provides base classes, that means it does not extend
+classes - it provides the base classes that are extended.</p>
+<p>That makes <strong>boring mind machine</strong> unique among the mind machines - every mind
+machine library imports boring mind machine no matter what, and every Keymaker
+is defined in boring mind machine.</p>
+<h3 id="oauth-keymakers">OAuth Keymakers<a class="headerlink" href="#oauth-keymakers" title="Permanent link">&para;</a></h3>
+<p>The second, most important functionality implemented in bmm are the Keymaker
+classes. bmm implements a Keymaker for each service that has a corresponding
+mind machine library.</p>
+<p>Collecting each Keymaker together makes the logic more clear. Each third party
+service implements the same authentication process (OAuth) but everybody does it
+differently, so there are many tedious, boring details to work out.</p>
+<p>Hence, the "boring".</p>
+<h2 id="how-is-boring-mind-machine-simple">How is boring mind machine simple?<a class="headerlink" href="#how-is-boring-mind-machine-simple" title="Permanent link">&para;</a></h2>
+<p>Everything is kept simple by collecting Keymakers together in one place (these
+are long and ugly but share many similarities) and letting each mind machine
+library focus solely on the details of bot creation.</p>
+<p>Take care of OAuth! Stop mucking around with keys! Get busy making bot flocks!</p>
+<h2 id="how-is-boring-mind-machine-poop-y">How is boring mind machine POOP-y?<a class="headerlink" href="#how-is-boring-mind-machine-poop-y" title="Permanent link">&para;</a></h2>
+<p>Libraries that implement good practices in POOP (Python Object Oriented
+Programming) are said to be POOP-y. What makes the boring mind machine library
+particularly POOP-y is the fact that it provides the solid foundation on which
+the entire mind machine enterprise is constructed.</p>
+<p>It is critical that the boring mind machine library be an exemplar of good
+practices for software built using the mind machine framework!</p>
                 
                   
                 

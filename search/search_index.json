@@ -97,23 +97,53 @@
         },
         {
             "location": "/mind-machine-docs/sheep/",
-            "text": "The Sheep\n\u00b6\n\n\n(TODO: add high level sheep summary)",
+            "text": "The Sheep\n\u00b6\n\n\n\n\nThe rainbow mind machine sheep.\n\n\nThe Sheep is the component of the bot flock that actually\nperforms the actions using the bot accounts.\n\n\nThe Shepherd will instruct each Sheep to start performing an action - either in\nparallel (if it is a \"forever\" action like tweeting) or in serial (if it is a\n\"one-time\" action, like changing the bot user's profile).\n\n\nEach Sheep uses a bot key (created by the Keymaker and loaded by\nthe Shepherd) to create an API instance in the constructor.\nEach Sheep then uses that API instance to perform actions.\n\n\nThe BoringSheep base class in \nboring mind machine\n\ndefines a generic dispatcher method (which turns strings\ninto function calls) to allow Shepherds to call particular\nactions for each Sheep.\n\n\nDefining Actions\n\u00b6\n\n\nTo define an action, define a method for that action.\n(For example, to define a tweet action, make a \ntweet()\n method\nin the Sheep class you are using.)\n\n\nTo control how the action works and introduce variation, you can \npass extra parameters (in the form of keyword arguments) to the\naction method, and the Shepherd will pass those along to the Sheep.\n\n\nThe general pattern this follows is:\n\n\n\n\nset up or point to an API endpoint\n\n\ncreate or use the API client object to call the API endpoint\n\n\nprocess the results",
             "title": "Sheep"
         },
         {
             "location": "/mind-machine-docs/sheep/#the-sheep",
-            "text": "(TODO: add high level sheep summary)",
+            "text": "The rainbow mind machine sheep.  The Sheep is the component of the bot flock that actually\nperforms the actions using the bot accounts.  The Shepherd will instruct each Sheep to start performing an action - either in\nparallel (if it is a \"forever\" action like tweeting) or in serial (if it is a\n\"one-time\" action, like changing the bot user's profile).  Each Sheep uses a bot key (created by the Keymaker and loaded by\nthe Shepherd) to create an API instance in the constructor.\nEach Sheep then uses that API instance to perform actions.  The BoringSheep base class in  boring mind machine \ndefines a generic dispatcher method (which turns strings\ninto function calls) to allow Shepherds to call particular\nactions for each Sheep.",
             "title": "The Sheep"
         },
         {
+            "location": "/mind-machine-docs/sheep/#defining-actions",
+            "text": "To define an action, define a method for that action.\n(For example, to define a tweet action, make a  tweet()  method\nin the Sheep class you are using.)  To control how the action works and introduce variation, you can \npass extra parameters (in the form of keyword arguments) to the\naction method, and the Shepherd will pass those along to the Sheep.  The general pattern this follows is:   set up or point to an API endpoint  create or use the API client object to call the API endpoint  process the results",
+            "title": "Defining Actions"
+        },
+        {
             "location": "/about/",
-            "text": "About Boring Mind Machine\n\u00b6\n\n\nThe main job of \nboring mind machine\n is to take care of the boring stuff.\nSpecifically, (1) provide base classes for all other mind machines, and\n(2) provide Keymakers for different services (Github, Google, Twitter, etc.).",
+            "text": "About Boring Mind Machine\n\u00b6\n\n\nboring mind machine (bmm)\n is part of the mind machine suite of software,\nrun by the \nrainbow-mind-machine\n\norganization on Github.\n\n\nLike all mind machines, \nboring mind machine\n is simple and extensible.\n\n\nWhat does boring mind machine extend or do?\n\u00b6\n\n\nThe main job of \nboring mind machine\n is to take care of the boring stuff.\nThat means two things:\n\n\n\n\nSetting up boring base classes that are designed to be extended by\n    all of the other mind machine libraries; and\n\n\nProviding working OAuth Keymakers for every third-party service provider\n    that has its own mind machine library. (Github, Google, Twitter, etc.)\n\n\n\n\nBase classes\n\u00b6\n\n\nBecause \nboring mind machine\n provides base classes, that means it does not extend\nclasses - it provides the base classes that are extended.\n\n\nThat makes \nboring mind machine\n unique among the mind machines - every mind\nmachine library imports boring mind machine no matter what, and every Keymaker\nis defined in boring mind machine.\n\n\nOAuth Keymakers\n\u00b6\n\n\nThe second, most important functionality implemented in bmm are the Keymaker\nclasses. bmm implements a Keymaker for each service that has a corresponding\nmind machine library.\n\n\nCollecting each Keymaker together makes the logic more clear. Each third party\nservice implements the same authentication process (OAuth) but everybody does it\ndifferently, so there are many tedious, boring details to work out.\n\n\nHence, the \"boring\".\n\n\nHow is boring mind machine simple?\n\u00b6\n\n\nEverything is kept simple by collecting Keymakers together in one place (these\nare long and ugly but share many similarities) and letting each mind machine\nlibrary focus solely on the details of bot creation.\n\n\nTake care of OAuth! Stop mucking around with keys! Get busy making bot flocks!\n\n\nHow is boring mind machine POOP-y?\n\u00b6\n\n\nLibraries that implement good practices in POOP (Python Object Oriented\nProgramming) are said to be POOP-y. What makes the boring mind machine library\nparticularly POOP-y is the fact that it provides the solid foundation on which\nthe entire mind machine enterprise is constructed.\n\n\nIt is critical that the boring mind machine library be an exemplar of good\npractices for software built using the mind machine framework!",
             "title": "About bmm"
         },
         {
             "location": "/about/#about-boring-mind-machine",
-            "text": "The main job of  boring mind machine  is to take care of the boring stuff.\nSpecifically, (1) provide base classes for all other mind machines, and\n(2) provide Keymakers for different services (Github, Google, Twitter, etc.).",
+            "text": "boring mind machine (bmm)  is part of the mind machine suite of software,\nrun by the  rainbow-mind-machine \norganization on Github.  Like all mind machines,  boring mind machine  is simple and extensible.",
             "title": "About Boring Mind Machine"
+        },
+        {
+            "location": "/about/#what-does-boring-mind-machine-extend-or-do",
+            "text": "The main job of  boring mind machine  is to take care of the boring stuff.\nThat means two things:   Setting up boring base classes that are designed to be extended by\n    all of the other mind machine libraries; and  Providing working OAuth Keymakers for every third-party service provider\n    that has its own mind machine library. (Github, Google, Twitter, etc.)",
+            "title": "What does boring mind machine extend or do?"
+        },
+        {
+            "location": "/about/#base-classes",
+            "text": "Because  boring mind machine  provides base classes, that means it does not extend\nclasses - it provides the base classes that are extended.  That makes  boring mind machine  unique among the mind machines - every mind\nmachine library imports boring mind machine no matter what, and every Keymaker\nis defined in boring mind machine.",
+            "title": "Base classes"
+        },
+        {
+            "location": "/about/#oauth-keymakers",
+            "text": "The second, most important functionality implemented in bmm are the Keymaker\nclasses. bmm implements a Keymaker for each service that has a corresponding\nmind machine library.  Collecting each Keymaker together makes the logic more clear. Each third party\nservice implements the same authentication process (OAuth) but everybody does it\ndifferently, so there are many tedious, boring details to work out.  Hence, the \"boring\".",
+            "title": "OAuth Keymakers"
+        },
+        {
+            "location": "/about/#how-is-boring-mind-machine-simple",
+            "text": "Everything is kept simple by collecting Keymakers together in one place (these\nare long and ugly but share many similarities) and letting each mind machine\nlibrary focus solely on the details of bot creation.  Take care of OAuth! Stop mucking around with keys! Get busy making bot flocks!",
+            "title": "How is boring mind machine simple?"
+        },
+        {
+            "location": "/about/#how-is-boring-mind-machine-poop-y",
+            "text": "Libraries that implement good practices in POOP (Python Object Oriented\nProgramming) are said to be POOP-y. What makes the boring mind machine library\nparticularly POOP-y is the fact that it provides the solid foundation on which\nthe entire mind machine enterprise is constructed.  It is critical that the boring mind machine library be an exemplar of good\npractices for software built using the mind machine framework!",
+            "title": "How is boring mind machine POOP-y?"
         },
         {
             "location": "/installing/",
