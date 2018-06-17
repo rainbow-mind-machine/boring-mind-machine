@@ -918,7 +918,20 @@ constructor. </p>
 
 
 <h3 id="using-python-dict">Using Python Dict<a class="headerlink" href="#using-python-dict" title="Permanent link">&para;</a></h3>
-<p>(TODO: add python dict example)</p>
+<p><strong><code>use_dict.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_dict</span><span class="p">({</span>
+            <span class="s1">&#39;client_token&#39;</span> <span class="p">:</span> <span class="s1">&#39;asdf&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;client_secret&#39;</span> <span class="p">:</span> <span class="s1">&#39;qwerty&#39;</span>
+<span class="p">})</span>
+</pre></div>
+
+
 <h2 id="extending-the-keymaker">Extending the Keymaker<a class="headerlink" href="#extending-the-keymaker" title="Permanent link">&para;</a></h2>
 <p>"Ideas and future planning"</p>
 <p>(TODO: how is oauth keymaker extended - what method)</p>
