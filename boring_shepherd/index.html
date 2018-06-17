@@ -753,16 +753,16 @@ bot_key3.json
 and use the custom Shepherd class to </p>
 <p>(We illustrate performing basic key validation by filtering
 keys with a particular name.)</p>
-<div class="codehilite"><pre><span></span>import boringmindmachine as bmm
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
 
-class BlueShepherd(bmm.BoringShepherd):
-    def _create_sheep(self):
-        pass
-    def _validate_key(self):
-        pass
+<span class="k">class</span> <span class="nc">BlueShepherd</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringShepherd</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_create_sheep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span> <span class="nf">_validate_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
 
-if __name__==&quot;__main__&quot;:
-    s = BlueShepherd( a, b, c )
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">BlueShepherd</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">)</span>
 </pre></div>
 
 
@@ -771,20 +771,20 @@ if __name__==&quot;__main__&quot;:
 to call methods. The dispatcher pattern is used to
 turn a string (like "tweet") into a function call
 (like <code>tweet()</code>).</p>
-<div class="codehilite"><pre><span></span>import boringmindmachine as bmm
-import time
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-class FlatulentSheep(bmm.BoringSheep):
-    def pass_gas(self):
-        print(&quot;pfffft&quot;)
-        time.sleep(30)
+<span class="k">class</span> <span class="nc">FlatulentSheep</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringSheep</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pass_gas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;pfffft&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 
-if __name__==&quot;__name__&quot;:
-    s = bmm.BoringShepherd(
-                keys_dir = &quot;keys/&quot;,
-                flock_name = &quot;flatulent_flock&quot;,
-                sheep_class = FlatulentSheep
-    )
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">BoringShepherd</span><span class="p">(</span>
+                <span class="n">keys_dir</span> <span class="o">=</span> <span class="s2">&quot;keys/&quot;</span><span class="p">,</span>
+                <span class="n">flock_name</span> <span class="o">=</span> <span class="s2">&quot;flatulent_flock&quot;</span><span class="p">,</span>
+                <span class="n">sheep_class</span> <span class="o">=</span> <span class="n">FlatulentSheep</span>
+    <span class="p">)</span>
 </pre></div>
 
 
