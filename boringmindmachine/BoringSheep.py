@@ -9,14 +9,15 @@ class BoringSheep(object):
     be defined at the package level.
     """
     def __init__(self):
-        err = "ERROR: Sheep constructor initialiizes API instances "
+        err = "ERROR: Sheep constructor initializes API instances "
         err += "and should therefore be defined by the derived class."
         raise Exception(Err)
 
     def perform_action(self,action,**kwargs):
         """
         The only thing the BoringSheep defines is 
-        a dispatcher method to perform actions.
+        a perform_action method implementing a
+        dispatcher pattern to perform actions.
         
         For example, if the user asks for the 
         'dummy' action, this will look for a 
