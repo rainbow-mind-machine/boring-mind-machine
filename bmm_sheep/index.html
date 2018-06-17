@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#the-sheep" tabindex="1" class="md-skip">
+      <a href="#boring-sheep" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -524,22 +524,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-the-boring-sheep-dont" title="How to use the Boring Sheep? (don't)" class="md-nav__link">
-    How to use the Boring Sheep? (don't)
+  <a href="#how-to-use-the-boring-sheep-class-dont" title="How to use the Boring Sheep class? (...don't)" class="md-nav__link">
+    How to use the Boring Sheep class? (...don't)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-extend-the-boring-sheep" title="How to extend the Boring Sheep?" class="md-nav__link">
-    How to extend the Boring Sheep?
+  <a href="#how-to-extend-the-boring-sheep-class" title="How to extend the Boring Sheep class?" class="md-nav__link">
+    How to extend the Boring Sheep class?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-does-the-boring-sheep-define" title="What does the Boring Sheep define?" class="md-nav__link">
-    What does the Boring Sheep define?
+  <a href="#what-does-the-boring-sheep-class-define" title="What does the Boring Sheep class define?" class="md-nav__link">
+    What does the Boring Sheep class define?
   </a>
   
 </li>
@@ -658,22 +658,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-the-boring-sheep-dont" title="How to use the Boring Sheep? (don't)" class="md-nav__link">
-    How to use the Boring Sheep? (don't)
+  <a href="#how-to-use-the-boring-sheep-class-dont" title="How to use the Boring Sheep class? (...don't)" class="md-nav__link">
+    How to use the Boring Sheep class? (...don't)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-extend-the-boring-sheep" title="How to extend the Boring Sheep?" class="md-nav__link">
-    How to extend the Boring Sheep?
+  <a href="#how-to-extend-the-boring-sheep-class" title="How to extend the Boring Sheep class?" class="md-nav__link">
+    How to extend the Boring Sheep class?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-does-the-boring-sheep-define" title="What does the Boring Sheep define?" class="md-nav__link">
-    What does the Boring Sheep define?
+  <a href="#what-does-the-boring-sheep-class-define" title="What does the Boring Sheep class define?" class="md-nav__link">
+    What does the Boring Sheep class define?
   </a>
   
 </li>
@@ -695,26 +695,26 @@
               
                 
                 
-                <h1 id="the-sheep">The Sheep<a class="headerlink" href="#the-sheep" title="Permanent link">&para;</a></h1>
+                <h1 id="boring-sheep">Boring Sheep<a class="headerlink" href="#boring-sheep" title="Permanent link">&para;</a></h1>
 <p>(TODO: Copy Sheep materials over, and copy Shepherd docs)</p>
 <p>(TODO: What are the most common ways to extend Sheep? essential methods/call
 traces?)</p>
 <p>The Sheep is the class that represents a single user account on the
 third party service the mind machine is defining. In general, the pattern
 that mind machine bot flocks follow is: 1 Sheep = 1 bot account = 1 action.</p>
-<p>Because Sheep can do anything, we don't want to impose restrictions by
-implementing functionality here.</p>
-<h3 id="how-to-use-the-boring-sheep-dont">How to use the Boring Sheep? (don't)<a class="headerlink" href="#how-to-use-the-boring-sheep-dont" title="Permanent link">&para;</a></h3>
+<p>The <code>BoringSheep</code> class is really boring, because we don't want to impose
+restrictions or make assumptions by implementing a bunch of functionality.</p>
+<h3 id="how-to-use-the-boring-sheep-class-dont">How to use the Boring Sheep class? (...don't)<a class="headerlink" href="#how-to-use-the-boring-sheep-class-dont" title="Permanent link">&para;</a></h3>
 <p>The constructor is where you create the Sheep's API instance, and should be
 defined at the package level.</p>
-<p>The BoringSheep class has a virtual constructor, so it cannot be created
+<p>The Boring Sheep class has a virtual constructor, so it cannot be created
 directly. You should instead define a new Sheep class that inherits from
-BoringSheep and defines a constructor, which should initialize an API instance.</p>
-<h3 id="how-to-extend-the-boring-sheep">How to extend the Boring Sheep?<a class="headerlink" href="#how-to-extend-the-boring-sheep" title="Permanent link">&para;</a></h3>
-<h3 id="what-does-the-boring-sheep-define">What does the Boring Sheep define?<a class="headerlink" href="#what-does-the-boring-sheep-define" title="Permanent link">&para;</a></h3>
+Boring Sheep and defines a constructor, which should initialize an API instance.</p>
+<h3 id="how-to-extend-the-boring-sheep-class">How to extend the Boring Sheep class?<a class="headerlink" href="#how-to-extend-the-boring-sheep-class" title="Permanent link">&para;</a></h3>
+<h3 id="what-does-the-boring-sheep-class-define">What does the Boring Sheep class define?<a class="headerlink" href="#what-does-the-boring-sheep-class-define" title="Permanent link">&para;</a></h3>
 <p>In addition to mentioning what you have to define,
 let's mention what you don't have to define.</p>
-<p>The BoringSheep class implements a dispatcher pattern,
+<p>The Boring Sheep class implements a dispatcher pattern,
 which is a way of passing the name of an action as a
 string, and turning that into a function call.</p>
 <p>For example, if the user asks for the 'dummy' action
