@@ -10,30 +10,16 @@ This requires that you set up API keys.
 Use consumer_token and consumer_token_secret.
 """
 
-def usage():
-    print('''
-        twitter_auth.py
+keydir = 'keys'
 
-        This script creates a Twitter Keymaker using
-        boring mind machine. 
-    ''')
-    exit(1)
+gk = bmm.TwitterKeymaker()
+gk.set_apikeys_file('apikeys.json')
 
+print("Creating a dummy key...")
+gk.make_a_key('dummy','dummy.json',keydir)
+print("Success.")
 
-def main():
-    keydir = 'keys'
-    
-    gk = bmm.TwitterKeymaker()
-    gk.set_apikeys_file('apikeys.json')
-    
-    print("Creating a dummy key...")
-    gk.make_a_key('dummy','dummy.json',keydir)
-    print("Success.")
-    
-    print("Cleaning up...")
-    subprocess.call(['rm','-rf',keydir])
-    print("Done.")
-
-if __name__=="__main__":
-    main()
+print("Cleaning up...")
+subprocess.call(['rm','-rf',keydir])
+print("Done.")
 
