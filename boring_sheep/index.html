@@ -505,9 +505,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Boring Sheep
+      </label>
+    
     <a href="./" title="Boring Sheep" class="md-nav__link md-nav__link--active">
       Boring Sheep
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-the-boring-sheep-dont" title="How to use the Boring Sheep? (don't)" class="md-nav__link">
+    How to use the Boring Sheep? (don't)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extend-the-boring-sheep" title="How to extend the Boring Sheep?" class="md-nav__link">
+    How to extend the Boring Sheep?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-the-boring-sheep-define" title="What does the Boring Sheep define?" class="md-nav__link">
+    What does the Boring Sheep define?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -611,6 +654,36 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-the-boring-sheep-dont" title="How to use the Boring Sheep? (don't)" class="md-nav__link">
+    How to use the Boring Sheep? (don't)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extend-the-boring-sheep" title="How to extend the Boring Sheep?" class="md-nav__link">
+    How to extend the Boring Sheep?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-the-boring-sheep-define" title="What does the Boring Sheep define?" class="md-nav__link">
+    What does the Boring Sheep define?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -623,9 +696,38 @@
                 
                 
                 <h1 id="the-sheep">The Sheep<a class="headerlink" href="#the-sheep" title="Permanent link">&para;</a></h1>
-<p>(TODO: Copy Sheep materials over, and copy Shepherd docs)
-(TODO: What are the most common ways to extend Sheep? essential methods/call
+<p>(TODO: Copy Sheep materials over, and copy Shepherd docs)</p>
+<p>(TODO: What are the most common ways to extend Sheep? essential methods/call
 traces?)</p>
+<p>The Sheep is the class that represents a single user account on the
+third party service the mind machine is defining. In general, the pattern
+that mind machine bot flocks follow is: 1 Sheep = 1 bot account = 1 action.</p>
+<p>Because Sheep can do anything, we don't want to impose restrictions by
+implementing functionality here.</p>
+<h3 id="how-to-use-the-boring-sheep-dont">How to use the Boring Sheep? (don't)<a class="headerlink" href="#how-to-use-the-boring-sheep-dont" title="Permanent link">&para;</a></h3>
+<p>The constructor is where you create the Sheep's API instance, and should be
+defined at the package level.</p>
+<p>The BoringSheep class has a virtual constructor, so it cannot be created
+directly. You should instead define a new Sheep class that inherits from
+BoringSheep and defines a constructor, which should initialize an API instance.</p>
+<h3 id="how-to-extend-the-boring-sheep">How to extend the Boring Sheep?<a class="headerlink" href="#how-to-extend-the-boring-sheep" title="Permanent link">&para;</a></h3>
+<h3 id="what-does-the-boring-sheep-define">What does the Boring Sheep define?<a class="headerlink" href="#what-does-the-boring-sheep-define" title="Permanent link">&para;</a></h3>
+<p>In addition to mentioning what you have to define,
+let's mention what you don't have to define.</p>
+<p>The BoringSheep class implements a dispatcher pattern,
+which is a way of passing the name of an action as a
+string, and turning that into a function call.</p>
+<p>For example, if the user asks for the 'dummy' action
+via <code>sheep.perform_action('dummy',**kwargs)</code>, this will 
+call <code>sheep.dummy(**kwargs)</code>.</p>
+<p>See <a href="https://en.wikipedia.org/wiki/Command_pattern">command pattern (wikipedia)</a>
+for a detailed description of the dispatcher pattern.</p>
+<div class="codehilite"><pre><span></span>    <span class="k">def</span> <span class="nf">perform_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">action</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Dispatcher pattern</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+            <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+            <span class="n">method</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
