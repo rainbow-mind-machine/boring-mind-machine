@@ -431,9 +431,79 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Boring Keymaker
+      </label>
+    
     <a href="./" title="Boring Keymaker" class="md-nav__link md-nav__link--active">
       Boring Keymaker
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-the-keymaker" title="Constructing the Keymaker" class="md-nav__link">
+    Constructing the Keymaker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-api-keys-to-the-keymaker" title="Passing API Keys to the Keymaker" class="md-nav__link">
+    Passing API Keys to the Keymaker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables" title="Using Environment Variables" class="md-nav__link">
+    Using Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-json-file" title="Using JSON File" class="md-nav__link">
+    Using JSON File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-dict" title="Using Python Dict" class="md-nav__link">
+    Using Python Dict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
+    Extending the Keymaker
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -452,9 +522,79 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Boring OAuth Keymaker
+      </label>
+    
     <a href="./" title="Boring OAuth Keymaker" class="md-nav__link md-nav__link--active">
       Boring OAuth Keymaker
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-the-keymaker" title="Constructing the Keymaker" class="md-nav__link">
+    Constructing the Keymaker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-api-keys-to-the-keymaker" title="Passing API Keys to the Keymaker" class="md-nav__link">
+    Passing API Keys to the Keymaker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables" title="Using Environment Variables" class="md-nav__link">
+    Using Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-json-file" title="Using JSON File" class="md-nav__link">
+    Using JSON File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-dict" title="Using Python Dict" class="md-nav__link">
+    Using Python Dict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
+    Extending the Keymaker
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -618,6 +758,63 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-the-keymaker" title="Constructing the Keymaker" class="md-nav__link">
+    Constructing the Keymaker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-api-keys-to-the-keymaker" title="Passing API Keys to the Keymaker" class="md-nav__link">
+    Passing API Keys to the Keymaker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables" title="Using Environment Variables" class="md-nav__link">
+    Using Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-json-file" title="Using JSON File" class="md-nav__link">
+    Using JSON File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-dict" title="Using Python Dict" class="md-nav__link">
+    Using Python Dict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
+    Extending the Keymaker
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -636,8 +833,96 @@ boring mind machine; they are <code>BoringKeymaker</code> and
 <p>Technically a Keymaker can inherit from BoringKeymaker
 and use any authentication method, but in practice all
 Keymakers are OAuth Keymakers.</p>
-<p>(TODO: add list of important class methods)
-(TODO: how is oauth keymaker extended - what method)</p>
+<h2 id="constructing-the-keymaker">Constructing the Keymaker<a class="headerlink" href="#constructing-the-keymaker" title="Permanent link">&para;</a></h2>
+<p>The generic BoringOAuthKeymaker class requires two bits of information:
+an API application token and an API application secret. These have
+different names for different services, so when you create a Keymaker,
+you need to specify the name of the token and the name of the secret
+in the Keymaker constructor:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="c1"># create a dummy oauth keymaker class</span>
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>For Github, Google, Twitter, etc. Keymakers, this value is already set.</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="n">ghk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">GithubKeymaker</span><span class="p">()</span>
+
+<span class="n">gk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">GoogleKeymaker</span><span class="p">()</span>
+
+<span class="n">tk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">TwitterKeymaker</span><span class="p">()</span>
+</pre></div>
+
+
+<h2 id="passing-api-keys-to-the-keymaker">Passing API Keys to the Keymaker<a class="headerlink" href="#passing-api-keys-to-the-keymaker" title="Permanent link">&para;</a></h2>
+<p>The Keymaker must have client API keys to verify that it is in fact
+allowed to take actions as the third-party OAuth application.
+The API keys consist of a token and a secret that correspond to
+the OAuth app created for the third-party service.</p>
+<p>(For example, when you create a Github app, the app page will give
+a client ID and a client secret at the top of the page.)</p>
+<p>This token and secret can be passed three different ways:</p>
+<ul>
+<li>via environment variables</li>
+<li>via a JSON file</li>
+<li>via a Python dictionary</li>
+</ul>
+<h3 id="using-environment-variables">Using Environment Variables<a class="headerlink" href="#using-environment-variables" title="Permanent link">&para;</a></h3>
+<p>To set using environment variables:</p>
+<p><strong><code>use_env.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_env</span><span class="p">()</span>
+</pre></div>
+
+
+<p>This would then look for two environment variables corresponding to
+the name of the token and secret in all caps. In the above case,
+we would need to run the script and provide the API keys as follows:</p>
+<div class="codehilite"><pre><span></span>$ CLIENT_TOKEN=&quot;abcd&quot; CLIENT_SECRET=&quot;qwerty&quot; use_env.py
+</pre></div>
+
+
+<h3 id="using-json-file">Using JSON File<a class="headerlink" href="#using-json-file" title="Permanent link">&para;</a></h3>
+<p>To use a JSON file, create a simple JSON file with two key-value pairs.
+The two keys should be the token name and the secret name provided to the
+constructor. </p>
+<p><strong><code>apikeys.json</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;client_token&quot;</span> <span class="p">:</span> <span class="s2">&quot;asdf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;client_secret&quot;</span> <span class="p">:</span> <span class="s2">&quot;qwerty&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The corresponding call to set the Keymaker API tokens would look like:</p>
+<p><strong><code>use_json.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_json</span><span class="p">(</span><span class="s1">&#39;apikeys.json&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h3 id="using-python-dict">Using Python Dict<a class="headerlink" href="#using-python-dict" title="Permanent link">&para;</a></h3>
+<p>(TODO: add python dict example)</p>
+<h2 id="extending-the-keymaker">Extending the Keymaker<a class="headerlink" href="#extending-the-keymaker" title="Permanent link">&para;</a></h2>
+<p>"Ideas and future planning"</p>
+<p>(TODO: how is oauth keymaker extended - what method)</p>
+<p>what else can you can do?</p>
                 
                   
                 
