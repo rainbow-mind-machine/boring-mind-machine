@@ -34,7 +34,7 @@ description page will contain the client ID and client secret
 needed to use this application to run mind machine bots
 using Github.
 
-### End Result
+## Setting Github Credentials
 
 In the end you should have a pair of API keys (a client ID and
 a client secret), which you will pass to the keymaker using
@@ -48,26 +48,10 @@ keys to the keymaker using one of three methods:
 1. Using a JSON file
 1. Using environment variables
 
-To use the latter option, you can run the Github Keymaker program
-like this:
+### Environment Variables Example
 
-```
-$ CLIENT_ID="..." CLIENT_SECRET="..." python github_auth.py
-```
-
-
-## Authorizing
-
-To run this, you will need your client ID and client secret.
-These can be found by logging in as the user that created the
-OAuth application you will be using, or that is an admin on the
-organization that owns the OAuth account. Go to the settings page
-and find the OAuth Applications listing on the left side. The
-OAuth application page will list the client ID and client secret
-at the top of the page.
-
-Once you have them, set the `CLIENT_ID` and `CLIENT_SECRET` environment
-variables when you run the program, like this:
+To use the environment variables option, you can run the Github
+Keymaker example program in `examples/github/` like this:
 
 ```
 $ CLIENT_ID="..." \
@@ -75,7 +59,28 @@ $ CLIENT_ID="..." \
   python github_auth.py
 ```
 
-This will create an authorization link, which you can log in to with
-any Github account. The Keymaker will create bot keys in `keys/`,
-and will then clean up and remove the `keys/` directory.
+### Example Code
+
+**`github_auth.py`:**
+
+```python
+import boringmindmachine as bmm
+import subprocess
+
+keydir = 'keys'
+
+gk = bmm.GithubKeymaker()
+gk.set_apikeys_env()
+
+# make the Github key
+print("Creating a dummy key...")
+gk.make_a_key('dummy','dummy.json',keydir)
+print("Success.")
+
+# Clean up the key
+# (remove this bit to keep the key around)
+print("Cleaning up...")
+subprocess.call(['rm','-rf',keydir])
+print("Done.")
+```
 

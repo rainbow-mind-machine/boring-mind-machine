@@ -80,11 +80,10 @@ used to perform actions on behalf of the account.
 Google requires the application's API keys to be provided via
 a JSON file on disk.
 
-To run the Google Keymaker example, specify the API key name in the
-`google_auth.py` script (`client_secret.json` by default):
+To run the Google Keymaker example, **specify the API key name in the
+`google_auth.py` script** (`client_secret.json` by default):
 
 ```
 $ python google_auth.py
 ```
-
 
