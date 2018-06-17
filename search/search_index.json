@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nOther mind machine libraries utilize the \nboring mind machine\n library's\nclasses as a starting point for implementing bot flocks.\n\n\nLinks\n\u00b6\n\n\nboring mind machine (bmm) links:\n\n\n\n\nbmm source code on Github: \nhttps://github.com/rainbow-mind-machine/boring-mind-machine\n\n\nbmm documentation: \nhttps://pages.charlesreid1.com/boring-mind-machine/\n\n\nrainbow mind machine organization on Github: \nhttps://github.com/rainbow-mind-machine\n\n\n\n\nPages\n\u00b6\n\n\nAbout the Mind Machine Framework\n - general\ninformation about the mind machine framework (how does it work? what does it\nlook like?)\n\n\nAbout Boring Mind Machine\n - about the boring mind machine library\n(what is it? what does it do?)\n\n\nInstalling\n - installation instructions (how do I install bmm?)\n\n\nQuick Start\n - quick start instructions for getting started\nwith boring mind machine base classes (how do I run bmm?)\n\n\nDocumentation for components implemented in boring mind machine:\n\n\n\n\nKeymakers:\n\n\nBoringKeymaker\n\n\nBoringOAuthKeymaker\n\n\nGithubKeymaker\n\n\nGoogleKeymaker\n\n\nTwitterKeymaker\n\n\n\n\n\n\nBoringShepherd\n\n\nBoringSheep\n\n\n\n\nFuture Work and Ideas\n (what's next for boring mind machine?)\n\n\nCredits\n\n\nContributing\n\n\nDeveloper Notes\n - notes on processes for developers\n(how do I run tests, update packages/images, build documentation, etc.?)",
+            "text": "boring-mind-machine\n\u00b6\n\n\nboring mind machine\n is a set of boring base classes for building awesome bot flocks.\n\n\nOther mind machine libraries utilize the \nboring mind machine\n library's\nclasses as a starting point for implementing bot flocks.\n\n\nLinks\n\u00b6\n\n\nboring mind machine (bmm) links:\n\n\n\n\nbmm source code on Github: \nhttps://github.com/rainbow-mind-machine/boring-mind-machine\n\n\nbmm documentation: \nhttps://pages.charlesreid1.com/boring-mind-machine/\n\n\nrainbow mind machine organization on Github: \nhttps://github.com/rainbow-mind-machine\n\n\n\n\nPages\n\u00b6\n\n\nAbout the Mind Machine Framework\n - general\ninformation about the mind machine framework (how does it work? what does it\nlook like?)\n\n\nAbout Boring Mind Machine\n - about the boring mind machine library\n(what is it? what does it do?)\n\n\nInstalling\n - installation instructions (how do I install bmm?)\n\n\nQuick Start\n - quick start instructions for getting started\nwith boring mind machine base classes (how do I run bmm?)\n\n\nDocumentation for components implemented in boring mind machine:\n\n\n\n\nKeymakers:\n\n\nbmm.BoringKeymaker\n\n\nbmm.BoringOAuthKeymaker\n\n\nbmm.GithubKeymaker\n\n\nbmm.GoogleKeymaker\n\n\nbmm.TwitterKeymaker\n\n\n\n\n\n\nbmm.BoringShepherd\n\n\nbmm.BoringSheep\n\n\n\n\nFuture Work and Ideas\n (what's next for boring mind machine?)\n\n\nCredits\n\n\nContributing\n\n\nDeveloper Notes\n - notes on processes for developers\n(how do I run tests, update packages/images, build documentation, etc.?)",
             "title": "Home"
         },
         {
@@ -17,12 +17,12 @@
         },
         {
             "location": "/#pages",
-            "text": "About the Mind Machine Framework  - general\ninformation about the mind machine framework (how does it work? what does it\nlook like?)  About Boring Mind Machine  - about the boring mind machine library\n(what is it? what does it do?)  Installing  - installation instructions (how do I install bmm?)  Quick Start  - quick start instructions for getting started\nwith boring mind machine base classes (how do I run bmm?)  Documentation for components implemented in boring mind machine:   Keymakers:  BoringKeymaker  BoringOAuthKeymaker  GithubKeymaker  GoogleKeymaker  TwitterKeymaker    BoringShepherd  BoringSheep   Future Work and Ideas  (what's next for boring mind machine?)  Credits  Contributing  Developer Notes  - notes on processes for developers\n(how do I run tests, update packages/images, build documentation, etc.?)",
+            "text": "About the Mind Machine Framework  - general\ninformation about the mind machine framework (how does it work? what does it\nlook like?)  About Boring Mind Machine  - about the boring mind machine library\n(what is it? what does it do?)  Installing  - installation instructions (how do I install bmm?)  Quick Start  - quick start instructions for getting started\nwith boring mind machine base classes (how do I run bmm?)  Documentation for components implemented in boring mind machine:   Keymakers:  bmm.BoringKeymaker  bmm.BoringOAuthKeymaker  bmm.GithubKeymaker  bmm.GoogleKeymaker  bmm.TwitterKeymaker    bmm.BoringShepherd  bmm.BoringSheep   Future Work and Ideas  (what's next for boring mind machine?)  Credits  Contributing  Developer Notes  - notes on processes for developers\n(how do I run tests, update packages/images, build documentation, etc.?)",
             "title": "Pages"
         },
         {
             "location": "/mind-machine-docs/about/",
-            "text": "Mind Machine Framework\n\u00b6\n\n\nThe mind machine framework is designed to be a\n\nsimple, extensible framework\n for developing\nbots.\n\n\nHow is it extensible?\n\u00b6\n\n\nThe concept of \"extensible\" refers specifically to the use\nof inheritance and extended classes. \n\n\nThe mind machine philosophy is to keep things as simple\nas possible, and add functionality in an incremental way\nto keep things easy to understand.\n\n\nUsing inheritance and extending base classes allows us to\nbuild up simple functionality into more complicated bots.\n\n\nHow is it simple?\n\u00b6\n\n\nThe mind machine concept is simple because there are only three\ncomponents:\n\n\n\n\nKeymaker\n\n\nSheep\n\n\nShepherd\n\n\n\n\nHow is it POOP-y?\n\u00b6\n\n\nThe mind machine libraries are a great illustration of\nPython Object-Oriented Programming (POOP) in action.\nThese are very POOP-y libraries, in that they use\nclasses to combine minimal functionality into classes.\n\n\nDeep Thoughts\n\u00b6\n\n\nFoucault\n\n\nMotivations\n\n\nNaming things",
+            "text": "Mind Machine Framework\n\u00b6\n\n\nThe mind machine framework is designed to be a\n\nsimple, extensible framework\n for developing\nbots.\n\n\nHow is it simple?\n\u00b6\n\n\nThe mind machine concept is simple because there are only three\ncomponents:\n\n\n\n\nKeymaker\n\n\nSheep\n\n\nShepherd\n\n\n\n\nThese are the three types of objects that you deal with in any\ngiven mind machine (and you should not have to deal with the\nKeymaker much).\n\n\nHow is it extensible?\n\u00b6\n\n\nThe concept of \"extensible\" refers specifically to the use\nof inheritance and extended classes. \n\n\nWe want to keep things as simple as possible, but also build\nfunctionality up into complicated bots. Using base classes\nand extending one bit at a time helps us accomplish that.\n\n\nHow is it POOP-y?\n\u00b6\n\n\nThe mind machine libraries are a great illustration of\nPython Object-Oriented Programming (POOP) in action.\nThese are very POOP-y libraries, in that they use\nclasses to combine minimal functionality into classes.\n\n\nWe will point out the many examples of POOP-y behavior\nwhen we see them in a particular mind machine example.\n\n\nDeep Thoughts\n\u00b6\n\n\nFoucault\n\n\nMotivations\n\n\nNaming things",
             "title": "About Mind Machine Framework"
         },
         {
@@ -31,18 +31,18 @@
             "title": "Mind Machine Framework"
         },
         {
-            "location": "/mind-machine-docs/about/#how-is-it-extensible",
-            "text": "The concept of \"extensible\" refers specifically to the use\nof inheritance and extended classes.   The mind machine philosophy is to keep things as simple\nas possible, and add functionality in an incremental way\nto keep things easy to understand.  Using inheritance and extending base classes allows us to\nbuild up simple functionality into more complicated bots.",
-            "title": "How is it extensible?"
-        },
-        {
             "location": "/mind-machine-docs/about/#how-is-it-simple",
-            "text": "The mind machine concept is simple because there are only three\ncomponents:   Keymaker  Sheep  Shepherd",
+            "text": "The mind machine concept is simple because there are only three\ncomponents:   Keymaker  Sheep  Shepherd   These are the three types of objects that you deal with in any\ngiven mind machine (and you should not have to deal with the\nKeymaker much).",
             "title": "How is it simple?"
         },
         {
+            "location": "/mind-machine-docs/about/#how-is-it-extensible",
+            "text": "The concept of \"extensible\" refers specifically to the use\nof inheritance and extended classes.   We want to keep things as simple as possible, but also build\nfunctionality up into complicated bots. Using base classes\nand extending one bit at a time helps us accomplish that.",
+            "title": "How is it extensible?"
+        },
+        {
             "location": "/mind-machine-docs/about/#how-is-it-poop-y",
-            "text": "The mind machine libraries are a great illustration of\nPython Object-Oriented Programming (POOP) in action.\nThese are very POOP-y libraries, in that they use\nclasses to combine minimal functionality into classes.",
+            "text": "The mind machine libraries are a great illustration of\nPython Object-Oriented Programming (POOP) in action.\nThese are very POOP-y libraries, in that they use\nclasses to combine minimal functionality into classes.  We will point out the many examples of POOP-y behavior\nwhen we see them in a particular mind machine example.",
             "title": "How is it POOP-y?"
         },
         {
@@ -52,7 +52,7 @@
         },
         {
             "location": "/mind-machine-docs/keymaker/",
-            "text": "The Keymaker\n\u00b6\n\n\n\n\nYou can definitely trust this keymaker.\n\n\nThe Keymaker is the object that is used to authenticate with the third party\nservice and generate the bot keys the application needs to do things on behalf\nof a user account.\n\n\nThis document provides a high-level overview of the Keymaker.\n\n\nUsing the Keymaker\n\u00b6\n\n\nIf you don't care about all of this business and just want to know\nhow to use the keymaker, see the \nboring mind machine\ndocumentation\n,\nspecifically coverage of the \nBoringOAuthKeymaker\n class\nand the platform-specific \nGithub Keymaker\n,\n\nGoogle Keymaker\n, and \nTwitter Keymaker\n\nclasses.\n\n\nBackground: The Three-Legged OAuth Process\n\u00b6\n\n\nIn theory, not all Keymakers must do OAuth, but in practice,\n\nall Keymakers do OAuth\n.\n\n\nThe Keymaker carries out a one-time authorization step that needs to \nbe done once for each Sheep = bot = account.\n\n\nThe Keymaker will be given a set of \"items\" (more on this in a moment), with one\nitem = one Sheep = one bot = one account, etc.  The Keymaker iterates through\neach item and performs the three-legged OAuth process.\n\n\nHere's a summary of the process:\n\n\n\n\nThe three legs are: the user (the bot account), the third party service (Github/Google/Twitter/other), and the consumer \n    (your mind machine app - specifically, the Keymaker component)\n\n\nThe Keymaker will initiate the process by requesting an OAuth URL from the third party\n    (this is how an app asks a user for permission to access their account)\n\n\nThird party will return an OAuth URL to the Keymaker, which will pass it to the user\n\n\nThe user will open the URL in their browser, and sign in using a bot account\n\n\nThird party will verify the credentials of the user, and create a temporary token\n\n\nThis token is returned to the API application (via callback URL/other mechanism)\n\n\nAPI application sends the token to the third party, which verifies the token matches\n\n\nThird party gives the API application a new OAuth token. This is the magic token\n    that allows the OAuth application to do things with the bot account.\n\n\n\n\nWhy the song and dance? The three-legged authentication process is intended to \nallow API applications to verify a user's identity (i.e., yes this user \nactually\n granted\npermission for the API application to control their account) without having to handle\nsensitive data like a user's hashed password. It also keeps the third party in\ncontrol of the process.\n\n\nKeymaker Credentials\n\u00b6\n\n\nKeymaker Input: API Keys\n\u00b6\n\n\nThere are two pieces of information that are required\nto do things as your API application (independent of any\nbot accounts):\n\n\n\n\nAPI application key\n\n\nAPI application secret key\n\n\n\n\nThese are the two pieces of information that are required to prove\nto the third party service that you are the actual owner of your\napplication.\n\n\nEach service stores these pieces of information in different ways,\nand calls them by different names. For example:\n\n\n\n\nClient key/client secret key\n\n\nConsumer token/consumer token secret\n\n\nAPI token/API secret token\n\n\netc...\n\n\n\n\nThe \nboring mind machine\n\nlibrary provides a base OAuth Keymaker class\ncalled BoringOAuthKeymaker. This class implements\nthe OAuth process in a generic way. The details\nspecific to the third party service are then implemented\nin child classes (e.g., GithubKeymaker).\n\n\nKeymaker Output: OAuth Keys\n\u00b6\n\n\nIn general, the Keymaker creates a set of bot account keys\ncorresponding to a set of items.\n\n\nOnce the Keymaker and the user go through the three-legged\nauthentication process for one bot account, the Keymaker\nwill create a JSON file with the bot key so that it can\nbe used again in the future.\n\n\nThe bot key contains both the API keys for the application,\nand the OAuth keys for the bot account.",
+            "text": "The Keymaker\n\u00b6\n\n\n\n\nYou can definitely trust this keymaker.\n\n\nThe Keymaker is the object that is used to authenticate with the third party\nservice and generate the bot keys the application needs to do things on behalf\nof a user account.\n\n\nThis document provides a high-level overview of the Keymaker.\n\n\nUsing the Keymaker\n\u00b6\n\n\nIf you don't care about all of this business and just want to know\nhow to use the keymaker, see the \nboring mind machine\ndocumentation\n.\n\n\nSpecifically, see coverage of the \n\nBoringOAuthKeymaker\n\nclass, along with the service-specific\n\nGithub Keymaker\n,\n\nGoogle Keymaker\n, and \n\nTwitter Keymaker\n\nclasses.\n\n\nBackground: The Three-Legged OAuth Process\n\u00b6\n\n\nIn theory, not all Keymakers must do OAuth, but in practice,\n\nall Keymakers do OAuth\n.\n\n\nThe Keymaker carries out a one-time authorization step that needs to \nbe done once for each Sheep = bot = account.\n\n\nThe Keymaker will be given a set of \"items\" (more on this in a moment), with one\nitem = one Sheep = one bot = one account, etc.  The Keymaker iterates through\neach item and performs the three-legged OAuth process.\n\n\nHere's a summary of the process:\n\n\n\n\nThe three legs are: the user (the bot account), the third party service (Github/Google/Twitter/other), and the consumer \n    (your mind machine app - specifically, the Keymaker component)\n\n\nThe Keymaker will initiate the process by requesting an OAuth URL from the third party\n    (this is how an app asks a user for permission to access their account)\n\n\nThird party will return an OAuth URL to the Keymaker, which will pass it to the user\n\n\nThe user will open the URL in their browser, and sign in using a bot account\n\n\nThird party will verify the credentials of the user, and create a temporary token\n\n\nThis token is returned to the API application (via callback URL/other mechanism)\n\n\nAPI application sends the token to the third party, which verifies the token matches\n\n\nThird party gives the API application a new OAuth token. This is the magic token\n    that allows the OAuth application to do things with the bot account.\n\n\n\n\nWhy the song and dance? The three-legged authentication process is intended to \nallow API applications to verify a user's identity (i.e., yes this user \nactually\n granted\npermission for the API application to control their account) without having to handle\nsensitive data like a user's hashed password. It also keeps the third party in\ncontrol of the process.\n\n\nKeymaker Credentials\n\u00b6\n\n\nKeymaker Input: API Keys\n\u00b6\n\n\nThere are two pieces of information that are required\nto do things as your API application (independent of any\nbot accounts):\n\n\n\n\nAPI application key\n\n\nAPI application secret key\n\n\n\n\nThese are the two pieces of information that are required to prove\nto the third party service that you are the actual owner of your\napplication.\n\n\nEach service stores these pieces of information in different ways,\nand calls them by different names. For example:\n\n\n\n\nClient key/client secret key\n\n\nConsumer token/consumer token secret\n\n\nAPI token/API secret token\n\n\netc...\n\n\n\n\nThe \nboring mind machine\n\nlibrary provides a base OAuth Keymaker class\ncalled BoringOAuthKeymaker. This class implements\nthe OAuth process in a generic way. The details\nspecific to the third party service are then implemented\nin child classes (e.g., GithubKeymaker).\n\n\nKeymaker Output: OAuth Keys\n\u00b6\n\n\nIn general, the Keymaker creates a set of bot account keys\ncorresponding to a set of items.\n\n\nOnce the Keymaker and the user go through the three-legged\nauthentication process for one bot account, the Keymaker\nwill create a JSON file with the bot key so that it can\nbe used again in the future.\n\n\nThe bot key contains both the API keys for the application,\nand the OAuth keys for the bot account.",
             "title": "Keymaker"
         },
         {
@@ -62,7 +62,7 @@
         },
         {
             "location": "/mind-machine-docs/keymaker/#using-the-keymaker",
-            "text": "If you don't care about all of this business and just want to know\nhow to use the keymaker, see the  boring mind machine\ndocumentation ,\nspecifically coverage of the  BoringOAuthKeymaker  class\nand the platform-specific  Github Keymaker , Google Keymaker , and  Twitter Keymaker \nclasses.",
+            "text": "If you don't care about all of this business and just want to know\nhow to use the keymaker, see the  boring mind machine\ndocumentation .  Specifically, see coverage of the  BoringOAuthKeymaker \nclass, along with the service-specific Github Keymaker , Google Keymaker , and  Twitter Keymaker \nclasses.",
             "title": "Using the Keymaker"
         },
         {
@@ -87,13 +87,43 @@
         },
         {
             "location": "/mind-machine-docs/shepherd/",
-            "text": "The Shepherd\n\u00b6\n\n\n(TODO: Add high level shepherd summary)",
+            "text": "The Shepherd\n\u00b6\n\n\n\n\nThe shepherd's (\npasteur\n) power manifests itself, therefore, in a duty, a task to\nbe undertaken, so that - and I think this is also an important characteristic of\npastoral power - the form it takes is not first of all the striking display of\nstrength and superiority. Pastoral power initially manifests itself in its zeal,\ndevotion, and endless application. What is the shepherd (\nberger\n)? Is (s)he someone\nwhose strength strikes people's eyes, like the sovereigns or gods, like the Greek\ngods, who essentially appear in their splendor? Not at all. The shepherd is\nsomeone who keeps watch. (S)he \"keeps watch\" in the sense, of course, of keeping an\neye out for possible evils, but above all in the sense of vigilance with regard\nto any possible misfortune.\n\n\n\n\nMichel Foucault, \nSecurity, Territory, Population: Lectures at the Coll\u00e9ge de France\n (1977-1978)\n\n\n\n\n\n\n\n\nThe rainbow mind machine shepherd.\n\n\nwhat is the Shepherd?\n\u00b6\n\n\nThe Shepherd is a very simple object: it is basically a data container\nfor storing Sheep.\n\n\nwhen does the Shepherd come in?\n\u00b6\n\n\nThe first thing a bot flock needs is a set of keys.\nThat's what the \nKeymaker\n is for.\n\n\nOnce the bot flock keys have been created with the Keymaker,\nthe bot flock is started. To do that, the Shepherd\ninitializes each Sheep with a corresponding JSON \nkey file (created by the Keymaker).\n\n\nhow does the Shepherd tend to the Sheep?\n\u00b6\n\n\nIn general, the Shepherd is a free-range parent, and lets the \nSheep go off and do their own thing.\n\n\nNote however, that in the spirit of extensibility,\nyou can extend the Shepherd and Sheep classes to \nchange the nature of your bot flock.\n(See next section.)\n\n\nwhen and how do you extend the Shepherd?\n\u00b6\n\n\nThe Shepherd class determines how much coordination\nhappens among different Sheep in the flock and between\nthe flock and the outside world (the Internet).\n\n\nSome simple examples:\n\n\nwebhook bot flock\n\u00b6\n\n\nAs an example of a bot flock that requires tighter integration\nbetween the Shepherd and the Sheep, imagine you want to create\na bot fock where the bots can be controlled with webhooks.\n\n\nYou would need the Shepherd to act as a central dispatcher \nand process incoming webhooks to determine which webhook \npayloads to pass on to which Sheep. But the Sheep also need\nto be modified to listen for instructions from the Shepherd.\n\n\nTo modify the Shepherd class, we would add a method \nthat listens for incoming webhooks, and a method or \nmethods implementing logic about which payloads to\npass along to which Sheep (or to call the appropriate\nfunctions when webhooks trigger flock-wide actions).\n\n\nTo modify the Sheep class, we would add a \nlisten()\n method\nthat would run forever - ideally in parallel with other\nrun-forever methods.\n\n\ntwo bots per key flock\n\u00b6\n\n\nSuppose we wanted to build an argument bot flock.\nThis bot flock would consist of pairs of Sheep\nthat use Queneau generation to create dialogue,\nand that argue back and forth forever with each other.\n\n\nThis bot flock modifies the way that our Sheep\ncoordinate with each other, which is an indication\nwe should change the Shepherd class.\n\n\nThe Sheep bots we will use will work identically to\na normal Queneau Sheep bot. Each bot generates dialogue\nfrom a single speaker, and tweets it in response to \nanother bot tweeting.\n\n\nWhile we \ncould\n extend the Sheep class to control the dialogue,\nit would be easier to use the inner/outer loop structure\nthat the QueneauSheep class already has. That way, the Sheep\ndo not require any extending.\n\n\nThe Shepherd class needs to be modified by changing\nthe way it instantiates bots from keys. Instead of \ncreating one bot per key, it should create two \nbots per keys. \n\n\n(Note that the user will need to provide relevant\ndetails in the key or config dictionaries. For example,\nname and handle of both bot sides, inner/outer loop timing,\netc.)\n\n\nThe \n-setup_keys()\n method will not change, because \nwe want to maintain the consistency of one key file\ncorresponding to one bot corresponding to one Twitter \naccount.\n\n\nThe \n_setup_sheep()\n method would be modified from \nits current arrangement (pseudocode):\n\n\ncurrent _setup_sheep() method:\n    for json in list-of-all-json-files:\n        create new sheep from json\n        add new sheep to flock\n\n\n\n\n\nto something more like (pseudocode):\n\n\nnew _setup_sheep() method:\n    for (bot1, bot2) in list-of-all-bot-pairs:\n        get key1 from keys\n        create bot1 from key1\n\n        get key2 from keys\n        create bot2 from key2\n\n        link bot1 and bot2\n        add bot1 and bot2 to flock\n\n\n\n\n\nIn this case, we want to have two Queneau Sheep that \nwork almost exactly the same as normal Queneau Sheep,\nwith perhaps a slight modification to make sure that\neach bot generates dialogue from a single speaker \ncorresponding to their party in the argument.",
             "title": "Shepherd"
         },
         {
             "location": "/mind-machine-docs/shepherd/#the-shepherd",
-            "text": "(TODO: Add high level shepherd summary)",
+            "text": "The shepherd's ( pasteur ) power manifests itself, therefore, in a duty, a task to\nbe undertaken, so that - and I think this is also an important characteristic of\npastoral power - the form it takes is not first of all the striking display of\nstrength and superiority. Pastoral power initially manifests itself in its zeal,\ndevotion, and endless application. What is the shepherd ( berger )? Is (s)he someone\nwhose strength strikes people's eyes, like the sovereigns or gods, like the Greek\ngods, who essentially appear in their splendor? Not at all. The shepherd is\nsomeone who keeps watch. (S)he \"keeps watch\" in the sense, of course, of keeping an\neye out for possible evils, but above all in the sense of vigilance with regard\nto any possible misfortune.   Michel Foucault,  Security, Territory, Population: Lectures at the Coll\u00e9ge de France  (1977-1978)     The rainbow mind machine shepherd.",
             "title": "The Shepherd"
+        },
+        {
+            "location": "/mind-machine-docs/shepherd/#what-is-the-shepherd",
+            "text": "The Shepherd is a very simple object: it is basically a data container\nfor storing Sheep.",
+            "title": "what is the Shepherd?"
+        },
+        {
+            "location": "/mind-machine-docs/shepherd/#when-does-the-shepherd-come-in",
+            "text": "The first thing a bot flock needs is a set of keys.\nThat's what the  Keymaker  is for.  Once the bot flock keys have been created with the Keymaker,\nthe bot flock is started. To do that, the Shepherd\ninitializes each Sheep with a corresponding JSON \nkey file (created by the Keymaker).",
+            "title": "when does the Shepherd come in?"
+        },
+        {
+            "location": "/mind-machine-docs/shepherd/#how-does-the-shepherd-tend-to-the-sheep",
+            "text": "In general, the Shepherd is a free-range parent, and lets the \nSheep go off and do their own thing.  Note however, that in the spirit of extensibility,\nyou can extend the Shepherd and Sheep classes to \nchange the nature of your bot flock.\n(See next section.)",
+            "title": "how does the Shepherd tend to the Sheep?"
+        },
+        {
+            "location": "/mind-machine-docs/shepherd/#when-and-how-do-you-extend-the-shepherd",
+            "text": "The Shepherd class determines how much coordination\nhappens among different Sheep in the flock and between\nthe flock and the outside world (the Internet).  Some simple examples:",
+            "title": "when and how do you extend the Shepherd?"
+        },
+        {
+            "location": "/mind-machine-docs/shepherd/#webhook-bot-flock",
+            "text": "As an example of a bot flock that requires tighter integration\nbetween the Shepherd and the Sheep, imagine you want to create\na bot fock where the bots can be controlled with webhooks.  You would need the Shepherd to act as a central dispatcher \nand process incoming webhooks to determine which webhook \npayloads to pass on to which Sheep. But the Sheep also need\nto be modified to listen for instructions from the Shepherd.  To modify the Shepherd class, we would add a method \nthat listens for incoming webhooks, and a method or \nmethods implementing logic about which payloads to\npass along to which Sheep (or to call the appropriate\nfunctions when webhooks trigger flock-wide actions).  To modify the Sheep class, we would add a  listen()  method\nthat would run forever - ideally in parallel with other\nrun-forever methods.",
+            "title": "webhook bot flock"
+        },
+        {
+            "location": "/mind-machine-docs/shepherd/#two-bots-per-key-flock",
+            "text": "Suppose we wanted to build an argument bot flock.\nThis bot flock would consist of pairs of Sheep\nthat use Queneau generation to create dialogue,\nand that argue back and forth forever with each other.  This bot flock modifies the way that our Sheep\ncoordinate with each other, which is an indication\nwe should change the Shepherd class.  The Sheep bots we will use will work identically to\na normal Queneau Sheep bot. Each bot generates dialogue\nfrom a single speaker, and tweets it in response to \nanother bot tweeting.  While we  could  extend the Sheep class to control the dialogue,\nit would be easier to use the inner/outer loop structure\nthat the QueneauSheep class already has. That way, the Sheep\ndo not require any extending.  The Shepherd class needs to be modified by changing\nthe way it instantiates bots from keys. Instead of \ncreating one bot per key, it should create two \nbots per keys.   (Note that the user will need to provide relevant\ndetails in the key or config dictionaries. For example,\nname and handle of both bot sides, inner/outer loop timing,\netc.)  The  -setup_keys()  method will not change, because \nwe want to maintain the consistency of one key file\ncorresponding to one bot corresponding to one Twitter \naccount.  The  _setup_sheep()  method would be modified from \nits current arrangement (pseudocode):  current _setup_sheep() method:\n    for json in list-of-all-json-files:\n        create new sheep from json\n        add new sheep to flock  to something more like (pseudocode):  new _setup_sheep() method:\n    for (bot1, bot2) in list-of-all-bot-pairs:\n        get key1 from keys\n        create bot1 from key1\n\n        get key2 from keys\n        create bot2 from key2\n\n        link bot1 and bot2\n        add bot1 and bot2 to flock  In this case, we want to have two Queneau Sheep that \nwork almost exactly the same as normal Queneau Sheep,\nwith perhaps a slight modification to make sure that\neach bot generates dialogue from a single speaker \ncorresponding to their party in the argument.",
+            "title": "two bots per key flock"
         },
         {
             "location": "/mind-machine-docs/sheep/",
@@ -166,252 +196,247 @@
             "title": "Quick Start with Boring Mind Machine"
         },
         {
-            "location": "/boring_keymaker/",
+            "location": "/bmm_keymaker/",
             "text": "Boring Keymaker and Boring OAuth Keymaker\n\u00b6\n\n\nThere are two base Keymaker classes implemented by \nboring mind machine; they are \nBoringKeymaker\n and\n\nBoringOAuthKeymaker\n.\n\n\nTechnically a Keymaker can inherit from BoringKeymaker\nand use any authentication method, but in practice all\nKeymakers are OAuth Keymakers.\n\n\nConstructing the Keymaker\n\u00b6\n\n\nThe generic BoringOAuthKeymaker class requires two bits of information:\nan API application token and an API application secret. These have\ndifferent names for different services, so when you create a Keymaker,\nyou need to specify the name of the token and the name of the secret\nin the Keymaker constructor:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\n# create a dummy oauth keymaker class\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\n\n\n\n\nFor Github, Google, Twitter, etc. Keymakers, this value is already set.\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nghk\n \n=\n \nbmm\n.\nGithubKeymaker\n()\n\n\n\ngk\n \n=\n \nbmm\n.\nGoogleKeymaker\n()\n\n\n\ntk\n \n=\n \nbmm\n.\nTwitterKeymaker\n()\n\n\n\n\n\n\nPassing API Keys to the Keymaker\n\u00b6\n\n\nThe Keymaker must have client API keys to verify that it is in fact\nallowed to take actions as the third-party OAuth application.\nThe API keys consist of a token and a secret that correspond to\nthe OAuth app created for the third-party service.\n\n\n(For example, when you create a Github app, the app page will give\na client ID and a client secret at the top of the page.)\n\n\nThis token and secret can be passed three different ways:\n\n\n\n\nvia environment variables\n\n\nvia a JSON file\n\n\nvia a Python dictionary\n\n\n\n\nUsing Environment Variables\n\u00b6\n\n\nTo set using environment variables:\n\n\nuse_env.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\nk\n.\nset_apikeys_env\n()\n\n\n\n\n\n\nThis would then look for two environment variables corresponding to\nthe name of the token and secret in all caps. In the above case,\nwe would need to run the script and provide the API keys as follows:\n\n\n$ CLIENT_TOKEN=\"abcd\" CLIENT_SECRET=\"qwerty\" use_env.py\n\n\n\n\n\nUsing JSON File\n\u00b6\n\n\nTo use a JSON file, create a simple JSON file with two key-value pairs.\nThe two keys should be the token name and the secret name provided to the\nconstructor. \n\n\napikeys.json\n:\n\n\n{\n\n    \n\"client_token\"\n \n:\n \n\"asdf\"\n,\n\n    \n\"client_secret\"\n \n:\n \n\"qwerty\"\n\n\n}\n\n\n\n\n\n\nThe corresponding call to set the Keymaker API tokens would look like:\n\n\nuse_json.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\nk\n.\nset_apikeys_json\n(\n'apikeys.json'\n)\n\n\n\n\n\n\nUsing Python Dict\n\u00b6\n\n\nuse_dict.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\nk\n.\nset_apikeys_dict\n({\n\n            \n'client_token'\n \n:\n \n'asdf'\n,\n\n            \n'client_secret'\n \n:\n \n'qwerty'\n\n\n})\n\n\n\n\n\n\nExtending the Keymaker\n\u00b6\n\n\n\"Ideas and future planning\"\n\n\n(TODO: how is oauth keymaker extended - what method)\n\n\nwhat else can you can do?",
             "title": "Boring Keymaker"
         },
         {
-            "location": "/boring_keymaker/#boring-keymaker-and-boring-oauth-keymaker",
+            "location": "/bmm_keymaker/#boring-keymaker-and-boring-oauth-keymaker",
             "text": "There are two base Keymaker classes implemented by \nboring mind machine; they are  BoringKeymaker  and BoringOAuthKeymaker .  Technically a Keymaker can inherit from BoringKeymaker\nand use any authentication method, but in practice all\nKeymakers are OAuth Keymakers.",
             "title": "Boring Keymaker and Boring OAuth Keymaker"
         },
         {
-            "location": "/boring_keymaker/#constructing-the-keymaker",
+            "location": "/bmm_keymaker/#constructing-the-keymaker",
             "text": "The generic BoringOAuthKeymaker class requires two bits of information:\nan API application token and an API application secret. These have\ndifferent names for different services, so when you create a Keymaker,\nyou need to specify the name of the token and the name of the secret\nin the Keymaker constructor:  import   boringmindmachine   as   bmm  # create a dummy oauth keymaker class  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )   For Github, Google, Twitter, etc. Keymakers, this value is already set.  import   boringmindmachine   as   bmm  ghk   =   bmm . GithubKeymaker ()  gk   =   bmm . GoogleKeymaker ()  tk   =   bmm . TwitterKeymaker ()",
             "title": "Constructing the Keymaker"
         },
         {
-            "location": "/boring_keymaker/#passing-api-keys-to-the-keymaker",
+            "location": "/bmm_keymaker/#passing-api-keys-to-the-keymaker",
             "text": "The Keymaker must have client API keys to verify that it is in fact\nallowed to take actions as the third-party OAuth application.\nThe API keys consist of a token and a secret that correspond to\nthe OAuth app created for the third-party service.  (For example, when you create a Github app, the app page will give\na client ID and a client secret at the top of the page.)  This token and secret can be passed three different ways:   via environment variables  via a JSON file  via a Python dictionary",
             "title": "Passing API Keys to the Keymaker"
         },
         {
-            "location": "/boring_keymaker/#using-environment-variables",
+            "location": "/bmm_keymaker/#using-environment-variables",
             "text": "To set using environment variables:  use_env.py :  import   boringmindmachine   as   bmm  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )  k . set_apikeys_env ()   This would then look for two environment variables corresponding to\nthe name of the token and secret in all caps. In the above case,\nwe would need to run the script and provide the API keys as follows:  $ CLIENT_TOKEN=\"abcd\" CLIENT_SECRET=\"qwerty\" use_env.py",
             "title": "Using Environment Variables"
         },
         {
-            "location": "/boring_keymaker/#using-json-file",
+            "location": "/bmm_keymaker/#using-json-file",
             "text": "To use a JSON file, create a simple JSON file with two key-value pairs.\nThe two keys should be the token name and the secret name provided to the\nconstructor.   apikeys.json :  { \n     \"client_token\"   :   \"asdf\" , \n     \"client_secret\"   :   \"qwerty\"  }   The corresponding call to set the Keymaker API tokens would look like:  use_json.py :  import   boringmindmachine   as   bmm  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )  k . set_apikeys_json ( 'apikeys.json' )",
             "title": "Using JSON File"
         },
         {
-            "location": "/boring_keymaker/#using-python-dict",
+            "location": "/bmm_keymaker/#using-python-dict",
             "text": "use_dict.py :  import   boringmindmachine   as   bmm  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )  k . set_apikeys_dict ({ \n             'client_token'   :   'asdf' , \n             'client_secret'   :   'qwerty'  })",
             "title": "Using Python Dict"
         },
         {
-            "location": "/boring_keymaker/#extending-the-keymaker",
+            "location": "/bmm_keymaker/#extending-the-keymaker",
             "text": "\"Ideas and future planning\"  (TODO: how is oauth keymaker extended - what method)  what else can you can do?",
             "title": "Extending the Keymaker"
         },
         {
-            "location": "/boring_keymaker/",
+            "location": "/bmm_keymaker/",
             "text": "Boring Keymaker and Boring OAuth Keymaker\n\u00b6\n\n\nThere are two base Keymaker classes implemented by \nboring mind machine; they are \nBoringKeymaker\n and\n\nBoringOAuthKeymaker\n.\n\n\nTechnically a Keymaker can inherit from BoringKeymaker\nand use any authentication method, but in practice all\nKeymakers are OAuth Keymakers.\n\n\nConstructing the Keymaker\n\u00b6\n\n\nThe generic BoringOAuthKeymaker class requires two bits of information:\nan API application token and an API application secret. These have\ndifferent names for different services, so when you create a Keymaker,\nyou need to specify the name of the token and the name of the secret\nin the Keymaker constructor:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\n# create a dummy oauth keymaker class\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\n\n\n\n\nFor Github, Google, Twitter, etc. Keymakers, this value is already set.\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nghk\n \n=\n \nbmm\n.\nGithubKeymaker\n()\n\n\n\ngk\n \n=\n \nbmm\n.\nGoogleKeymaker\n()\n\n\n\ntk\n \n=\n \nbmm\n.\nTwitterKeymaker\n()\n\n\n\n\n\n\nPassing API Keys to the Keymaker\n\u00b6\n\n\nThe Keymaker must have client API keys to verify that it is in fact\nallowed to take actions as the third-party OAuth application.\nThe API keys consist of a token and a secret that correspond to\nthe OAuth app created for the third-party service.\n\n\n(For example, when you create a Github app, the app page will give\na client ID and a client secret at the top of the page.)\n\n\nThis token and secret can be passed three different ways:\n\n\n\n\nvia environment variables\n\n\nvia a JSON file\n\n\nvia a Python dictionary\n\n\n\n\nUsing Environment Variables\n\u00b6\n\n\nTo set using environment variables:\n\n\nuse_env.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\nk\n.\nset_apikeys_env\n()\n\n\n\n\n\n\nThis would then look for two environment variables corresponding to\nthe name of the token and secret in all caps. In the above case,\nwe would need to run the script and provide the API keys as follows:\n\n\n$ CLIENT_TOKEN=\"abcd\" CLIENT_SECRET=\"qwerty\" use_env.py\n\n\n\n\n\nUsing JSON File\n\u00b6\n\n\nTo use a JSON file, create a simple JSON file with two key-value pairs.\nThe two keys should be the token name and the secret name provided to the\nconstructor. \n\n\napikeys.json\n:\n\n\n{\n\n    \n\"client_token\"\n \n:\n \n\"asdf\"\n,\n\n    \n\"client_secret\"\n \n:\n \n\"qwerty\"\n\n\n}\n\n\n\n\n\n\nThe corresponding call to set the Keymaker API tokens would look like:\n\n\nuse_json.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\nk\n.\nset_apikeys_json\n(\n'apikeys.json'\n)\n\n\n\n\n\n\nUsing Python Dict\n\u00b6\n\n\nuse_dict.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nMyKeymaker\n(\nbmm\n.\nBoringOAuthKeymaker\n):\n\n    \npass\n\n\n\nk\n \n=\n \nbmm\n.\nMyKeymaker\n(\n'client_token'\n,\n'client_secret'\n)\n\n\nk\n.\nset_apikeys_dict\n({\n\n            \n'client_token'\n \n:\n \n'asdf'\n,\n\n            \n'client_secret'\n \n:\n \n'qwerty'\n\n\n})\n\n\n\n\n\n\nExtending the Keymaker\n\u00b6\n\n\n\"Ideas and future planning\"\n\n\n(TODO: how is oauth keymaker extended - what method)\n\n\nwhat else can you can do?",
             "title": "Boring OAuth Keymaker"
         },
         {
-            "location": "/boring_keymaker/#boring-keymaker-and-boring-oauth-keymaker",
+            "location": "/bmm_keymaker/#boring-keymaker-and-boring-oauth-keymaker",
             "text": "There are two base Keymaker classes implemented by \nboring mind machine; they are  BoringKeymaker  and BoringOAuthKeymaker .  Technically a Keymaker can inherit from BoringKeymaker\nand use any authentication method, but in practice all\nKeymakers are OAuth Keymakers.",
             "title": "Boring Keymaker and Boring OAuth Keymaker"
         },
         {
-            "location": "/boring_keymaker/#constructing-the-keymaker",
+            "location": "/bmm_keymaker/#constructing-the-keymaker",
             "text": "The generic BoringOAuthKeymaker class requires two bits of information:\nan API application token and an API application secret. These have\ndifferent names for different services, so when you create a Keymaker,\nyou need to specify the name of the token and the name of the secret\nin the Keymaker constructor:  import   boringmindmachine   as   bmm  # create a dummy oauth keymaker class  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )   For Github, Google, Twitter, etc. Keymakers, this value is already set.  import   boringmindmachine   as   bmm  ghk   =   bmm . GithubKeymaker ()  gk   =   bmm . GoogleKeymaker ()  tk   =   bmm . TwitterKeymaker ()",
             "title": "Constructing the Keymaker"
         },
         {
-            "location": "/boring_keymaker/#passing-api-keys-to-the-keymaker",
+            "location": "/bmm_keymaker/#passing-api-keys-to-the-keymaker",
             "text": "The Keymaker must have client API keys to verify that it is in fact\nallowed to take actions as the third-party OAuth application.\nThe API keys consist of a token and a secret that correspond to\nthe OAuth app created for the third-party service.  (For example, when you create a Github app, the app page will give\na client ID and a client secret at the top of the page.)  This token and secret can be passed three different ways:   via environment variables  via a JSON file  via a Python dictionary",
             "title": "Passing API Keys to the Keymaker"
         },
         {
-            "location": "/boring_keymaker/#using-environment-variables",
+            "location": "/bmm_keymaker/#using-environment-variables",
             "text": "To set using environment variables:  use_env.py :  import   boringmindmachine   as   bmm  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )  k . set_apikeys_env ()   This would then look for two environment variables corresponding to\nthe name of the token and secret in all caps. In the above case,\nwe would need to run the script and provide the API keys as follows:  $ CLIENT_TOKEN=\"abcd\" CLIENT_SECRET=\"qwerty\" use_env.py",
             "title": "Using Environment Variables"
         },
         {
-            "location": "/boring_keymaker/#using-json-file",
+            "location": "/bmm_keymaker/#using-json-file",
             "text": "To use a JSON file, create a simple JSON file with two key-value pairs.\nThe two keys should be the token name and the secret name provided to the\nconstructor.   apikeys.json :  { \n     \"client_token\"   :   \"asdf\" , \n     \"client_secret\"   :   \"qwerty\"  }   The corresponding call to set the Keymaker API tokens would look like:  use_json.py :  import   boringmindmachine   as   bmm  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )  k . set_apikeys_json ( 'apikeys.json' )",
             "title": "Using JSON File"
         },
         {
-            "location": "/boring_keymaker/#using-python-dict",
+            "location": "/bmm_keymaker/#using-python-dict",
             "text": "use_dict.py :  import   boringmindmachine   as   bmm  class   MyKeymaker ( bmm . BoringOAuthKeymaker ): \n     pass  k   =   bmm . MyKeymaker ( 'client_token' , 'client_secret' )  k . set_apikeys_dict ({ \n             'client_token'   :   'asdf' , \n             'client_secret'   :   'qwerty'  })",
             "title": "Using Python Dict"
         },
         {
-            "location": "/boring_keymaker/#extending-the-keymaker",
+            "location": "/bmm_keymaker/#extending-the-keymaker",
             "text": "\"Ideas and future planning\"  (TODO: how is oauth keymaker extended - what method)  what else can you can do?",
             "title": "Extending the Keymaker"
         },
         {
-            "location": "/keymaker_github/",
+            "location": "/bmm_keymaker_github/",
             "text": "Github Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/github\n.\n\n\nAn example of creating a Github OAuth keymaker.\n\n\nCreating a Github App\n\u00b6\n\n\nThe brief summary of what we cover here:\n\n\nWe need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nGithub account.\n\n\nSet Up API and Create App\n\u00b6\n\n\nTo create an OAuth app as a user, see \n\nthese detailed instructions\n\nfrom Github.\n\n\nWhen you create your OAuth app, the one crucial\npiece of information is the callback URL. This is\nwhere the magic token is sent once the user logs in\nwith their Github account.\n\n\nThe Github Keymaker runs a server on localhost port 8000,\nso \nthe callback URL for your OAuth application should be \nset to \nhttp://localhost:8000\n.\n\n\nGetting App Credentials\n\u00b6\n\n\nOnce you have created your application, the application's\ndescription page will contain the client ID and client secret\nneeded to use this application to run mind machine bots\nusing Github.\n\n\nSetting Github Credentials\n\u00b6\n\n\nIn the end you should have a pair of API keys (a client ID and\na client secret), which you will pass to the keymaker using\none of the three methods provided (via a dictionary, a JSON\nfile, or environment variables).\n\n\nTo run the Github Keymaker example, you need to pass the API\nkeys to the keymaker using one of three methods:\n\n\n\n\nUsing a dictionary\n\n\nUsing a JSON file\n\n\nUsing environment variables\n\n\n\n\nEnvironment Variables Example\n\u00b6\n\n\nTo use the environment variables option, you can run the Github\nKeymaker example program in \nexamples/github/\n like this:\n\n\n$ CLIENT_ID=\"...\" \\\n  CLIENT_SECRET=\"...\" \\\n  python github_auth.py\n\n\n\n\n\nExample Code\n\u00b6\n\n\ngithub_auth.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\nimport\n \nsubprocess\n\n\n\nkeydir\n \n=\n \n'keys'\n\n\n\ngk\n \n=\n \nbmm\n.\nGithubKeymaker\n()\n\n\ngk\n.\nset_apikeys_env\n()\n\n\n\n# make the Github key\n\n\nprint\n(\n\"Creating a dummy key...\"\n)\n\n\ngk\n.\nmake_a_key\n(\n'dummy'\n,\n'dummy.json'\n,\nkeydir\n)\n\n\nprint\n(\n\"Success.\"\n)\n\n\n\n# Clean up the key\n\n\n# (remove this bit to keep the key around)\n\n\nprint\n(\n\"Cleaning up...\"\n)\n\n\nsubprocess\n.\ncall\n([\n'rm'\n,\n'-rf'\n,\nkeydir\n])\n\n\nprint\n(\n\"Done.\"\n)",
             "title": "Github Keymaker"
         },
         {
-            "location": "/keymaker_github/#github-keymaker-example",
+            "location": "/bmm_keymaker_github/#github-keymaker-example",
             "text": "See  boring-mind-machine/examples/github .  An example of creating a Github OAuth keymaker.",
             "title": "Github Keymaker Example"
         },
         {
-            "location": "/keymaker_github/#creating-a-github-app",
+            "location": "/bmm_keymaker_github/#creating-a-github-app",
             "text": "The brief summary of what we cover here:  We need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nGithub account.",
             "title": "Creating a Github App"
         },
         {
-            "location": "/keymaker_github/#set-up-api-and-create-app",
+            "location": "/bmm_keymaker_github/#set-up-api-and-create-app",
             "text": "To create an OAuth app as a user, see  these detailed instructions \nfrom Github.  When you create your OAuth app, the one crucial\npiece of information is the callback URL. This is\nwhere the magic token is sent once the user logs in\nwith their Github account.  The Github Keymaker runs a server on localhost port 8000,\nso  the callback URL for your OAuth application should be \nset to  http://localhost:8000 .",
             "title": "Set Up API and Create App"
         },
         {
-            "location": "/keymaker_github/#getting-app-credentials",
+            "location": "/bmm_keymaker_github/#getting-app-credentials",
             "text": "Once you have created your application, the application's\ndescription page will contain the client ID and client secret\nneeded to use this application to run mind machine bots\nusing Github.",
             "title": "Getting App Credentials"
         },
         {
-            "location": "/keymaker_github/#setting-github-credentials",
+            "location": "/bmm_keymaker_github/#setting-github-credentials",
             "text": "In the end you should have a pair of API keys (a client ID and\na client secret), which you will pass to the keymaker using\none of the three methods provided (via a dictionary, a JSON\nfile, or environment variables).  To run the Github Keymaker example, you need to pass the API\nkeys to the keymaker using one of three methods:   Using a dictionary  Using a JSON file  Using environment variables",
             "title": "Setting Github Credentials"
         },
         {
-            "location": "/keymaker_github/#environment-variables-example",
+            "location": "/bmm_keymaker_github/#environment-variables-example",
             "text": "To use the environment variables option, you can run the Github\nKeymaker example program in  examples/github/  like this:  $ CLIENT_ID=\"...\" \\\n  CLIENT_SECRET=\"...\" \\\n  python github_auth.py",
             "title": "Environment Variables Example"
         },
         {
-            "location": "/keymaker_github/#example-code",
+            "location": "/bmm_keymaker_github/#example-code",
             "text": "github_auth.py :  import   boringmindmachine   as   bmm  import   subprocess  keydir   =   'keys'  gk   =   bmm . GithubKeymaker ()  gk . set_apikeys_env ()  # make the Github key  print ( \"Creating a dummy key...\" )  gk . make_a_key ( 'dummy' , 'dummy.json' , keydir )  print ( \"Success.\" )  # Clean up the key  # (remove this bit to keep the key around)  print ( \"Cleaning up...\" )  subprocess . call ([ 'rm' , '-rf' , keydir ])  print ( \"Done.\" )",
             "title": "Example Code"
         },
         {
-            "location": "/keymaker_google/",
+            "location": "/bmm_keymaker_google/",
             "text": "Google Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/google\n.\n\n\nAn example of creating a Google OAuth keymaker.\n\n\nCreating a Google App\n\u00b6\n\n\nThe brief summary of what we cover here:\n\n\nWe need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one Google\naccount.\n\n\nSet Up API and Create App\n\u00b6\n\n\nThe first thing you must do is enable the APIs that you need.\nThis may include the Drive, Calendar, or other APIs.\nYou do this in the \nGoogle Cloud Platform (GCP) console\n.\n\n\nGo to the \nenable APIs\n\npage and select a project from the drop down menu.  If you do not already have\na project, go to the \nGCP console\n to create\na new one before visiting the enable APIs link above.\n\n\nCreating App Credentials\n\u00b6\n\n\nNow you will need to create OAuth credentials for your application. You can do this\non the API Credentials page. To get there, click the three-stack menu (a.k.a. the \n\"hamburger\" menu) and scroll down to the Products section and click \"APIs and Services\".\nNow click the \"Credentials\" option on the left side.\n\n\nNow create your credentials. Create \"OAuth Client ID\" credentials.\nUse application type \"Other\".\n\n\nWhen you create the credentials, you will be given a client ID and a client secret.\nCopy these into a password manager or other location.\n\n\nGetting the App Credentials\n\u00b6\n\n\nOnce you've created the credentials, you can either copy-and-paste the\nclient ID and client secret, or you can download them as a JSON file.\n\n\nTo copy-and-paste, find the OAuth client credentials you created in the\nprior step and click the pencil icon on the right side. This will take\nyou to a page with the client ID and client secret.\n\n\nTo download as a JSON file, download credentials using the download button\n(down-arrow icon) on the right side. This JSON file contains all credential\ninformation (client ID and client secret).\n\n\nRename it \nclient_secret.json\n.\n\n\nEnd Result\n\u00b6\n\n\nIn the end you will have a JSON file with your OAuth application credentials\nin it, and these will be used to authenticate with the user. The Google\nOAuth process will load the keys from \nclient_secret.json\n, and will\nopen a login link for the user to authenticate with their Google account.\n\n\nThe Google OAuth process also takes care of recieving the callback URL\nand the token contained in it, so the bot account keys are also stored in\na JSON file.\n\n\nNo environment variables need to be set, the only thing that needs to be set\nis the name of the JSON file containing the OAuth application's API credentials\n(should be \nclient_secret.json\n).\n\n\nOnce you have \nclient_secret.json\n in the current directory, you're set to go.\n\n\nAuthorizing\n\u00b6\n\n\nIn the authorization step the Keymaker generates a login link/token\nfor the user to visit and log in with their Google account. The user\nis then redirected back to the application with a token that can be\nused to perform actions on behalf of the account.\n\n\nGoogle requires the application's API keys to be provided via\na JSON file on disk.\n\n\nTo run the Google Keymaker example, \nspecify the API key name in the\n\ngoogle_auth.py\n script\n (\nclient_secret.json\n by default):\n\n\n$ python google_auth.py",
             "title": "Google Keymaker"
         },
         {
-            "location": "/keymaker_google/#google-keymaker-example",
+            "location": "/bmm_keymaker_google/#google-keymaker-example",
             "text": "See  boring-mind-machine/examples/google .  An example of creating a Google OAuth keymaker.",
             "title": "Google Keymaker Example"
         },
         {
-            "location": "/keymaker_google/#creating-a-google-app",
+            "location": "/bmm_keymaker_google/#creating-a-google-app",
             "text": "The brief summary of what we cover here:  We need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one Google\naccount.",
             "title": "Creating a Google App"
         },
         {
-            "location": "/keymaker_google/#set-up-api-and-create-app",
+            "location": "/bmm_keymaker_google/#set-up-api-and-create-app",
             "text": "The first thing you must do is enable the APIs that you need.\nThis may include the Drive, Calendar, or other APIs.\nYou do this in the  Google Cloud Platform (GCP) console .  Go to the  enable APIs \npage and select a project from the drop down menu.  If you do not already have\na project, go to the  GCP console  to create\na new one before visiting the enable APIs link above.",
             "title": "Set Up API and Create App"
         },
         {
-            "location": "/keymaker_google/#creating-app-credentials",
+            "location": "/bmm_keymaker_google/#creating-app-credentials",
             "text": "Now you will need to create OAuth credentials for your application. You can do this\non the API Credentials page. To get there, click the three-stack menu (a.k.a. the \n\"hamburger\" menu) and scroll down to the Products section and click \"APIs and Services\".\nNow click the \"Credentials\" option on the left side.  Now create your credentials. Create \"OAuth Client ID\" credentials.\nUse application type \"Other\".  When you create the credentials, you will be given a client ID and a client secret.\nCopy these into a password manager or other location.",
             "title": "Creating App Credentials"
         },
         {
-            "location": "/keymaker_google/#getting-the-app-credentials",
+            "location": "/bmm_keymaker_google/#getting-the-app-credentials",
             "text": "Once you've created the credentials, you can either copy-and-paste the\nclient ID and client secret, or you can download them as a JSON file.  To copy-and-paste, find the OAuth client credentials you created in the\nprior step and click the pencil icon on the right side. This will take\nyou to a page with the client ID and client secret.  To download as a JSON file, download credentials using the download button\n(down-arrow icon) on the right side. This JSON file contains all credential\ninformation (client ID and client secret).  Rename it  client_secret.json .",
             "title": "Getting the App Credentials"
         },
         {
-            "location": "/keymaker_google/#end-result",
+            "location": "/bmm_keymaker_google/#end-result",
             "text": "In the end you will have a JSON file with your OAuth application credentials\nin it, and these will be used to authenticate with the user. The Google\nOAuth process will load the keys from  client_secret.json , and will\nopen a login link for the user to authenticate with their Google account.  The Google OAuth process also takes care of recieving the callback URL\nand the token contained in it, so the bot account keys are also stored in\na JSON file.  No environment variables need to be set, the only thing that needs to be set\nis the name of the JSON file containing the OAuth application's API credentials\n(should be  client_secret.json ).  Once you have  client_secret.json  in the current directory, you're set to go.",
             "title": "End Result"
         },
         {
-            "location": "/keymaker_google/#authorizing",
+            "location": "/bmm_keymaker_google/#authorizing",
             "text": "In the authorization step the Keymaker generates a login link/token\nfor the user to visit and log in with their Google account. The user\nis then redirected back to the application with a token that can be\nused to perform actions on behalf of the account.  Google requires the application's API keys to be provided via\na JSON file on disk.  To run the Google Keymaker example,  specify the API key name in the google_auth.py  script  ( client_secret.json  by default):  $ python google_auth.py",
             "title": "Authorizing"
         },
         {
-            "location": "/keymaker_twitter/",
-            "text": "Twitter Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/twitter\n.\n\n\nAn example of creating a Twitter OAuth keymaker.\n\n\nCreating a Twitter App\n\u00b6\n\n\nThe brief summary of what we cover here:\n\n\nWe need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nTwitter account.\n\n\nSet Up API\n\u00b6\n\n\nSee \nDigital Ocean instructions on creating a Twitter app\n.\n\n\nCreating a Twitter App\n\u00b6\n\n\nSee \nDigital Ocean instructions on creating a Twitter app\n.\n\n\nGetting App Credentials\n\u00b6\n\n\nGet the consumer token and consumer token secret from your application page.\n\n\nEnd result is you should have two pieces of information,\nwhich you can pass to the program using environment variables\n(easiest) or other methods.\n\n\nAuthorizing\n\u00b6\n\n\nIn the authorization step, the TwitterKeymaker generates a login link/token for\nthe user to visit and log in using their account. This then sends the user back\nto the application with a token.\n\n\nThe user can provide the application API keys to the Keymaker via file,\nenvironment variable, or dictionary. The TwitterKeymaker will use the\napplication API credentials and will guide the user through the process of\nauthenticating.  This uses Twitter's PIN-based authentication method.\n\n\n$ python twitter_auth.py\n\n\n\n\n\nExample Code\n\u00b6\n\n\ntwitter_auth.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\nimport\n \nsubprocess\n\n\n\nkeydir\n \n=\n \n'keys'\n\n\n\ngk\n \n=\n \nbmm\n.\nTwitterKeymaker\n()\n\n\ngk\n.\nset_apikeys_file\n(\n'apikeys.json'\n)\n\n\n\n# make the Twitter key\n\n\nprint\n(\n\"Creating a dummy key...\"\n)\n\n\ngk\n.\nmake_a_key\n(\n'dummy'\n,\n'dummy.json'\n,\nkeydir\n)\n\n\nprint\n(\n\"Success.\"\n)\n\n\n\n# Clean up the key\n\n\n# (remove this bit to keep the key around)\n\n\nprint\n(\n\"Cleaning up...\"\n)\n\n\nsubprocess\n.\ncall\n([\n'rm'\n,\n'-rf'\n,\nkeydir\n])\n\n\nprint\n(\n\"Done.\"\n)",
+            "location": "/bmm_keymaker_twitter/",
+            "text": "Twitter Keymaker Example\n\u00b6\n\n\nSee \nboring-mind-machine/examples/twitter\n.\n\n\nThis page gives an example of creating a Twitter OAuth Keymaker\nusing the boring mind machine library. (Full Twitter bot functionality\nrequires the \nrainbow mind machine\nlibrary\n.)\n\n\nCreating a Twitter App\n\u00b6\n\n\nThe brief summary of what we cover here:\n\n\nWe need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nTwitter account.\n\n\nSet Up API and Create Twitter App\n\u00b6\n\n\nSee \nthese Digital Ocean instructions\n\nthat cover setting up the Twitter API and creating a Twitter OAuth application.\n\n\nGetting App Credentials\n\u00b6\n\n\nOnce you have created your Twitter app, visit the app page and look for the\n\"consumer token\" and \"consumer token secret\" (this is what Twitter calls the\nAPI application's token and secret).\n\n\nEnd result is you should have two pieces of information,\nwhich you can pass to the program using environment variables\n(easiest) or other methods.\n\n\nAuthorizing\n\u00b6\n\n\nIn the authorization step, the TwitterKeymaker generates a login link/token for\nthe user to visit and log in using their account. This then sends the user back\nto the application with a token.\n\n\nThe user can provide the application API keys to the Keymaker via file,\nenvironment variable, or dictionary. The TwitterKeymaker will use the\napplication API credentials and will guide the user through the process of\nauthenticating.  This uses Twitter's PIN-based authentication method.\n\n\n$ python twitter_auth.py\n\n\n\n\n\nExample Code\n\u00b6\n\n\ntwitter_auth.py\n:\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\nimport\n \nsubprocess\n\n\n\nkeydir\n \n=\n \n'keys'\n\n\n\ngk\n \n=\n \nbmm\n.\nTwitterKeymaker\n()\n\n\ngk\n.\nset_apikeys_file\n(\n'apikeys.json'\n)\n\n\n\n# make the Twitter key\n\n\nprint\n(\n\"Creating a dummy key...\"\n)\n\n\ngk\n.\nmake_a_key\n(\n'dummy'\n,\n'dummy.json'\n,\nkeydir\n)\n\n\nprint\n(\n\"Success.\"\n)\n\n\n\n# Clean up the key\n\n\n# (remove this bit to keep the key around)\n\n\nprint\n(\n\"Cleaning up...\"\n)\n\n\nsubprocess\n.\ncall\n([\n'rm'\n,\n'-rf'\n,\nkeydir\n])\n\n\nprint\n(\n\"Done.\"\n)",
             "title": "Twitter Keymaker"
         },
         {
-            "location": "/keymaker_twitter/#twitter-keymaker-example",
-            "text": "See  boring-mind-machine/examples/twitter .  An example of creating a Twitter OAuth keymaker.",
+            "location": "/bmm_keymaker_twitter/#twitter-keymaker-example",
+            "text": "See  boring-mind-machine/examples/twitter .  This page gives an example of creating a Twitter OAuth Keymaker\nusing the boring mind machine library. (Full Twitter bot functionality\nrequires the  rainbow mind machine\nlibrary .)",
             "title": "Twitter Keymaker Example"
         },
         {
-            "location": "/keymaker_twitter/#creating-a-twitter-app",
+            "location": "/bmm_keymaker_twitter/#creating-a-twitter-app",
             "text": "The brief summary of what we cover here:  We need to create an application (something that will consume the API\nendpoints), and we need to grant the application access to at least one \nTwitter account.",
             "title": "Creating a Twitter App"
         },
         {
-            "location": "/keymaker_twitter/#set-up-api",
-            "text": "See  Digital Ocean instructions on creating a Twitter app .",
-            "title": "Set Up API"
+            "location": "/bmm_keymaker_twitter/#set-up-api-and-create-twitter-app",
+            "text": "See  these Digital Ocean instructions \nthat cover setting up the Twitter API and creating a Twitter OAuth application.",
+            "title": "Set Up API and Create Twitter App"
         },
         {
-            "location": "/keymaker_twitter/#creating-a-twitter-app_1",
-            "text": "See  Digital Ocean instructions on creating a Twitter app .",
-            "title": "Creating a Twitter App"
-        },
-        {
-            "location": "/keymaker_twitter/#getting-app-credentials",
-            "text": "Get the consumer token and consumer token secret from your application page.  End result is you should have two pieces of information,\nwhich you can pass to the program using environment variables\n(easiest) or other methods.",
+            "location": "/bmm_keymaker_twitter/#getting-app-credentials",
+            "text": "Once you have created your Twitter app, visit the app page and look for the\n\"consumer token\" and \"consumer token secret\" (this is what Twitter calls the\nAPI application's token and secret).  End result is you should have two pieces of information,\nwhich you can pass to the program using environment variables\n(easiest) or other methods.",
             "title": "Getting App Credentials"
         },
         {
-            "location": "/keymaker_twitter/#authorizing",
+            "location": "/bmm_keymaker_twitter/#authorizing",
             "text": "In the authorization step, the TwitterKeymaker generates a login link/token for\nthe user to visit and log in using their account. This then sends the user back\nto the application with a token.  The user can provide the application API keys to the Keymaker via file,\nenvironment variable, or dictionary. The TwitterKeymaker will use the\napplication API credentials and will guide the user through the process of\nauthenticating.  This uses Twitter's PIN-based authentication method.  $ python twitter_auth.py",
             "title": "Authorizing"
         },
         {
-            "location": "/keymaker_twitter/#example-code",
+            "location": "/bmm_keymaker_twitter/#example-code",
             "text": "twitter_auth.py :  import   boringmindmachine   as   bmm  import   subprocess  keydir   =   'keys'  gk   =   bmm . TwitterKeymaker ()  gk . set_apikeys_file ( 'apikeys.json' )  # make the Twitter key  print ( \"Creating a dummy key...\" )  gk . make_a_key ( 'dummy' , 'dummy.json' , keydir )  print ( \"Success.\" )  # Clean up the key  # (remove this bit to keep the key around)  print ( \"Cleaning up...\" )  subprocess . call ([ 'rm' , '-rf' , keydir ])  print ( \"Done.\" )",
             "title": "Example Code"
         },
         {
-            "location": "/boring_shepherd/",
+            "location": "/bmm_shepherd/",
             "text": "Boring Shepherd\n\u00b6\n\n\nThe Shepherd class spins up the flock of Sheep \nand lets them roam free.\n\n\nThe BoringShepherd class leaves the details of creating Sheep\nto the user, but still defines some useful methods. \n\n\nThe constructor calls a method to setup the flock.\nThe method to setup the flock loops over each key.\n\n\nFor each key, it:\n- validates the key\n- creates a Sheep from the key\n\n\nThere are also two methods to perform actions with the flock:\none for serial and one for parallel.\n\n\nConstructor\n\u00b6\n\n\nThis defines a generic Shepherd constructor that takes the following\nparameters:\n\n\n\n\njson_keys_dir\n: Directory where Sheep API keys are located\n\n\nflock_name\n: The name of the bot flock (used to format log messages)\n\n\nsheep_class\n: Type of Sheep\n\n\n**kwargs\n: Logging parameters passed directly to Lumberjack logger\n\n\n\n\nExample:\n\n\nSuppose we have the following directory structure:\n\n\n$ ls keys/\nbot_key1.json\nbot_key2.json\nbot_key3.json\n\n\n\n\n\nConstructor Call Order\n\u00b6\n\n\nThe call order for the constructor is as follows:\n\n\n\n\nShepherd contructor calls \ncreate_flock()\n method\n\n\ncreate_flock()\n method loads each key in a directory and calls two methods:\n\n\nPrivate method \n_validate_key()\n is called to check the bot key\n\n\nPrivate method \n_create_sheep()\n is called to create the Sheep\n\n\n\n\n\n\n\n\nTo extend the BoringShepherd class,\nyou must extend both the \n_create_sheep()\n\nand \n_validate_key()\n classes (they are \nundefined/virtual methods in the base class).\n\n\nExample:\n\n\nSuppose we have the following directory structure:\n\n\n$ ls keys/\nbot_key1.json\nbot_key2.json\nbot_key3.json\n\n\n\n\n\nNow we create a custom Shepherd class that extends the\n\n_create_sheep()\n and \n_validate_key()\n methods,\nand use the custom Shepherd class to \n\n\n(We illustrate performing basic key validation by filtering\nkeys with a particular name.)\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\n\nclass\n \nBlueShepherd\n(\nbmm\n.\nBoringShepherd\n):\n\n    \ndef\n \n_create_sheep\n(\nself\n):\n\n        \npass\n\n    \ndef\n \n_validate_key\n(\nself\n):\n\n        \npass\n\n\n\nif\n \n__name__\n==\n\"__main__\"\n:\n\n    \ns\n \n=\n \nBlueShepherd\n(\n \na\n,\n \nb\n,\n \nc\n \n)\n\n\n\n\n\n\nPerforming Actions\n\u00b6\n\n\nThe Shepherd and Sheep use the dispatcher pattern\nto call methods. The dispatcher pattern is used to\nturn a string (like \"tweet\") into a function call\n(like \ntweet()\n).\n\n\nimport\n \nboringmindmachine\n \nas\n \nbmm\n\n\nimport\n \ntime\n\n\n\nclass\n \nFlatulentSheep\n(\nbmm\n.\nBoringSheep\n):\n\n    \ndef\n \npass_gas\n(\nself\n):\n\n        \nprint\n(\n\"pfffft\"\n)\n\n        \ntime\n.\nsleep\n(\n30\n)\n\n\n\nif\n \n__name__\n==\n\"__name__\"\n:\n\n    \ns\n \n=\n \nbmm\n.\nBoringShepherd\n(\n\n                \nkeys_dir\n \n=\n \n\"keys/\"\n,\n\n                \nflock_name\n \n=\n \n\"flatulent_flock\"\n,\n\n                \nsheep_class\n \n=\n \nFlatulentSheep\n\n    \n)\n\n\n\n\n\n\n(TODO: Finish these examples.)",
             "title": "Boring Shepherd"
         },
         {
-            "location": "/boring_shepherd/#boring-shepherd",
+            "location": "/bmm_shepherd/#boring-shepherd",
             "text": "The Shepherd class spins up the flock of Sheep \nand lets them roam free.  The BoringShepherd class leaves the details of creating Sheep\nto the user, but still defines some useful methods.   The constructor calls a method to setup the flock.\nThe method to setup the flock loops over each key.  For each key, it:\n- validates the key\n- creates a Sheep from the key  There are also two methods to perform actions with the flock:\none for serial and one for parallel.",
             "title": "Boring Shepherd"
         },
         {
-            "location": "/boring_shepherd/#constructor",
+            "location": "/bmm_shepherd/#constructor",
             "text": "This defines a generic Shepherd constructor that takes the following\nparameters:   json_keys_dir : Directory where Sheep API keys are located  flock_name : The name of the bot flock (used to format log messages)  sheep_class : Type of Sheep  **kwargs : Logging parameters passed directly to Lumberjack logger   Example:  Suppose we have the following directory structure:  $ ls keys/\nbot_key1.json\nbot_key2.json\nbot_key3.json",
             "title": "Constructor"
         },
         {
-            "location": "/boring_shepherd/#constructor-call-order",
+            "location": "/bmm_shepherd/#constructor-call-order",
             "text": "The call order for the constructor is as follows:   Shepherd contructor calls  create_flock()  method  create_flock()  method loads each key in a directory and calls two methods:  Private method  _validate_key()  is called to check the bot key  Private method  _create_sheep()  is called to create the Sheep     To extend the BoringShepherd class,\nyou must extend both the  _create_sheep() \nand  _validate_key()  classes (they are \nundefined/virtual methods in the base class).  Example:  Suppose we have the following directory structure:  $ ls keys/\nbot_key1.json\nbot_key2.json\nbot_key3.json  Now we create a custom Shepherd class that extends the _create_sheep()  and  _validate_key()  methods,\nand use the custom Shepherd class to   (We illustrate performing basic key validation by filtering\nkeys with a particular name.)  import   boringmindmachine   as   bmm  class   BlueShepherd ( bmm . BoringShepherd ): \n     def   _create_sheep ( self ): \n         pass \n     def   _validate_key ( self ): \n         pass  if   __name__ == \"__main__\" : \n     s   =   BlueShepherd (   a ,   b ,   c   )",
             "title": "Constructor Call Order"
         },
         {
-            "location": "/boring_shepherd/#performing-actions",
+            "location": "/bmm_shepherd/#performing-actions",
             "text": "The Shepherd and Sheep use the dispatcher pattern\nto call methods. The dispatcher pattern is used to\nturn a string (like \"tweet\") into a function call\n(like  tweet() ).  import   boringmindmachine   as   bmm  import   time  class   FlatulentSheep ( bmm . BoringSheep ): \n     def   pass_gas ( self ): \n         print ( \"pfffft\" ) \n         time . sleep ( 30 )  if   __name__ == \"__name__\" : \n     s   =   bmm . BoringShepherd ( \n                 keys_dir   =   \"keys/\" , \n                 flock_name   =   \"flatulent_flock\" , \n                 sheep_class   =   FlatulentSheep \n     )   (TODO: Finish these examples.)",
             "title": "Performing Actions"
         },
         {
-            "location": "/boring_sheep/",
+            "location": "/bmm_sheep/",
             "text": "The Sheep\n\u00b6\n\n\n(TODO: Copy Sheep materials over, and copy Shepherd docs)\n\n\n(TODO: What are the most common ways to extend Sheep? essential methods/call\ntraces?)\n\n\nThe Sheep is the class that represents a single user account on the\nthird party service the mind machine is defining. In general, the pattern\nthat mind machine bot flocks follow is: 1 Sheep = 1 bot account = 1 action.\n\n\nBecause Sheep can do anything, we don't want to impose restrictions by\nimplementing functionality here.\n\n\nHow to use the Boring Sheep? (don't)\n\u00b6\n\n\nThe constructor is where you create the Sheep's API instance, and should be\ndefined at the package level.\n\n\nThe BoringSheep class has a virtual constructor, so it cannot be created\ndirectly. You should instead define a new Sheep class that inherits from\nBoringSheep and defines a constructor, which should initialize an API instance.\n\n\nHow to extend the Boring Sheep?\n\u00b6\n\n\nWhat does the Boring Sheep define?\n\u00b6\n\n\nIn addition to mentioning what you have to define,\nlet's mention what you don't have to define.\n\n\nThe BoringSheep class implements a dispatcher pattern,\nwhich is a way of passing the name of an action as a\nstring, and turning that into a function call.\n\n\nFor example, if the user asks for the 'dummy' action\nvia \nsheep.perform_action('dummy',**kwargs)\n, this will \ncall \nsheep.dummy(**kwargs)\n.\n\n\nSee \ncommand pattern (wikipedia)\n\nfor a detailed description of the dispatcher pattern.\n\n\n    \ndef\n \nperform_action\n(\nself\n,\naction\n,\n**\nkwargs\n):\n\n        \n# Dispatcher pattern\n\n        \nif\n \nhasattr\n(\nself\n,\n \naction\n):\n\n            \nmethod\n \n=\n \ngetattr\n(\nself\n,\n \naction\n)\n\n            \nmethod\n(\n**\nkwargs\n)",
             "title": "Boring Sheep"
         },
         {
-            "location": "/boring_sheep/#the-sheep",
+            "location": "/bmm_sheep/#the-sheep",
             "text": "(TODO: Copy Sheep materials over, and copy Shepherd docs)  (TODO: What are the most common ways to extend Sheep? essential methods/call\ntraces?)  The Sheep is the class that represents a single user account on the\nthird party service the mind machine is defining. In general, the pattern\nthat mind machine bot flocks follow is: 1 Sheep = 1 bot account = 1 action.  Because Sheep can do anything, we don't want to impose restrictions by\nimplementing functionality here.",
             "title": "The Sheep"
         },
         {
-            "location": "/boring_sheep/#how-to-use-the-boring-sheep-dont",
+            "location": "/bmm_sheep/#how-to-use-the-boring-sheep-dont",
             "text": "The constructor is where you create the Sheep's API instance, and should be\ndefined at the package level.  The BoringSheep class has a virtual constructor, so it cannot be created\ndirectly. You should instead define a new Sheep class that inherits from\nBoringSheep and defines a constructor, which should initialize an API instance.",
             "title": "How to use the Boring Sheep? (don't)"
         },
         {
-            "location": "/boring_sheep/#how-to-extend-the-boring-sheep",
+            "location": "/bmm_sheep/#how-to-extend-the-boring-sheep",
             "text": "",
             "title": "How to extend the Boring Sheep?"
         },
         {
-            "location": "/boring_sheep/#what-does-the-boring-sheep-define",
+            "location": "/bmm_sheep/#what-does-the-boring-sheep-define",
             "text": "In addition to mentioning what you have to define,\nlet's mention what you don't have to define.  The BoringSheep class implements a dispatcher pattern,\nwhich is a way of passing the name of an action as a\nstring, and turning that into a function call.  For example, if the user asks for the 'dummy' action\nvia  sheep.perform_action('dummy',**kwargs) , this will \ncall  sheep.dummy(**kwargs) .  See  command pattern (wikipedia) \nfor a detailed description of the dispatcher pattern.       def   perform_action ( self , action , ** kwargs ): \n         # Dispatcher pattern \n         if   hasattr ( self ,   action ): \n             method   =   getattr ( self ,   action ) \n             method ( ** kwargs )",
             "title": "What does the Boring Sheep define?"
         },

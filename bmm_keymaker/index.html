@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://pages.charlesreid1.com/boring-mind-machine/boring_shepherd/">
+        <link rel="canonical" href="https://pages.charlesreid1.com/boring-mind-machine/bmm_keymaker/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Boring Shepherd - boring mind machine</title>
+        <title>Boring OAuth Keymaker - boring mind machine</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#boring-shepherd" tabindex="1" class="md-skip">
+      <a href="#boring-keymaker-and-boring-oauth-keymaker" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 boring mind machine
               </span>
               <span class="md-header-nav__topic">
-                Boring Shepherd
+                Boring OAuth Keymaker
               </span>
             
           
@@ -425,57 +425,86 @@
 
 
   <li class="md-nav__item">
-    <a href="../boring_keymaker/" title="Boring Keymaker" class="md-nav__link">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Boring Keymaker
+      </label>
+    
+    <a href="./" title="Boring Keymaker" class="md-nav__link md-nav__link--active">
       Boring Keymaker
     </a>
-  </li>
-
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-the-keymaker" title="Constructing the Keymaker" class="md-nav__link">
+    Constructing the Keymaker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-api-keys-to-the-keymaker" title="Passing API Keys to the Keymaker" class="md-nav__link">
+    Passing API Keys to the Keymaker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../boring_keymaker/" title="Boring OAuth Keymaker" class="md-nav__link">
-      Boring OAuth Keymaker
-    </a>
-  </li>
-
+          <li class="md-nav__item">
+  <a href="#using-environment-variables" title="Using Environment Variables" class="md-nav__link">
+    Using Environment Variables
+  </a>
+  
+</li>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../keymaker_github/" title="Github Keymaker" class="md-nav__link">
-      Github Keymaker
-    </a>
-  </li>
-
+          <li class="md-nav__item">
+  <a href="#using-json-file" title="Using JSON File" class="md-nav__link">
+    Using JSON File
+  </a>
+  
+</li>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../keymaker_google/" title="Google Keymaker" class="md-nav__link">
-      Google Keymaker
-    </a>
-  </li>
-
+          <li class="md-nav__item">
+  <a href="#using-python-dict" title="Using Python Dict" class="md-nav__link">
+    Using Python Dict
+  </a>
+  
+</li>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../keymaker_twitter/" title="Twitter Keymaker" class="md-nav__link">
-      Twitter Keymaker
-    </a>
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
+    Extending the Keymaker
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -494,11 +523,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Boring Shepherd
+        Boring OAuth Keymaker
       </label>
     
-    <a href="./" title="Boring Shepherd" class="md-nav__link md-nav__link--active">
-      Boring Shepherd
+    <a href="./" title="Boring OAuth Keymaker" class="md-nav__link md-nav__link--active">
+      Boring OAuth Keymaker
     </a>
     
       
@@ -512,22 +541,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#constructor" title="Constructor" class="md-nav__link">
-    Constructor
+  <a href="#constructing-the-keymaker" title="Constructing the Keymaker" class="md-nav__link">
+    Constructing the Keymaker
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#constructor-call-order" title="Constructor Call Order" class="md-nav__link">
-    Constructor Call Order
+  <a href="#passing-api-keys-to-the-keymaker" title="Passing API Keys to the Keymaker" class="md-nav__link">
+    Passing API Keys to the Keymaker
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables" title="Using Environment Variables" class="md-nav__link">
+    Using Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-json-file" title="Using JSON File" class="md-nav__link">
+    Using JSON File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-dict" title="Using Python Dict" class="md-nav__link">
+    Using Python Dict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#performing-actions" title="Performing Actions" class="md-nav__link">
-    Performing Actions
+  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
+    Extending the Keymaker
   </a>
   
 </li>
@@ -549,7 +605,55 @@
 
 
   <li class="md-nav__item">
-    <a href="../boring_sheep/" title="Boring Sheep" class="md-nav__link">
+    <a href="../bmm_keymaker_github/" title="Github Keymaker" class="md-nav__link">
+      Github Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bmm_keymaker_google/" title="Google Keymaker" class="md-nav__link">
+      Google Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bmm_keymaker_twitter/" title="Twitter Keymaker" class="md-nav__link">
+      Twitter Keymaker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bmm_shepherd/" title="Boring Shepherd" class="md-nav__link">
+      Boring Shepherd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bmm_sheep/" title="Boring Sheep" class="md-nav__link">
       Boring Sheep
     </a>
   </li>
@@ -658,22 +762,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#constructor" title="Constructor" class="md-nav__link">
-    Constructor
+  <a href="#constructing-the-keymaker" title="Constructing the Keymaker" class="md-nav__link">
+    Constructing the Keymaker
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#constructor-call-order" title="Constructor Call Order" class="md-nav__link">
-    Constructor Call Order
+  <a href="#passing-api-keys-to-the-keymaker" title="Passing API Keys to the Keymaker" class="md-nav__link">
+    Passing API Keys to the Keymaker
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables" title="Using Environment Variables" class="md-nav__link">
+    Using Environment Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-json-file" title="Using JSON File" class="md-nav__link">
+    Using JSON File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-python-dict" title="Using Python Dict" class="md-nav__link">
+    Using Python Dict
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#performing-actions" title="Performing Actions" class="md-nav__link">
-    Performing Actions
+  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
+    Extending the Keymaker
   </a>
   
 </li>
@@ -695,100 +826,116 @@
               
                 
                 
-                <h1 id="boring-shepherd">Boring Shepherd<a class="headerlink" href="#boring-shepherd" title="Permanent link">&para;</a></h1>
-<p>The Shepherd class spins up the flock of Sheep 
-and lets them roam free.</p>
-<p>The BoringShepherd class leaves the details of creating Sheep
-to the user, but still defines some useful methods. </p>
-<p>The constructor calls a method to setup the flock.
-The method to setup the flock loops over each key.</p>
-<p>For each key, it:
-- validates the key
-- creates a Sheep from the key</p>
-<p>There are also two methods to perform actions with the flock:
-one for serial and one for parallel.</p>
-<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="Permanent link">&para;</a></h2>
-<p>This defines a generic Shepherd constructor that takes the following
-parameters:</p>
-<ul>
-<li><code>json_keys_dir</code>: Directory where Sheep API keys are located</li>
-<li><code>flock_name</code>: The name of the bot flock (used to format log messages)</li>
-<li><code>sheep_class</code>: Type of Sheep</li>
-<li><code>**kwargs</code>: Logging parameters passed directly to Lumberjack logger</li>
-</ul>
-<p><strong>Example:</strong></p>
-<p>Suppose we have the following directory structure:</p>
-<div class="codehilite"><pre><span></span>$ ls keys/
-bot_key1.json
-bot_key2.json
-bot_key3.json
-</pre></div>
-
-
-<h2 id="constructor-call-order">Constructor Call Order<a class="headerlink" href="#constructor-call-order" title="Permanent link">&para;</a></h2>
-<p>The call order for the constructor is as follows:</p>
-<ul>
-<li>Shepherd contructor calls <code>create_flock()</code> method</li>
-<li><code>create_flock()</code> method loads each key in a directory and calls two methods:<ul>
-<li>Private method <code>_validate_key()</code> is called to check the bot key</li>
-<li>Private method <code>_create_sheep()</code> is called to create the Sheep</li>
-</ul>
-</li>
-</ul>
-<p>To extend the BoringShepherd class,
-you must extend both the <code>_create_sheep()</code>
-and <code>_validate_key()</code> classes (they are 
-undefined/virtual methods in the base class).</p>
-<p><strong>Example:</strong></p>
-<p>Suppose we have the following directory structure:</p>
-<div class="codehilite"><pre><span></span>$ ls keys/
-bot_key1.json
-bot_key2.json
-bot_key3.json
-</pre></div>
-
-
-<p>Now we create a custom Shepherd class that extends the
-<code>_create_sheep()</code> and <code>_validate_key()</code> methods,
-and use the custom Shepherd class to </p>
-<p>(We illustrate performing basic key validation by filtering
-keys with a particular name.)</p>
+                <h1 id="boring-keymaker-and-boring-oauth-keymaker">Boring Keymaker and Boring OAuth Keymaker<a class="headerlink" href="#boring-keymaker-and-boring-oauth-keymaker" title="Permanent link">&para;</a></h1>
+<p>There are two base Keymaker classes implemented by 
+boring mind machine; they are <code>BoringKeymaker</code> and
+<code>BoringOAuthKeymaker</code>.</p>
+<p>Technically a Keymaker can inherit from BoringKeymaker
+and use any authentication method, but in practice all
+Keymakers are OAuth Keymakers.</p>
+<h2 id="constructing-the-keymaker">Constructing the Keymaker<a class="headerlink" href="#constructing-the-keymaker" title="Permanent link">&para;</a></h2>
+<p>The generic BoringOAuthKeymaker class requires two bits of information:
+an API application token and an API application secret. These have
+different names for different services, so when you create a Keymaker,
+you need to specify the name of the token and the name of the secret
+in the Keymaker constructor:</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
 
-<span class="k">class</span> <span class="nc">BlueShepherd</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringShepherd</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">_create_sheep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
-    <span class="k">def</span> <span class="nf">_validate_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
+<span class="c1"># create a dummy oauth keymaker class</span>
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">BlueShepherd</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
 </pre></div>
 
 
-<h2 id="performing-actions">Performing Actions<a class="headerlink" href="#performing-actions" title="Permanent link">&para;</a></h2>
-<p>The Shepherd and Sheep use the dispatcher pattern
-to call methods. The dispatcher pattern is used to
-turn a string (like "tweet") into a function call
-(like <code>tweet()</code>).</p>
+<p>For Github, Google, Twitter, etc. Keymakers, this value is already set.</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
-<span class="kn">import</span> <span class="nn">time</span>
 
-<span class="k">class</span> <span class="nc">FlatulentSheep</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringSheep</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">pass_gas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;pfffft&quot;</span><span class="p">)</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">ghk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">GithubKeymaker</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">BoringShepherd</span><span class="p">(</span>
-                <span class="n">keys_dir</span> <span class="o">=</span> <span class="s2">&quot;keys/&quot;</span><span class="p">,</span>
-                <span class="n">flock_name</span> <span class="o">=</span> <span class="s2">&quot;flatulent_flock&quot;</span><span class="p">,</span>
-                <span class="n">sheep_class</span> <span class="o">=</span> <span class="n">FlatulentSheep</span>
-    <span class="p">)</span>
+<span class="n">gk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">GoogleKeymaker</span><span class="p">()</span>
+
+<span class="n">tk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">TwitterKeymaker</span><span class="p">()</span>
 </pre></div>
 
 
-<p>(TODO: Finish these examples.)</p>
+<h2 id="passing-api-keys-to-the-keymaker">Passing API Keys to the Keymaker<a class="headerlink" href="#passing-api-keys-to-the-keymaker" title="Permanent link">&para;</a></h2>
+<p>The Keymaker must have client API keys to verify that it is in fact
+allowed to take actions as the third-party OAuth application.
+The API keys consist of a token and a secret that correspond to
+the OAuth app created for the third-party service.</p>
+<p>(For example, when you create a Github app, the app page will give
+a client ID and a client secret at the top of the page.)</p>
+<p>This token and secret can be passed three different ways:</p>
+<ul>
+<li>via environment variables</li>
+<li>via a JSON file</li>
+<li>via a Python dictionary</li>
+</ul>
+<h3 id="using-environment-variables">Using Environment Variables<a class="headerlink" href="#using-environment-variables" title="Permanent link">&para;</a></h3>
+<p>To set using environment variables:</p>
+<p><strong><code>use_env.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_env</span><span class="p">()</span>
+</pre></div>
+
+
+<p>This would then look for two environment variables corresponding to
+the name of the token and secret in all caps. In the above case,
+we would need to run the script and provide the API keys as follows:</p>
+<div class="codehilite"><pre><span></span>$ CLIENT_TOKEN=&quot;abcd&quot; CLIENT_SECRET=&quot;qwerty&quot; use_env.py
+</pre></div>
+
+
+<h3 id="using-json-file">Using JSON File<a class="headerlink" href="#using-json-file" title="Permanent link">&para;</a></h3>
+<p>To use a JSON file, create a simple JSON file with two key-value pairs.
+The two keys should be the token name and the secret name provided to the
+constructor. </p>
+<p><strong><code>apikeys.json</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;client_token&quot;</span> <span class="p">:</span> <span class="s2">&quot;asdf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;client_secret&quot;</span> <span class="p">:</span> <span class="s2">&quot;qwerty&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The corresponding call to set the Keymaker API tokens would look like:</p>
+<p><strong><code>use_json.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_json</span><span class="p">(</span><span class="s1">&#39;apikeys.json&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<h3 id="using-python-dict">Using Python Dict<a class="headerlink" href="#using-python-dict" title="Permanent link">&para;</a></h3>
+<p><strong><code>use_dict.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+
+<span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_dict</span><span class="p">({</span>
+            <span class="s1">&#39;client_token&#39;</span> <span class="p">:</span> <span class="s1">&#39;asdf&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;client_secret&#39;</span> <span class="p">:</span> <span class="s1">&#39;qwerty&#39;</span>
+<span class="p">})</span>
+</pre></div>
+
+
+<h2 id="extending-the-keymaker">Extending the Keymaker<a class="headerlink" href="#extending-the-keymaker" title="Permanent link">&para;</a></h2>
+<p>"Ideas and future planning"</p>
+<p>(TODO: how is oauth keymaker extended - what method)</p>
+<p>what else can you can do?</p>
                 
                   
                 
@@ -809,7 +956,7 @@ turn a string (like "tweet") into a function call
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../keymaker_twitter/" title="Twitter Keymaker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="./" title="Boring Keymaker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -818,19 +965,19 @@ turn a string (like "tweet") into a function call
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Twitter Keymaker
+                Boring Keymaker
               </span>
             </div>
           </a>
         
         
-          <a href="../boring_sheep/" title="Boring Sheep" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../bmm_keymaker_github/" title="Github Keymaker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Boring Sheep
+                Github Keymaker
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
