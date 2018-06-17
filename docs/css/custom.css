@@ -9,6 +9,9 @@ body {
 div.body {
     background-color: #efefef;
 }
+div.md-content {
+    margin-bottom: 100px;
+}
 i.md-icon {
     font-size: 25px;
 }
