@@ -57,3 +57,4 @@ the entire mind machine enterprise is constructed.
 
 It is critical that the boring mind machine library be an exemplar of good
 practices for software built using the mind machine framework!
+

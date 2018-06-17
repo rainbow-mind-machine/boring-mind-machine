@@ -111,7 +111,21 @@ k.set_apikeys_json('apikeys.json')
 
 ### Using Python Dict
 
-(TODO: add python dict example)
+
+**`use_dict.py`:**
+
+```python
+import boringmindmachine as bmm
+
+class MyKeymaker(bmm.BoringOAuthKeymaker):
+    pass
+
+k = bmm.MyKeymaker('client_token','client_secret')
+k.set_apikeys_dict({
+            'client_token' : 'asdf',
+            'client_secret' : 'qwerty'
+})
+```
 
 
 ## Extending the Keymaker
