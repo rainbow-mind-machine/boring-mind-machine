@@ -6,6 +6,16 @@ organization on Github.
 
 Like all mind machines, **boring mind machine** is simple and extensible.
 
+
+## How is boring mind machine simple?
+
+Everything is kept simple by collecting Keymakers together in one place (these
+are long and ugly but share many similarities) and letting each mind machine
+library focus solely on the details of bot creation.
+
+Take care of OAuth! Stop mucking around with keys! Get busy making bot flocks!
+
+
 ## What does boring mind machine extend or do?
 
 The main job of **boring mind machine** is to take care of the boring stuff.
@@ -37,14 +47,6 @@ differently, so there are many tedious, boring details to work out.
 
 Hence, the "boring".
 
-
-## How is boring mind machine simple?
-
-Everything is kept simple by collecting Keymakers together in one place (these
-are long and ugly but share many similarities) and letting each mind machine
-library focus solely on the details of bot creation.
-
-Take care of OAuth! Stop mucking around with keys! Get busy making bot flocks!
 
 ## How is boring mind machine POOP-y?
 
