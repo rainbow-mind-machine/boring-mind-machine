@@ -3,7 +3,6 @@ from os.path import \
     isfile, isdir, exists, join, basename, splitext
 
 
-
 class BoringKeymaker(object):
     """
     We do only what we are meant to do.
