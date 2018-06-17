@@ -30,7 +30,7 @@ parameters:
 
 Suppose we have the following directory structure:
 
-```
+```plain
 $ ls keys/
 bot_key1.json
 bot_key2.json
@@ -55,7 +55,7 @@ undefined/virtual methods in the base class).
 
 Suppose we have the following directory structure:
 
-```
+```plain
 $ ls keys/
 bot_key1.json
 bot_key2.json
@@ -69,7 +69,7 @@ and use the custom Shepherd class to
 (We illustrate performing basic key validation by filtering
 keys with a particular name.)
 
-```
+```python
 import boringmindmachine as bmm
 
 class BlueShepherd(bmm.BoringShepherd):
@@ -90,7 +90,7 @@ to call methods. The dispatcher pattern is used to
 turn a string (like "tweet") into a function call
 (like `tweet()`).
 
-```
+```python
 import boringmindmachine as bmm
 import time
 
