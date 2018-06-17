@@ -2,7 +2,10 @@
 
 See [boring-mind-machine/examples/twitter](https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/twitter).
 
-An example of creating a Twitter OAuth keymaker.
+This page gives an example of creating a Twitter OAuth Keymaker
+using the boring mind machine library. (Full Twitter bot functionality
+requires the [rainbow mind machine
+library](https://pages.charlesreid1.com/rainbow-mind-machine).)
 
 ## Creating a Twitter App
 
@@ -12,17 +15,16 @@ We need to create an application (something that will consume the API
 endpoints), and we need to grant the application access to at least one 
 Twitter account.
 
-### Set Up API
+### Set Up API and Create Twitter App
 
-See [Digital Ocean instructions on creating a Twitter app](https://www.digitalocean.com/community/tutorials/how-to-create-a-twitter-app).
-
-## Creating a Twitter App
-
-See [Digital Ocean instructions on creating a Twitter app](https://www.digitalocean.com/community/tutorials/how-to-create-a-twitter-app).
+See [these Digital Ocean instructions](https://www.digitalocean.com/community/tutorials/how-to-create-a-twitter-app)
+that cover setting up the Twitter API and creating a Twitter OAuth application.
 
 ## Getting App Credentials
 
-Get the consumer token and consumer token secret from your application page.
+Once you have created your Twitter app, visit the app page and look for the
+"consumer token" and "consumer token secret" (this is what Twitter calls the
+API application's token and secret).
 
 End result is you should have two pieces of information,
 which you can pass to the program using environment variables
