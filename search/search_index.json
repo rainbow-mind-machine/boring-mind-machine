@@ -327,12 +327,12 @@
         },
         {
             "location": "/credits/",
-            "text": "Credits\n\u00b6\n\n\n(TODO: add credits)",
+            "text": "Credits\n\u00b6\n\n\n(TODO: add credits)\n\n\nPhoto credits:\n\n\n\n\nkeymaker.jpg\n - \nRuss Loar\n,\n    released under the \nCC BY-NC-ND License",
             "title": "Credits"
         },
         {
             "location": "/credits/#credits",
-            "text": "(TODO: add credits)",
+            "text": "(TODO: add credits)  Photo credits:   keymaker.jpg  -  Russ Loar ,\n    released under the  CC BY-NC-ND License",
             "title": "Credits"
         },
         {
