@@ -1,8 +1,12 @@
-# Github Keymaker Example
+# Github Keymaker 
 
 See [boring-mind-machine/examples/github](https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/github).
 
 An example of creating a Github OAuth keymaker.
+This page gives an example of creating a Github OAuth Keymaker
+using the boring mind machine library. (Full Github bot functionality
+requires the [embarcadero mind machine
+library](https://pages.charlesreid1.com/embarcadero-mind-machine).)
 
 ## Creating a Github App
 

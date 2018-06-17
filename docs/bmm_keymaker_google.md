@@ -1,8 +1,15 @@
-# Google Keymaker Example
+# Google Keymaker 
 
 See [boring-mind-machine/examples/google](https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/google).
 
-An example of creating a Google OAuth keymaker.
+This page gives an example of creating a Google OAuth Keymaker
+using the boring mind machine library. (Full Google bot functionality
+requires one of the 
+[cheeseburger mind
+machine](https://pages.charlesreid1.com/cheeseburger-mind-machine)
+or [papyrus mind machine](https://pages.charlesreid1.com/papyrus-mind-machine)
+or [waxing gibbous mind machine](https://pages.charlesreid1.com/waxing-gibbous-mind-machine)
+libraries.)
 
 ## Creating a Google App
 

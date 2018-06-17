@@ -1,4 +1,4 @@
-# Twitter Keymaker Example
+# Twitter Keymaker
 
 See [boring-mind-machine/examples/twitter](https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/twitter).
 
