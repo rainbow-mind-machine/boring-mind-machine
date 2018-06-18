@@ -33,23 +33,32 @@ class BoringShepherd(object):
     The Shepherd should behave the same for each API,
     since all APIs require keys and all keys will go
     in a JSON file. (Even if it is an empty one.)
+
+    To extend BoringShepherd, 
+    define the two methods:
+
+        _validate_key(self,bot_key)
+
+        _create_sheep(self,bot_key)
     """
     def __init__(self, 
                  json_keys_dir, 
-                 name,
-                 sheep_class=BoringSheep, 
+                 sheep_class = BoringSheep, 
                  **kwargs):
         """
         This constructor will create a Shepherd.
 
-            json_keys_dir:      Directory where Sheep API keys are located
+            json_keys_dir:  Directory where Sheep API keys are located
 
-            flock_name:         The name of the bot flock (used to format log messages)
+            flock_name:     The name of the bot flock (used to format log messages)
 
-            sheep_class:        Type of Sheep
+            sheep_class:    Type of Sheep
 
-            kwargs:             Logging parameters passed directly to Lumberjack logger
+            kwargs:         Parameters passed on to both the Lumberjack and the Sheep
         """
+        if 'flock_name' not in kwargs:
+            kwargs['flock_name'] = 'Anonymous Flock of Cowards'
+
         # Create a lumberjack to set up the logs
         lumberjack = BoringLumberjack(**kwargs)
         # We won't need the lumberjack anymore
@@ -57,11 +66,13 @@ class BoringShepherd(object):
         # Shepherds have to keep watch over their flock
         self.sheep_class = sheep_class
         self.flock = []
-        self.create_flock(json_keys_dir)
+        self.create_flock(json_keys_dir, **kwargs)
 
-    def create_flock(self, json_keys_dir):
+    def create_flock(self, json_keys_dir, **kwargs):
         """
         Create a flock of Sheep from a given directory of keys.
+
+        All **kwargs are added to the bot key.
 
         Note that separating code out into 
         a method like this makes it easier to
@@ -76,8 +87,8 @@ class BoringShepherd(object):
 
         logger = logging.getLogger('rainbowmindmachine')
 
-        logger.info("About to initialize sheep")
-        logger.info("Looking in %s"%(json_keys_dir))
+        logger.info("About to initialize Sheep bot")
+        logger.info("Looking for bot keys in %s"%(json_keys_dir))
 
         if os.path.isdir(json_keys_dir) is False:
             err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
@@ -91,34 +102,42 @@ class BoringShepherd(object):
 
         for json_file in glob.glob(os.path.join(json_keys_dir,'*.json')):
             bot_key = {}
-            logger.info("File %s"%(json_file))
+            logger.info("Found bot key %s"%(json_file))
             try:
                 with open(json_file,'r') as f:
                     bot_key = json.load(f)
             except ValueError:
-                err = "ERROR: Invalid JSON key in %s"%(json_file)
+                err = "ERROR: Invalid JSON bot key in %s"%(json_file)
                 raise Exception(err)
 
+            # All kwargs should be added to the bot_key
+            for kwarg in kwargs:
+                if kwarg not in bot_key.keys():
+                    bot_key[kwarg] = kwargs[kwarg]
 
-            logger.info("Validate key")
-            self._validate_key(bot_key)
+            # This information might be useful to log
+
+            logger.info("Validate bot key")
+            self._validate_key(bot_key, **kwargs)
             logger.info("Create Sheep")
-            self._create_sheep(bot_key)
+            self._create_sheep(bot_key, **kwargs)
 
 
-    def _validate_key(self, bot_key):
+    def _validate_key(self, bot_key, **kwargs):
         """virtual method"""
         self.virtual_method(bot_key)
 
-    def _create_sheep(self, bot_key):
+
+    def _create_sheep(self, bot_key, **kwargs):
         """virtual method"""
         self.virtual_method(bot_key)
+
 
     def virtual_method(self):
         err = "ERROR: BoringShepherd is a virtual class and should not be used.\n"
         err += "Define a derived class that defines the following methods:\n"
-        err += "    _validate_key(self,bot_key)\n"
-        err += "    _create_sheep(self,bot_key)\n\n\n"
+        err += "    _validate_key(self,bot_key,**kwargs)\n"
+        err += "    _create_sheep(self,bot_key,**kwargs)\n\n\n"
         raise Exception(err)
 
 
@@ -131,7 +150,7 @@ class BoringShepherd(object):
             for sheep in self.flock:
                 sheep.perform_action(action, **kwargs)
         else:
-            err = "ERROR: The shepherd has no sheep!"
+            err = "ERROR: Tried to perform action, but the Shepherd has no Sheep!"
             raise Exception(err)
 
 
