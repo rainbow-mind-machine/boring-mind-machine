@@ -9,7 +9,6 @@ and use any authentication method, but in practice all
 Keymakers are OAuth Keymakers.
 
 
-
 ## Constructing the Keymaker
 
 The generic BoringOAuthKeymaker class requires two bits of information:
@@ -25,7 +24,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = bmm.MyKeymaker('client_token','client_secret')
+k = MyKeymaker('client_token','client_secret')
 ```
 
 For Github, Google, Twitter, etc. Keymakers, this value is already set.
@@ -39,6 +38,7 @@ gk = bmm.GoogleKeymaker()
 
 tk = bmm.TwitterKeymaker()
 ```
+
 
 ## Passing API Keys to the Keymaker
 
@@ -68,7 +68,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = bmm.MyKeymaker('client_token','client_secret')
+k = MyKeymaker('client_token','client_secret')
 k.set_apikeys_env()
 ```
 
@@ -105,7 +105,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = bmm.MyKeymaker('client_token','client_secret')
+k = MyKeymaker('client_token','client_secret')
 k.set_apikeys_json('apikeys.json')
 ```
 
@@ -120,7 +120,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = bmm.MyKeymaker('client_token','client_secret')
+k = MyKeymaker('client_token','client_secret')
 k.set_apikeys_dict({
             'client_token' : 'asdf',
             'client_secret' : 'qwerty'

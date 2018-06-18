@@ -94,3 +94,25 @@ To run the Google Keymaker example, **specify the API key name in the
 $ python google_auth.py
 ```
 
+### Example Code
+
+**`google_auth.py`:**
+
+```python
+import boringmindmachine as bmm
+import subprocess
+
+keydir = 'keys'
+
+gk = bmm.GoogleKeymaker()
+gk.set_apikeys_file('client_secret.json')
+
+print("Creating a dummy key...")
+gk.make_a_key('dummy','dummy.json',keydir)
+print("Success.")
+
+print("Cleaning up...")
+subprocess.call(['rm','-rf',keydir])
+print("Done.")
+```
+
