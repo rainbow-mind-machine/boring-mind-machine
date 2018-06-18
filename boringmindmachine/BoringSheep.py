@@ -27,6 +27,10 @@ class BoringSheep(object):
         if hasattr(self, action):
             method = getattr(self, action)
             method(**kwargs)
+        else:
+            err = "Sheep could not figure out how to perform action '{action}'"
+            err = err.format(action=action)
+            raise Exception(err)
 
 
     def dummy(self,**kwargs):
