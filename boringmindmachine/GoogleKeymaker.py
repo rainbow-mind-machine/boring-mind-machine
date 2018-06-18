@@ -88,22 +88,8 @@ class GoogleKeymaker(BoringOAuthKeymaker):
         if os.path.isdir(keys_out_dir) is False:
             subprocess.call(['mkdir','-p',keys_out_dir])
 
-        # Here is where we build logic in to make this 
-        # behave gracefully.
-        # 
-        # If we are passed a json_target that is not .json:
-        # - if no extension, add a .json extension and use as json target
-        # - if extension, replace extension with .json and use as json target
-        # 
-        # That way, we can use this as a files keymaker too
-        # 
-        _, ext = os.path.splitext(json_target)
-        if(ext == ''):
-            json_target = json_target + ".json"
-        elif(ext == '.json'):
-            pass
-        else:
-            json_target = re.sub(ext,'.json',json_target)
+        # strip paths from json_target file name
+        json_target = os.path.basename(json_target)
 
         # ------------8<----------------8<--------------
         # Begin Google-Specific Section

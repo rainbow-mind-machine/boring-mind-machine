@@ -39,7 +39,7 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
 
             name :          Label for the bot
 
-            json_name :     The name of the JSON file in which to save
+            json_target :   The name of the JSON file in which to save
                             the bot OAuth key (all paths are ignored).
 
             keys_out_dir :  Directory in which to place final JSON keys
@@ -48,22 +48,8 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
         if os.path.isdir(keys_out_dir) is False:
             subprocess.call(['mkdir','-p',keys_out_dir])
 
-        # Here is where we build logic in to make this 
-        # behave gracefully.
-        # 
-        # If we are passed a json_target that is not .json:
-        # - if no extension, add a .json extension and use as json target
-        # - if extension, replace extension with .json and use as json target
-        # 
-        # That way, we can use this as a files keymaker too
-        # 
-        _, ext = os.path.splitext(json_target)
-        if(ext == ''):
-            json_target = json_target + ".json"
-        elif(ext == '.json'):
-            pass
-        else:
-            json_target = re.sub(ext,'.json',json_target)
+        # strip paths from json_target file name
+        json_target = os.path.basename(json_target)
 
         # ------------8<----------------8<--------------
         # Begin Twitter-Specific Section
@@ -239,10 +225,10 @@ class FilesKeymaker(TwitterKeymaker):
         # Step 2:
         # Iterate over each file and ask the user if 
         # they want to make a key for that file
-        for f in files:
+        for full_file in files:
 
-            full_file = join(files_dir,f)
             full_keys_file = re.sub(files_dir,keys_out_dir,full_file)
+
             _, ext = splitext(full_keys_file)
             if(self.files_extension == ''):
                 full_keys_file = full_keys_file+".json"
