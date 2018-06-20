@@ -1,11 +1,11 @@
 import boringmindmachine as bmm
-import urllib
-import oauth2 as oauth
+import subprocess
 import os, re, glob
 import json
-import subprocess
 from os.path import isfile, isdir, exists
 from os.path import join, basename, splitext
+import urllib
+import oauth2 as oauth
 
 
 class TwitterKeymaker(bmm.BoringOAuthKeymaker):
@@ -44,6 +44,8 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
 
             keys_out_dir :  Directory in which to place final JSON keys
                             containing OAuth tokens and other bot info
+
+        All kwargs are passed into the key file.
         """
         if os.path.isdir(keys_out_dir) is False:
             subprocess.call(['mkdir','-p',keys_out_dir])
@@ -145,7 +147,7 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
 
             token.set_verifier(oauth_verifier)
             client = oauth.Client(consumer, token)
-            
+
             resp, content = client.request(access_token_url, "POST")
             access_token = dict(urllib.parse.parse_qsl(content))
 
@@ -154,9 +156,12 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
                     return mystr.decode('utf-8')
                 return mystr
 
-            # Step 2.4: Make a dict with all relevant Sheep info
+            # Step 2.4: Make a dict with all 
+            # final key info and Sheep info
             # (twitter - y u use binary strings??)
+
             d = {}
+
             for key in self.credentials.keys():
                 value = self.credentials[key]
                 d[strip(key)] = strip(value)
@@ -165,7 +170,13 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
                 value = access_token[key]
                 d[strip(key)] = strip(value)
 
-            print("Successfully obtained Twitter API key for %s"%name)
+            for key in kwargs.keys():
+                d[key] = kwargs[key]
+
+
+            print("Successfully obtained Twitter API key for Sheep %s"%(name))
+            print("-------------------------------")
+
 
             # Step 2.5: Round this out by making the key files
             # Make a key dir
@@ -177,8 +188,6 @@ class TwitterKeymaker(bmm.BoringOAuthKeymaker):
                 json.dump(d,outfile)
 
             print("Successfully exported a key bundle for item %s to JSON file %s"%(name,keys_out))
-
-
 
 
 
@@ -217,27 +226,33 @@ class FilesKeymaker(TwitterKeymaker):
 
         files.sort()
 
-        # Each bot needs to save its own file.
-        # This sets the key that stores that info.
+        # Each bot needs to stash the name of the file it is assigned.
+        # That's what this variable is.
         self.file_key = 'file'
-
 
         # Step 2:
         # Iterate over each file and ask the user if 
-        # they want to make a key for that file
+        # they want to make a key for that file.
+        # This is a list of filenames with relative paths
+        # (that means it includes files_dir)
         for full_file in files:
+
+            # To get the key file that corresponds to this (random) file, 
+            # we swap out the files directory name with the keys directory name,
+            # then copy the file name but use a .json extension instead
 
             full_keys_file = re.sub(files_dir,keys_out_dir,full_file)
 
-            _, ext = splitext(full_keys_file)
+            base, ext = splitext(basename(full_keys_file))
             if(self.files_extension == ''):
                 full_keys_file = full_keys_file+".json"
             else:
                 full_keys_file = re.sub(ext,'.json',full_keys_file)
 
-            self.make_a_key(full_file,
-                            full_keys_file,
-                            keys_out_dir)
+            self.make_a_key(name = base,
+                            json_target = full_keys_file,
+                            keys_out_dir = keys_out_dir,
+                            file = full_file)
 
 
 
