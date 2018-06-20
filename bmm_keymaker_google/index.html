@@ -533,6 +533,19 @@
     Authorizing
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -730,6 +743,19 @@
     Authorizing
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" title="Example Code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -813,6 +839,26 @@ a JSON file on disk.</p>
 <p>To run the Google Keymaker example, <strong>specify the API key name in the
 <code>google_auth.py</code> script</strong> (<code>client_secret.json</code> by default):</p>
 <div class="codehilite"><pre><span></span>$ python google_auth.py
+</pre></div>
+
+
+<h3 id="example-code">Example Code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h3>
+<p><strong><code>google_auth.py</code>:</strong></p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="n">keydir</span> <span class="o">=</span> <span class="s1">&#39;keys&#39;</span>
+
+<span class="n">gk</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">GoogleKeymaker</span><span class="p">()</span>
+<span class="n">gk</span><span class="o">.</span><span class="n">set_apikeys_file</span><span class="p">(</span><span class="s1">&#39;client_secret.json&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Creating a dummy key...&quot;</span><span class="p">)</span>
+<span class="n">gk</span><span class="o">.</span><span class="n">make_a_key</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">,</span><span class="s1">&#39;dummy.json&#39;</span><span class="p">,</span><span class="n">keydir</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Success.&quot;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Cleaning up...&quot;</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s1">&#39;rm&#39;</span><span class="p">,</span><span class="s1">&#39;-rf&#39;</span><span class="p">,</span><span class="n">keydir</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Done.&quot;</span><span class="p">)</span>
 </pre></div>
                 
                   
