@@ -66,21 +66,31 @@ Now we create a custom Shepherd class that extends the
 `_create_sheep()` and `_validate_key()` methods,
 and use the custom Shepherd class to 
 
-(We illustrate performing basic key validation by filtering
-keys with a particular name.)
+(We illustrate performing basic key validation by
+checking for keys with a particular name.)
 
 ```python
 import boringmindmachine as bmm
 
 class BlueShepherd(bmm.BoringShepherd):
-    def _create_sheep(self):
-        pass
-    def _validate_key(self):
-        pass
 
-if __name__=="__main__":
-    s = BlueShepherd( a, b, c )
+    def _validate_key(self, bot_key, **kwargs):
+        """
+        Validate a bot key, passed in as a dictionary.
+        Sole purpose of this function: raise an exception if there is a problem.
+        """
+        required_keys = ['key1','key2','key3']
+        for key in required_keys:
+            if key not in bot_key.keys():
+                err = "ERROR: the bot key is missing a required key '%s'."%(key)
+                raise Exception(err)
+
+    def _create_sheep(self):
+        sheep = self.sheep_class(bot_key)
+        self.flock.append(sheep)
 ```
+
+
 
 
 ## Performing Actions
