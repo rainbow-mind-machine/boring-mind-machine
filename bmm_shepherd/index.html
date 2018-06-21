@@ -845,7 +845,10 @@ we can use <code>**kwargs</code> as follows;</p>
                 <span class="n">flock_name</span> <span class="o">=</span> <span class="s2">&quot;flatulent_flock&quot;</span><span class="p">,</span>
                 <span class="n">sheep_class</span> <span class="o">=</span> <span class="n">FlatulentSheep</span>
     <span class="p">)</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">perform_parallel_action</span><span class="p">(</span><span class="s1">&#39;pass_gas&#39;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">perform_parallel_action</span><span class="p">(</span>
+            <span class="s1">&#39;pass_gas&#39;</span><span class="p">,</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;FFFRRRRRRRRRAAAAAAAPPPPPPP&#39;</span>
+    <span class="p">)</span>
 </pre></div>
                 
                   
