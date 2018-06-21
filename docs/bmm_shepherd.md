@@ -113,6 +113,34 @@ if __name__=="__name__":
                 flock_name = "flatulent_flock",
                 sheep_class = FlatulentSheep
     )
+    s.perform_parallel_action('pass_gas')
 ```
 
-(TODO: Finish these examples.)
+### Adding Parameters to Actions
+
+If we wanted to add a parameter with a default value
+(for example, the string being printed by `pass_gas()`),
+we can use `**kwargs` as follows;
+
+```python
+import boringmindmachine as bmm
+import time
+
+class FlatulentSheep(bmm.BoringSheep):
+    def pass_gas(self,, **kwargs):
+        if 'message' in kwargs:
+            msg = kwargs['message']
+        else:
+            msg = 'pfffffft'
+        print(msg)
+        time.sleep(30)
+
+if __name__=="__name__":
+    s = bmm.BoringShepherd(
+                keys_dir = "keys/",
+                flock_name = "flatulent_flock",
+                sheep_class = FlatulentSheep
+    )
+    s.perform_parallel_action('pass_gas')
+```
+
