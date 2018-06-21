@@ -530,6 +530,19 @@
     Performing Actions
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-parameters-to-actions" title="Adding Parameters to Actions" class="md-nav__link">
+    Adding Parameters to Actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -676,6 +689,19 @@
     Performing Actions
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-parameters-to-actions" title="Adding Parameters to Actions" class="md-nav__link">
+    Adding Parameters to Actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -793,10 +819,34 @@ turn a string (like "tweet") into a function call
                 <span class="n">flock_name</span> <span class="o">=</span> <span class="s2">&quot;flatulent_flock&quot;</span><span class="p">,</span>
                 <span class="n">sheep_class</span> <span class="o">=</span> <span class="n">FlatulentSheep</span>
     <span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">perform_parallel_action</span><span class="p">(</span><span class="s1">&#39;pass_gas&#39;</span><span class="p">)</span>
 </pre></div>
 
 
-<p>(TODO: Finish these examples.)</p>
+<h3 id="adding-parameters-to-actions">Adding Parameters to Actions<a class="headerlink" href="#adding-parameters-to-actions" title="Permanent link">&para;</a></h3>
+<p>If we wanted to add a parameter with a default value
+(for example, the string being printed by <code>pass_gas()</code>),
+we can use <code>**kwargs</code> as follows;</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">class</span> <span class="nc">FlatulentSheep</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringSheep</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">pass_gas</span><span class="p">(</span><span class="bp">self</span><span class="p">,,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;message&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;pfffffft&#39;</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__name__&quot;</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">bmm</span><span class="o">.</span><span class="n">BoringShepherd</span><span class="p">(</span>
+                <span class="n">keys_dir</span> <span class="o">=</span> <span class="s2">&quot;keys/&quot;</span><span class="p">,</span>
+                <span class="n">flock_name</span> <span class="o">=</span> <span class="s2">&quot;flatulent_flock&quot;</span><span class="p">,</span>
+                <span class="n">sheep_class</span> <span class="o">=</span> <span class="n">FlatulentSheep</span>
+    <span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">perform_parallel_action</span><span class="p">(</span><span class="s1">&#39;pass_gas&#39;</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
