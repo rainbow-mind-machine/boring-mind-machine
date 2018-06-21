@@ -91,8 +91,6 @@ class BlueShepherd(bmm.BoringShepherd):
 ```
 
 
-
-
 ## Performing Actions
 
 The Shepherd and Sheep use the dispatcher pattern
