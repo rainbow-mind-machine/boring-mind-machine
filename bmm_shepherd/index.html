@@ -751,18 +751,26 @@ bot_key3.json
 <p>Now we create a custom Shepherd class that extends the
 <code>_create_sheep()</code> and <code>_validate_key()</code> methods,
 and use the custom Shepherd class to </p>
-<p>(We illustrate performing basic key validation by filtering
-keys with a particular name.)</p>
+<p>(We illustrate performing basic key validation by
+checking for keys with a particular name.)</p>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">boringmindmachine</span> <span class="kn">as</span> <span class="nn">bmm</span>
 
 <span class="k">class</span> <span class="nc">BlueShepherd</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringShepherd</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">_create_sheep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
-    <span class="k">def</span> <span class="nf">_validate_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">pass</span>
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">BlueShepherd</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_validate_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bot_key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate a bot key, passed in as a dictionary.</span>
+<span class="sd">        Sole purpose of this function: raise an exception if there is a problem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">required_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span><span class="s1">&#39;key3&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">required_keys</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bot_key</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">err</span> <span class="o">=</span> <span class="s2">&quot;ERROR: the bot key is missing a required key &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_create_sheep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sheep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sheep_class</span><span class="p">(</span><span class="n">bot_key</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flock</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sheep</span><span class="p">)</span>
 </pre></div>
 
 
