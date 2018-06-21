@@ -2,9 +2,7 @@
 
 ![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
 
-## About
-
-![tinysheep](img/boring.jpg)
+![boring mind machine comic](img/boring.jpg)
 
 **boring mind machine** is a set of boring base classes for building awesome bot flocks.
 
