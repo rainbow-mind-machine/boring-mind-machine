@@ -141,6 +141,9 @@ if __name__=="__name__":
                 flock_name = "flatulent_flock",
                 sheep_class = FlatulentSheep
     )
-    s.perform_parallel_action('pass_gas')
+    s.perform_parallel_action(
+            'pass_gas',
+            message = 'FFFRRRRRRRRRAAAAAAAPPPPPPP'
+    )
 ```
 
