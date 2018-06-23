@@ -128,29 +128,40 @@ class GithubKeymaker(BoringOAuthKeymaker):
         BASE = 'http://localhost:8000'
         redirect_response = BASE + callback_token.strip()
 
-        github = OAuth2Session(self.credentials[self.token], state=state)
+        github = OAuth2Session(
+                self.credentials[self.token],
+                state=state
+        )
 
         # now use the callback token to receive the oauth token
-        github.fetch_token(token_url,
-                           client_secret = self.credentials[self.secret],
-                           verify = False,
-                           scope = scope,
-                           authorization_response = redirect_response)
+        github.fetch_token(
+                token_url,
+                client_secret = self.credentials[self.secret],
+                verify = False,
+                scope = scope,
+                authorization_response = redirect_response
+        )
 
         # now the github object owns the token.
         # can we get the oauth key and create our own token json?
         # we will need to regenerate the github object later anyway.
-        import pdb; pdb.set_trace()
 
-        final_key = {}
-        final_key['token'] = github.token
-        final_key['client_id'] = github.client_id
-        final_key['name'] = name
-        final_key['json_target'] = json_target
+        d = {}
+
+        for key in github.token.keys():
+            value = github.token[key]
+            d[key] = value
+
+        for key in self.credentials.keys():
+            value = self.credentials[key]
+            d[key] = value
+
+        d['name'] = name
+        d['json_target'] = json_target
 
         keyloc = os.path.join(keys_out_dir,json_target)
         with open(keyloc,'w') as f:
-            json.dump(final_key,f)
+            json.dump(d,f)
 
         print("\n\nCreated key for %s at %s\n\n"%(name,keyloc))
 
