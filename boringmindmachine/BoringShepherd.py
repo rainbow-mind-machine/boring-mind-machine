@@ -1,11 +1,11 @@
-import glob, os, json, logging
+import glob, os, sys, json
 import subprocess
 
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool 
 
+from utils import eprint
 from .BoringSheep import BoringSheep
-from .BoringLumberjack import BoringLumberjack
 
 
 """
@@ -53,20 +53,8 @@ class BoringShepherd(object):
 
             sheep_class:    Type of Sheep
 
-            kwargs:         Parameters passed on to both the Lumberjack and the Sheep
-
-        kwargs:
-
-            flock_name:     The name of the bot flock (used to format log messages)
-
+            kwargs:         Parameters passed on to the Sheep
         """
-        if 'flock_name' not in kwargs:
-            kwargs['flock_name'] = 'Anonymous Flock of Cowards'
-
-        # Create a lumberjack to set up the logs
-        lumberjack = BoringLumberjack(**kwargs)
-        # We won't need the lumberjack anymore
-
         # Shepherds have to keep watch over their flock
         self.sheep_class = sheep_class
         self.flock = []
@@ -89,10 +77,8 @@ class BoringShepherd(object):
         # These methods need to be defined by 
         # the derived class.
 
-        logger = logging.getLogger('rainbowmindmachine')
-
-        logger.info("About to initialize Sheep bot")
-        logger.info("Looking for bot keys in %s"%(json_keys_dir))
+        eprint("BoringShepherd: About to initialize Sheep bot")
+        eprint("BoringShepherd: Looking for bot keys in %s"%(json_keys_dir))
 
         if not os.path.exists(json_keys_dir):
             # keys dir does not exist, so make it
@@ -109,7 +95,7 @@ class BoringShepherd(object):
 
         for json_file in glob.glob(os.path.join(json_keys_dir,'*.json')):
             bot_key = {}
-            logger.info("Found bot key %s"%(json_file))
+            eprint("Found bot key %s"%(json_file))
             try:
                 with open(json_file,'r') as f:
                     bot_key = json.load(f)
@@ -124,9 +110,9 @@ class BoringShepherd(object):
 
             # This information might be useful to log
 
-            logger.info("Validate bot key")
+            eprint("BoringShepherd: Validating bot key")
             self._validate_key(bot_key, **kwargs)
-            logger.info("Create Sheep")
+            eprint("BoringShepherd: Creating sheep")
             self._create_sheep(bot_key, **kwargs)
 
 

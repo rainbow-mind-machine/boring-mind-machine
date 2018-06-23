@@ -156,21 +156,22 @@ class GithubKeymaker(BoringOAuthKeymaker):
         d['name'] = name
         d['json_target'] = json_target
 
+
+        # get any additional information you want while you still can
+
+        # test the credentials and get the user login
+        sess = OAuth2Session(token=d['token'], client_id=d['client_id']) 
+        r = github.get('https://api.github.com/user')
+        result = json.loads(r.content)
+        d['login'] = result['login']
+
+
         keyloc = os.path.join(keys_out_dir,json_target)
         with open(keyloc,'w') as f:
-            json.dump(d,f)
+            f.write(json.dumps(d, indent=4, sort_keys=True))
 
-        print("\n\nCreated key for %s at %s\n\n"%(name,keyloc))
+        print("\n\nCreated key for %s (login id %s) at %s\n\n"%(name, d['login'], keyloc))
 
-        do_verification = False
-        if do_verification:
-            # Create a new OAuth2Session and test it:
-            del github
-            github2 = OAuth2Session(token=d['token'], client_id=d['client_id'])
-
-            # Fetch a protected resource, i.e. user profile
-            r = github2.get('https://api.github.com/user')
-            print(r.content)
 
         # End Github-Specific Section
         # ------------8<----------------8<--------------
