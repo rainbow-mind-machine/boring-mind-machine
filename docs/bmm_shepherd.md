@@ -10,6 +10,7 @@ The constructor calls a method to setup the flock.
 The method to setup the flock loops over each key.
 
 For each key, it:
+
 - validates the key
 - creates a Sheep from the key
 
