@@ -4,7 +4,7 @@ import subprocess
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool 
 
-from utils import eprint
+from .utils import eprint
 from .BoringSheep import BoringSheep
 
 
