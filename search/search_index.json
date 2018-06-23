@@ -472,13 +472,18 @@
         },
         {
             "location": "/contributing/",
-            "text": "Contributing\n\u00b6\n\n\n(TODO: add contributing message)",
+            "text": "Contributing\n\u00b6\n\n\nWays to Contribute\n\u00b6\n\n\nSome ways that you can contribute, in order of increasing involvement:\n\n\n\n\n\n\nRead \nthe documentation\n!\n  If you find a problem or can't understand something, open an issue (see below).\n\n\n\n\n\n\nUse boring mind machine! You can test it out and come up with new ideas\n  and ways of using boring mind machine.\n\n\n\n\n\n\nOpen an issue\n\n  in the boring mind machine repository on Github. The issue can be a bug,\n  a question, an idea, or anything else.\n\n\n\n\n\n\nFork boring mind machine on\n  Github!",
             "title": "Contributing"
         },
         {
             "location": "/contributing/#contributing",
-            "text": "(TODO: add contributing message)",
+            "text": "",
             "title": "Contributing"
+        },
+        {
+            "location": "/contributing/#ways-to-contribute",
+            "text": "Some ways that you can contribute, in order of increasing involvement:    Read  the documentation !\n  If you find a problem or can't understand something, open an issue (see below).    Use boring mind machine! You can test it out and come up with new ideas\n  and ways of using boring mind machine.    Open an issue \n  in the boring mind machine repository on Github. The issue can be a bug,\n  a question, an idea, or anything else.    Fork boring mind machine on\n  Github!",
+            "title": "Ways to Contribute"
         },
         {
             "location": "/mind-machine-docs/dev/",
