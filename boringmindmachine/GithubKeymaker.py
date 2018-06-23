@@ -140,6 +140,7 @@ class GithubKeymaker(BoringOAuthKeymaker):
         # now the github object owns the token.
         # can we get the oauth key and create our own token json?
         # we will need to regenerate the github object later anyway.
+        import pdb; pdb.set_trace()
 
         final_key = {}
         final_key['token'] = github.token
