@@ -23,6 +23,8 @@ Boring Sheep and defines a constructor, which should initialize an API instance.
 
 ### How to extend the Boring Sheep class?
 
+See the [`examples/`](/examples) directory.
+
 ### What does the Boring Sheep class define?
 
 In addition to mentioning what you have to define,
