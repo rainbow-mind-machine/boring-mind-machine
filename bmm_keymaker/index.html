@@ -490,13 +490,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
-    Extending the Keymaker
-  </a>
-  
-</li>
-      
       
       
       
@@ -578,13 +571,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
-    Extending the Keymaker
-  </a>
   
 </li>
       
@@ -802,13 +788,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#extending-the-keymaker" title="Extending the Keymaker" class="md-nav__link">
-    Extending the Keymaker
-  </a>
-  
-</li>
-      
       
       
       
@@ -845,7 +824,7 @@ in the Keymaker constructor:</p>
 <span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -881,7 +860,7 @@ a client ID and a client secret at the top of the page.)</p>
 <span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
 <span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_env</span><span class="p">()</span>
 </pre></div>
 
@@ -912,7 +891,7 @@ constructor. </p>
 <span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
 <span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_json</span><span class="p">(</span><span class="s1">&#39;apikeys.json&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -924,18 +903,12 @@ constructor. </p>
 <span class="k">class</span> <span class="nc">MyKeymaker</span><span class="p">(</span><span class="n">bmm</span><span class="o">.</span><span class="n">BoringOAuthKeymaker</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">MyKeymaker</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;client_token&#39;</span><span class="p">,</span><span class="n">secret</span><span class="o">=</span><span class="s1">&#39;client_secret&#39;</span><span class="p">)</span>
 <span class="n">k</span><span class="o">.</span><span class="n">set_apikeys_dict</span><span class="p">({</span>
             <span class="s1">&#39;client_token&#39;</span> <span class="p">:</span> <span class="s1">&#39;asdf&#39;</span><span class="p">,</span>
             <span class="s1">&#39;client_secret&#39;</span> <span class="p">:</span> <span class="s1">&#39;qwerty&#39;</span>
 <span class="p">})</span>
 </pre></div>
-
-
-<h2 id="extending-the-keymaker">Extending the Keymaker<a class="headerlink" href="#extending-the-keymaker" title="Permanent link">&para;</a></h2>
-<p>"Ideas and future planning"</p>
-<p>(TODO: how is oauth keymaker extended - what method)</p>
-<p>what else can you can do?</p>
                 
                   
                 

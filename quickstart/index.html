@@ -621,7 +621,23 @@
                 
                 
                 <h1 id="quick-start-with-boring-mind-machine">Quick Start with Boring Mind Machine<a class="headerlink" href="#quick-start-with-boring-mind-machine" title="Permanent link">&para;</a></h1>
-<p>(TODO: finish this quickstart section with some keymaker examples)</p>
+<p>Here is a bare minimum example </p>
+<div class="codehilite"><pre><span></span>import boringmindmachine as bmm
+import os, tempfile
+
+token_var = &#39;token&#39;
+secret_var = &#39;secret&#39;
+keys_json = &quot;fake_apikeys.json&quot;
+keypath = os.path.join(os.getcwd(),keys_json)
+
+bk = bmm.BoringOAuthKeymaker(token=token_var,
+                             secret=secret_var)
+bk.set_apikeys_file(keypath)
+</pre></div>
+
+
+<p>See the <a href="../examples/"><code>examples/</code></a> directory for
+additional examples.</p>
                 
                   
                 

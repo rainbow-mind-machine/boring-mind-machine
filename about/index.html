@@ -733,16 +733,25 @@
               
                 
                 
-                <h1 id="about-boring-mind-machine">About Boring Mind Machine<a class="headerlink" href="#about-boring-mind-machine" title="Permanent link">&para;</a></h1>
+                <h1 id="about-boring-mind-machine">About boring mind machine<a class="headerlink" href="#about-boring-mind-machine" title="Permanent link">&para;</a></h1>
 <p><strong>boring mind machine (bmm)</strong> is part of the mind machine suite of software,
 run by the <a href="https://github.com/rainbow-mind-machine">rainbow-mind-machine</a>
 organization on Github.</p>
 <p>Like all mind machines, <strong>boring mind machine</strong> is simple and extensible.</p>
 <h2 id="how-is-boring-mind-machine-simple">How is boring mind machine simple?<a class="headerlink" href="#how-is-boring-mind-machine-simple" title="Permanent link">&para;</a></h2>
-<p>Everything is kept simple by collecting Keymakers together in one place (these
-are long and ugly but share many similarities) and letting each mind machine
-library focus solely on the details of bot creation.</p>
-<p>Take care of OAuth! Stop mucking around with keys! Get busy making bot flocks!</p>
+<p>The <strong>mind machine framework</strong> revolves around providing a few
+simple components for building bot flocks:</p>
+<ul>
+<li><a href="../mind-machine-docs/keymaker/">Keymaker classes</a></li>
+<li><a href="../mind-machine-docs/shepherd/">Shepherd classes</a></li>
+<li><a href="../mind-machine-docs/sheep/">Sheep classes</a></li>
+</ul>
+<p>But it gets even simpler than that:
+<a href="https://pages.charlesreid1.com/boring-mind-machine">boring-mind-machine</a>
+provides a <a href="https://pages.charlesreid1.com/boring-mind-machine/bmm_keymaker_github/">GithubKeymaker class</a>,
+so that embarcadero mind machine can focus exclusively on Shepherd and Sheep
+classes.</p>
+<p>That's pretty simple!</p>
 <h2 id="what-does-boring-mind-machine-extend-or-do">What does boring mind machine extend or do?<a class="headerlink" href="#what-does-boring-mind-machine-extend-or-do" title="Permanent link">&para;</a></h2>
 <p>The main job of <strong>boring mind machine</strong> is to take care of the boring stuff.
 That means two things:</p>
