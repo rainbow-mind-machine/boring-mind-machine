@@ -1,4 +1,4 @@
-# About Boring Mind Machine
+# About boring mind machine
 
 **boring mind machine (bmm)** is part of the mind machine suite of software,
 run by the [rainbow-mind-machine](https://github.com/rainbow-mind-machine)
@@ -9,11 +9,20 @@ Like all mind machines, **boring mind machine** is simple and extensible.
 
 ## How is boring mind machine simple?
 
-Everything is kept simple by collecting Keymakers together in one place (these
-are long and ugly but share many similarities) and letting each mind machine
-library focus solely on the details of bot creation.
+The **mind machine framework** revolves around providing a few
+simple components for building bot flocks:
 
-Take care of OAuth! Stop mucking around with keys! Get busy making bot flocks!
+* [Keymaker classes](mind-machine-docs/keymaker.md)
+* [Shepherd classes](mind-machine-docs/shepherd.md)
+* [Sheep classes](mind-machine-docs/sheep.md)
+
+But it gets even simpler than that:
+[boring-mind-machine](https://pages.charlesreid1.com/boring-mind-machine)
+provides a [GithubKeymaker class](https://pages.charlesreid1.com/boring-mind-machine/bmm_keymaker_github/),
+so that embarcadero mind machine can focus exclusively on Shepherd and Sheep
+classes.
+
+That's pretty simple!
 
 
 ## What does boring mind machine extend or do?
@@ -25,6 +34,7 @@ That means two things:
     all of the other mind machine libraries; and
 2. Providing working OAuth Keymakers for every third-party service provider
     that has its own mind machine library. (Github, Google, Twitter, etc.)
+
 
 ### Base classes
 
