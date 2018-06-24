@@ -1,5 +1,5 @@
 import boringmindmachine as bmm
-import os, subprocess, json
+import os, tempfile
 import tempfile
 
 token_var = 'token'
