@@ -1,6 +1,10 @@
 # boring-mind-machine
 
-![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
+Releases: ![latest prime number version](https://img.shields.io/badge/version-5-blue.svg)
+
+Pypi: ![pypi versions](https://img.shields.io/pypi/pyversions/boringmindmachine.svg)
+
+Tests: ![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
 
 ![boring mind machine comic](docs/img/boring.jpg)
 
