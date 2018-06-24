@@ -128,38 +128,50 @@ class GithubKeymaker(BoringOAuthKeymaker):
         BASE = 'http://localhost:8000'
         redirect_response = BASE + callback_token.strip()
 
-        github = OAuth2Session(self.credentials[self.token], state=state)
+        github = OAuth2Session(
+                self.credentials[self.token],
+                state=state
+        )
 
         # now use the callback token to receive the oauth token
-        github.fetch_token(token_url,
-                           client_secret = self.credentials[self.secret],
-                           verify = False,
-                           scope = scope,
-                           authorization_response = redirect_response)
+        github.fetch_token(
+                token_url,
+                client_secret = self.credentials[self.secret],
+                verify = False,
+                scope = scope,
+                authorization_response = redirect_response
+        )
 
         # now the github object owns the token.
         # can we get the oauth key and create our own token json?
         # we will need to regenerate the github object later anyway.
 
-        final_key = {}
-        final_key['token'] = github.token
-        final_key['client_id'] = github.client_id
-        final_key['name'] = name
-        final_key['json_target'] = json_target
+        d = {}
+
+        for key in self.credentials.keys():
+            value = self.credentials[key]
+            d[key] = value
+
+        d['token'] = github.token
+        d['name'] = name
+        d['json_target'] = json_target
+
+
+        # get any additional information you want while you still can
+
+        # test the credentials and get the user login
+        sess = OAuth2Session(token=d['token'], client_id=d['client_id']) 
+        r = github.get('https://api.github.com/user')
+        result = json.loads(r.content)
+        d['login'] = result['login']
+
 
         keyloc = os.path.join(keys_out_dir,json_target)
         with open(keyloc,'w') as f:
-            json.dump(final_key,f)
+            f.write(json.dumps(d, indent=4, sort_keys=True))
 
-        print("\n\nCreated key for %s at %s\n\n"%(name,keyloc))
+        print("\n\nCreated key for %s (login id %s) at %s\n\n"%(name, d['login'], keyloc))
 
-        ### # Create a new OAuth2Session and test it:
-        ### del github
-        ### github2 = OAuth2Session(token=final_key['token'], client_id=final_key['client_id'])
-
-        ### # Fetch a protected resource, i.e. user profile
-        ### r = github2.get('https://api.github.com/user')
-        ### print(r.content)
 
         # End Github-Specific Section
         # ------------8<----------------8<--------------

@@ -1,10 +1,11 @@
-import glob, os, json, logging
+import glob, os, sys, json
+import subprocess
 
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool 
 
+from .utils import eprint
 from .BoringSheep import BoringSheep
-from .BoringLumberjack import BoringLumberjack
 
 
 """
@@ -50,19 +51,10 @@ class BoringShepherd(object):
 
             json_keys_dir:  Directory where Sheep API keys are located
 
-            flock_name:     The name of the bot flock (used to format log messages)
-
             sheep_class:    Type of Sheep
 
-            kwargs:         Parameters passed on to both the Lumberjack and the Sheep
+            kwargs:         Parameters passed on to the Sheep
         """
-        if 'flock_name' not in kwargs:
-            kwargs['flock_name'] = 'Anonymous Flock of Cowards'
-
-        # Create a lumberjack to set up the logs
-        lumberjack = BoringLumberjack(**kwargs)
-        # We won't need the lumberjack anymore
-
         # Shepherds have to keep watch over their flock
         self.sheep_class = sheep_class
         self.flock = []
@@ -85,24 +77,25 @@ class BoringShepherd(object):
         # These methods need to be defined by 
         # the derived class.
 
-        logger = logging.getLogger('rainbowmindmachine')
+        eprint("boring-mind-machine: BoringShepherd: About to initialize Sheep bot")
+        eprint("boring-mind-machine: BoringShepherd: Looking for bot keys in %s"%(json_keys_dir))
 
-        logger.info("About to initialize Sheep bot")
-        logger.info("Looking for bot keys in %s"%(json_keys_dir))
-
-        if os.path.isdir(json_keys_dir) is False:
+        if not os.path.exists(json_keys_dir):
+            # keys dir does not exist, so make it
+            subprocess.call(['mkdir','-p',json_keys_dir])
+        elif not os.path.isdir(json_keys_dir):
             err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
-            err += "that does not exist!"
+            err += "that is not a directory!"
             raise Exception(err)
 
         if len(glob.glob(os.path.join(json_keys_dir,'*.json')))==0:
             err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
-            err += "that contains no .json files!"
+            err += "that contains no .json files! Did you run your keymaker?"
             raise Exception(err)
 
         for json_file in glob.glob(os.path.join(json_keys_dir,'*.json')):
             bot_key = {}
-            logger.info("Found bot key %s"%(json_file))
+            eprint("boring-mind-machine: BoringShepherd: Found bot key %s"%(json_file))
             try:
                 with open(json_file,'r') as f:
                     bot_key = json.load(f)
@@ -117,9 +110,9 @@ class BoringShepherd(object):
 
             # This information might be useful to log
 
-            logger.info("Validate bot key")
+            eprint("boring-mind-machine: BoringShepherd: Validating bot key")
             self._validate_key(bot_key, **kwargs)
-            logger.info("Create Sheep")
+            eprint("boring-mind-machine: BoringShepherd: Creating sheep")
             self._create_sheep(bot_key, **kwargs)
 
 

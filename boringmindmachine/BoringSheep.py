@@ -1,13 +1,24 @@
+import threading
+
 class BoringSheep(object):
     """
     Because Sheep can do anything,
     we don't want to impose restrictions
     by implementing functionality here.
 
+    This mainly implements a way for Sheep
+    (threads) to print messages without
+    stepping all over each other.
+
     The constructor is where you create 
     the Sheep's API instance, and should 
     be defined at the package level.
     """
+
+    # Keep bots from writing over each other:
+    # use this lock, and use self.tprint(msg)
+    print_lock = threading.Lock()
+
     def __init__(self):
         err = "ERROR: Sheep constructor initializes API instances "
         err += "and should therefore be defined by the derived class."
@@ -32,6 +43,9 @@ class BoringSheep(object):
             err = err.format(action=action)
             raise Exception(err)
 
+    def tprint(self,*args):
+        with self.print_lock:
+            print(*args)
 
     def dummy(self,**kwargs):
         """dummy method"""
