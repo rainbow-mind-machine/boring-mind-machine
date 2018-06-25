@@ -13,13 +13,12 @@ GithubKeymaker class; and so on.
 
 ## All the shields
 
-![latest prime number version](https://img.shields.io/badge/latest--prime--number--version-5-blue.svg)
+![latest prime number version](https://img.shields.io/badge/latest--prime--number--version-7-blue.svg)
 
 ![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
 [![works on my machine](https://img.shields.io/badge/works-on_my_machine-blue.svg)](https://img.shields.io/badge/works-on_my_machine-green.svg)
 [![documentation at pages.charlesreid1.com](https://img.shields.io/website-up-down-green-red/https/pages.charlesreid1.com.svg)](https://pages.charlesreid1.com/boring-mind-machine)
 
-[![pypi versions](https://img.shields.io/pypi/pyversions/boringmindmachine.svg)](https://pypi.python.org/pypi/boringmindmachine/)
 ![PyPI version boringmindmachine](https://badge.fury.io/py/boringmindmachine.svg)
 ![PyPI license](https://img.shields.io/pypi/l/boringmindmachine.svg)
 ![PyPI implementation](https://img.shields.io/pypi/implementation/boringmindmachine.svg)
