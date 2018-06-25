@@ -492,13 +492,38 @@
         },
         {
             "location": "/mind-machine-docs/dev/",
-            "text": "Developer Notes\n\u00b6\n\n\nMakefiles:\n\n\n\n\nMakefile rules after first clone\n\n\nMakefile rules after fresh clone\n\n\nMakefile rules for test/deploy/docs\n\n\n\n\nPrime nubmer version system\n\n\n\n\nPrime number version system repository\n\n\nShould describe workflows and give overview of tasks\n\n\n\n\nTesting:\n\n\n\n\nUsing examples to test interactivity\n\n\nTests are mainly smoke tests\n\n\nFor complicated example, see bear/python-twitter on Github\n\n\n\n\nReleases:\n\n\n\n\nGithub releases\n\n\nPypi upload\n\n\nDockerhub (just an explanation of how it works/webhook)\n\n\n\n\nDocker:\n\n\n\n\nDeveloper considerations for docker container",
+            "text": "Developer Notes\n\u00b6\n\n\nMakefiles\n\u00b6\n\n\nThe Makefile in each mind machine repository provides rules to help you\nperform common tasks. There are three types of tasks:\n\n\n\n\nMakefile rules run after the \nfirst\n clone of a \nbrand-new\n mind machine repo\n\n\nMakefile rules run after a fresh clone of an existing mind machine repo\n\n\nMakefile rules for testing, creating, deploying\n\n\n\n\nThe Prime Number Version System\n\u00b6\n\n\nCrash course in the prime number version system:\n\n\nBranches:\n\n\n\n\n\n\nmaster\n - contains stable, tagged releases. Each release is a unique prime\n  number, occurring in ascending order.\n\n\n\n\n\n\ndev\n - development branch. All work happens here.\n\n\n\n\n\n\nfeature\n - feature branch. Feature branches are created from the dev branch,\n  and commits from these feature branches are merged back into the dev branch\n  before they are ultimately added to a mind machine release.\n\n\n\n\n\n\nrelease/vP\n - branch preparing a release of version P. Changes on release\n  branches are almost always synchronized with the development branch.\n\n\n\n\n\n\nWorkflow:\n\n\n\n\nStart from a stable version on master\n\n\nCreate branch dev from master (or pull from master into dev if it already exists)\n\n\nCreate branch feature from dev (feature branch contains all work on a particular feature)\n\n\nWhen ready, merge changes from feature into dev\n\n\nOnce dev branch is ready for a release, create a release candidate branch\n  \nrelease/vP\n\n\n\n\nTesting\n\u00b6\n\n\n\n\nUsing examples to test interactivity\n\n\nTests are mainly smoke tests\n\n\nFor complicated example, see bear/python-twitter on Github\n\n\n\n\nRelease Process\n\u00b6\n\n\nSee branching workflow above. Checklist:\n\n\n\n\nTest examples\n\n\nTest create Docker container\n\n\nTest documentation (but documentation can be/should be separate)\n\n\nUpdate submodules\n\n\nMainly code\n\n\n\n\nWhen ready:\n\n\n\n\nPypi upload\n\n\n\n\nHow to set up:\n\n\n\n\nDockerhub (update with new versions)\n\n\n\n\nDocker\n\u00b6\n\n\n\n\nDeveloper considerations for docker container",
             "title": "Developer Notes"
         },
         {
             "location": "/mind-machine-docs/dev/#developer-notes",
-            "text": "Makefiles:   Makefile rules after first clone  Makefile rules after fresh clone  Makefile rules for test/deploy/docs   Prime nubmer version system   Prime number version system repository  Should describe workflows and give overview of tasks   Testing:   Using examples to test interactivity  Tests are mainly smoke tests  For complicated example, see bear/python-twitter on Github   Releases:   Github releases  Pypi upload  Dockerhub (just an explanation of how it works/webhook)   Docker:   Developer considerations for docker container",
+            "text": "",
             "title": "Developer Notes"
+        },
+        {
+            "location": "/mind-machine-docs/dev/#makefiles",
+            "text": "The Makefile in each mind machine repository provides rules to help you\nperform common tasks. There are three types of tasks:   Makefile rules run after the  first  clone of a  brand-new  mind machine repo  Makefile rules run after a fresh clone of an existing mind machine repo  Makefile rules for testing, creating, deploying",
+            "title": "Makefiles"
+        },
+        {
+            "location": "/mind-machine-docs/dev/#the-prime-number-version-system",
+            "text": "Crash course in the prime number version system:  Branches:    master  - contains stable, tagged releases. Each release is a unique prime\n  number, occurring in ascending order.    dev  - development branch. All work happens here.    feature  - feature branch. Feature branches are created from the dev branch,\n  and commits from these feature branches are merged back into the dev branch\n  before they are ultimately added to a mind machine release.    release/vP  - branch preparing a release of version P. Changes on release\n  branches are almost always synchronized with the development branch.    Workflow:   Start from a stable version on master  Create branch dev from master (or pull from master into dev if it already exists)  Create branch feature from dev (feature branch contains all work on a particular feature)  When ready, merge changes from feature into dev  Once dev branch is ready for a release, create a release candidate branch\n   release/vP",
+            "title": "The Prime Number Version System"
+        },
+        {
+            "location": "/mind-machine-docs/dev/#testing",
+            "text": "Using examples to test interactivity  Tests are mainly smoke tests  For complicated example, see bear/python-twitter on Github",
+            "title": "Testing"
+        },
+        {
+            "location": "/mind-machine-docs/dev/#release-process",
+            "text": "See branching workflow above. Checklist:   Test examples  Test create Docker container  Test documentation (but documentation can be/should be separate)  Update submodules  Mainly code   When ready:   Pypi upload   How to set up:   Dockerhub (update with new versions)",
+            "title": "Release Process"
+        },
+        {
+            "location": "/mind-machine-docs/dev/#docker",
+            "text": "Developer considerations for docker container",
+            "title": "Docker"
         }
     ]
 }
