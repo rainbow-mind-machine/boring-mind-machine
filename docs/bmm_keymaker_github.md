@@ -1,6 +1,6 @@
 # Github Keymaker 
 
-See [boring-mind-machine/examples/github](https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/github).
+See [`examples/github/`](https://github.com/rainbow-mind-machine/boring-mind-machine/tree/master/examples/github).
 
 An example of creating a Github OAuth keymaker.
 This page gives an example of creating a Github OAuth Keymaker
@@ -76,7 +76,7 @@ keydir = 'keys'
 gk = bmm.GithubKeymaker()
 gk.set_apikeys_env()
 
-# make the Github key
+# Make the Github key
 print("Creating a dummy key...")
 gk.make_a_key('dummy','dummy.json',keydir)
 print("Success.")

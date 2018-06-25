@@ -1,6 +1,6 @@
 from setuptools import setup
 
-version = "5"
+version = "7"
 
 setup(  name='boringmindmachine',
         version=version,

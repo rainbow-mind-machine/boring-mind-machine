@@ -24,7 +24,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = MyKeymaker('client_token','client_secret')
+k = MyKeymaker(token='client_token',secret='client_secret')
 ```
 
 For Github, Google, Twitter, etc. Keymakers, this value is already set.
@@ -68,7 +68,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = MyKeymaker('client_token','client_secret')
+k = MyKeymaker(token='client_token',secret='client_secret')
 k.set_apikeys_env()
 ```
 
@@ -105,7 +105,7 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = MyKeymaker('client_token','client_secret')
+k = MyKeymaker(token='client_token',secret='client_secret')
 k.set_apikeys_json('apikeys.json')
 ```
 
@@ -120,19 +120,11 @@ import boringmindmachine as bmm
 class MyKeymaker(bmm.BoringOAuthKeymaker):
     pass
 
-k = MyKeymaker('client_token','client_secret')
+k = MyKeymaker(token='client_token',secret='client_secret')
 k.set_apikeys_dict({
             'client_token' : 'asdf',
             'client_secret' : 'qwerty'
 })
 ```
 
-
-## Extending the Keymaker
-
-"Ideas and future planning"
-
-(TODO: how is oauth keymaker extended - what method)
-
-what else can you can do?
 
