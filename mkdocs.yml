@@ -23,8 +23,6 @@ nav:
       - 'Boring OAuth Keymaker' : 'bmm_keymaker.md'
       - 'Boring Shepherd' : 'bmm_shepherd.md'
       - 'Boring Sheep' : 'bmm_sheep.md'
-    - 'Future Work and Ideas' : 'future.md'
-    - 'Credits' : 'credits.md'
 
   - 'Mind Machine Developers':
     - 'Contributing' : 'contributing.md'
