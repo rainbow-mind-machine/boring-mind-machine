@@ -1,3 +1,4 @@
+import logging
 import os, re, json, glob
 from os.path import \
     isfile, isdir, exists, join, basename, splitext
@@ -37,7 +38,9 @@ class BoringKeymaker(object):
         for each bot name. Simple as that.
         """
         if not self.apikeys_set:
-            err = "ERROR: Could not make bot keys, no API keys set!"
+            err = "BoringKeymaker Error: make_keys_from_strings(): "
+            err += "Could not make bot keys, no API keys set!"
+            logging.error(err)
             raise Exception(err)
 
         for name in names:
@@ -61,7 +64,9 @@ class BoringKeymaker(object):
         This key-value pair is preserved in the key file.
         """
         if not self.apikeys_set:
-            err = "ERROR: Could not make bot keys, no API keys set!"
+            err = "BoringKeymaker Error: make_keys_from_dict():"
+            err += "Could not make bot keys, no API keys set!"
+            logging.error(err)
             raise Exception(err)
 
         for name in d.keys():
@@ -71,9 +76,10 @@ class BoringKeymaker(object):
 
 
     def make_a_key(self):
-        err = "ERROR: BoringKeymaker does not define a "
-        err += "make_a_key() method. Perhaps you created "
+        err = "BoringKeymaker Error: make_a_key(): this method is undefined"
+        err += "for base Keymaker classes. Perhaps you created "
         err += "the wrong kind of Sheep.\n"
+        logging.error(err)
         raise Exception(err)
 
 
@@ -120,8 +126,9 @@ class BoringOAuthKeymaker(BoringKeymaker):
             self.credentials[secret_var] = os.environ[secret_var.upper()]
             self.apikeys_set = True
         except KeyError:
-            err = "ERROR: environment variables %s and %s were not set."%(
+            err = "BoringOAuthKeymaker Error: set_apikeys_env(): environment variables %s and %s were not set."%(
                     token_var.upper(), secret_var.upper())
+            logging.error(err)
             raise Exception(err)
 
 
@@ -136,18 +143,21 @@ class BoringOAuthKeymaker(BoringKeymaker):
         secret_var = secret_var.lower()
 
         if( not exists(f_apikeys) ):
-            err = "Error: could not find specified API keys file %s"%(f_apikeys)
+            err = "BoringOAuthKeymaker Error: set_apikeys_file(): could not find specified API keys file %s"%(f_apikeys)
+            logging.error(err)
             raise Exception(err)
 
         elif( not isfile(f_apikeys) ):
-            err = "ERROR: specified API keys file %s is not a file"%(f_apikeys)
+            err = "BoringOAuthKeymaker Error: set_apikeys_file(): specified API keys file %s is not a file"%(f_apikeys)
+            logging.error(err)
             raise Exception(err)
 
         try:
             with open(f_apikeys,'r') as f:
                 d = json.load(f)
         except ValueError:
-            err = "ERROR: given API keys file %s is not valid JSON"%(f_apikeys)
+            err = "BoringOAuthKeymaker Error: set_apikeys_file(): given API keys file %s is not valid JSON"%(f_apikeys)
+            logging.error(err)
             raise Exception(err)
 
         self.set_apikeys_dict(d)
@@ -164,19 +174,21 @@ class BoringOAuthKeymaker(BoringKeymaker):
         secret_var = secret_var.lower()
 
         if token_var not in d_apikeys.keys():
-            err = "ERROR: API token key \"%s\" not found in user-provided dictionary\n"%(token_var)
+            err = "BoringOAuthKeymaker Error: set_apikeys_dict(): API token key \"%s\" not found in user-provided dictionary\n"%(token_var)
             err += "API keys file had key set: %s\n"%(
                     ",".join(d_apikeys.keys()))
             err += "API keys file needs key set: %s\n"%(
                     ", ".join([token_var, secret_var]))
+            logging.error(err)
             raise Exception(err)
 
         if secret_var not in d_apikeys.keys():
-            err = "ERROR: API secret key \"%s\" not found in user-provided dictionary\n"%(token_var)
+            err = "BoringOAuthKeymaker Error: set_apikeys_dict(): API secret key \"%s\" not found in user-provided dictionary\n"%(token_var)
             err += "API keys file had key set: %s\n"%(
                     ", ".join(d_apikeys.keys()))
             err += "API keys file needs key set: %s\n"%(
                     ", ".join([token_var, secret_var]))
+            logging.error(err)
             raise Exception(err)
 
         self.credentials = {}
