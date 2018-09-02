@@ -1,5 +1,7 @@
 # Boring Sheep
 
+![the sheep](img/sheep.jpg)
+
 (TODO: Copy Sheep materials over, and copy Shepherd docs)
 
 (TODO: What are the most common ways to extend Sheep? essential methods/call

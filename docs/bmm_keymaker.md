@@ -1,5 +1,7 @@
 # Boring Keymaker and Boring OAuth Keymaker
 
+![the keymaker](mind-machine-docs/img/keymaker.jpg)
+
 There are two base Keymaker classes implemented by 
 boring mind machine; they are `BoringKeymaker` and
 `BoringOAuthKeymaker`.
