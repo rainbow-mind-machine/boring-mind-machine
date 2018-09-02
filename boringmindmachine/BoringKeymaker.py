@@ -131,6 +131,8 @@ class BoringOAuthKeymaker(BoringKeymaker):
             logging.error(err)
             raise Exception(err)
 
+        logging.debug("BoringOAuthKeymaker: set_apikeys_env(): Finished")
+
 
     def set_apikeys_file(self, f_apikeys):
         """
@@ -162,6 +164,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
 
         self.set_apikeys_dict(d)
 
+        logging.debug("BoringOAuthKeymaker: set_apikeys_file(): Finished")
 
     def set_apikeys_dict(self, d_apikeys):
         """
@@ -195,4 +198,6 @@ class BoringOAuthKeymaker(BoringKeymaker):
         self.credentials[token_var] = d_apikeys[token_var]
         self.credentials[secret_var] = d_apikeys[secret_var]
         self.apikeys_set = True
+
+        logging.debug("BoringOAuthKeymaker: set_apikeys_dict(): Finished")
 
