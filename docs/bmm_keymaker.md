@@ -2,6 +2,8 @@
 
 ![the keymaker](mind-machine-docs/img/keymaker.jpg)
 
+**the mind machine keymaker. trust it with your keys.**
+
 There are two base Keymaker classes implemented by 
 boring mind machine; they are `BoringKeymaker` and
 `BoringOAuthKeymaker`.

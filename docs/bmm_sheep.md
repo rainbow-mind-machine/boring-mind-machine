@@ -1,6 +1,8 @@
 # Boring Sheep
 
-![the sheep](img/sheep.jpg)
+![the sheep](mind-machine-docs/img/sheep.jpg)
+
+**The mind machine sheep.**
 
 (TODO: Copy Sheep materials over, and copy Shepherd docs)
 
