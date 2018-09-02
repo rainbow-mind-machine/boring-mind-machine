@@ -46,8 +46,11 @@ setup_docs: fix_remotes util_submodule_init setup_site
 # clone a copy of the gh-pages branch to gh-pages
 setup_site:
 	rm -rf site
-	git clone -b gh-pages $(BMM_GH) site && \
-		cd site && git remote add cmr $(BMM_CMR)
+	#git clone -b gh-pages $(BMM_GH) site && \
+	#	cd site && git remote add cmr $(BMM_CMR)
+	git clone -b gh-pages $(BMM_CMR) site && \
+		git rename origin cmr && \
+		cd site && git remote add gh $(BMM_GH)
 
 # build and deploy the documentation
 deploy_docs: 
