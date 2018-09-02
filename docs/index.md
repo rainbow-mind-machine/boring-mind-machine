@@ -63,10 +63,6 @@ Documentation for components implemented in boring mind machine:
 * [bmm.BoringShepherd](bmm_shepherd.md)
 * [bmm.BoringSheep](bmm_sheep.md)
 
-[Future Work and Ideas](future.md) (what's next for boring mind machine?)
-
-[Credits](credits.md)
-
 [Contributing](contributing.md)
 
 [Developer Notes](mind-machine-docs/dev.md) - notes on processes for developers
