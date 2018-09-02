@@ -60,9 +60,6 @@ Documentation for components implemented in boring mind machine:
 * Keymakers:
     * [bmm.BoringKeymaker](bmm_keymaker.md)
     * [bmm.BoringOAuthKeymaker](bmm_keymaker.md)
-    * [bmm.GithubKeymaker](bmm_keymaker_github.md)
-    * [bmm.GoogleKeymaker](bmm_keymaker_google.md)
-    * [bmm.TwitterKeymaker](bmm_keymaker_twitter.md)
 * [bmm.BoringShepherd](bmm_shepherd.md)
 * [bmm.BoringSheep](bmm_sheep.md)
 
