@@ -21,9 +21,6 @@ nav:
     - 'Boring Mind Machine Components':
       - 'Boring Keymaker' : 'bmm_keymaker.md'
       - 'Boring OAuth Keymaker' : 'bmm_keymaker.md'
-      - 'Github Keymaker' : 'bmm_keymaker_github.md'
-      - 'Google Keymaker' : 'bmm_keymaker_google.md'
-      - 'Twitter Keymaker' : 'bmm_keymaker_twitter.md'
       - 'Boring Shepherd' : 'bmm_shepherd.md'
       - 'Boring Sheep' : 'bmm_sheep.md'
     - 'Future Work and Ideas' : 'future.md'
