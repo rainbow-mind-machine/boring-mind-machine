@@ -30,7 +30,7 @@ class TestBoringKeymaker(TestCase):
         Running a test of the slugify function
         """
         bk = bmm.BoringKeymaker()
-        self.assertEquals("a-s-df",bk.slugify("a-?s-$!d(f"))
+        self.assertEqual("a-s-df",bk.slugify("a-?s-$!d(f"))
 
 
 class TestBoringOAuthKeymaker(TestCase):
