@@ -8,6 +8,9 @@ from datetime import datetime
 
 LOGDIR = '/tmp/mind-machine/'
 
+if not os.path.exists(LOGDIR):
+    os.mkdir(LOGDIR)
+
 unique = datetime.now().strftime("%Y%M%d_%H%m%S")
 log_filename = "mindmachine_%s.log"%(unique)
 log_file = os.path.join(LOGDIR,log_filename)
