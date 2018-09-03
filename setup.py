@@ -4,7 +4,7 @@ version = "23"
 
 setup(  name='boringmindmachine',
         version=version,
-        description='Boring base classes for awesome bot flocks.',
+        description='boring-mind-machine provides boring base classes for awesome bot flocks.',
         url='https://pages.charlesreid1.com/boring-mind-machine',
         author='charlesreid1',
         author_email='charles@charlesreid1.com',
