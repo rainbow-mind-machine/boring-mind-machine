@@ -46,7 +46,7 @@ serve:
 
 # run tests
 test:
-	nosetests -v
+	python setup.py test
 
 # upload to pypi
 pypi: pypi_upload pypi_test
