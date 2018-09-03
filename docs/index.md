@@ -13,7 +13,7 @@ GithubKeymaker class; and so on.
 
 ## All the shields
 
-![latest prime number version](https://img.shields.io/badge/latest--prime--number--version-7-blue.svg)
+![latest prime number version](https://img.shields.io/badge/latest--prime--number--version-23-blue.svg)
 
 ![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
 [![works on my machine](https://img.shields.io/badge/works-on_my_machine-blue.svg)](https://img.shields.io/badge/works-on_my_machine-green.svg)
@@ -60,15 +60,8 @@ Documentation for components implemented in boring mind machine:
 * Keymakers:
     * [bmm.BoringKeymaker](bmm_keymaker.md)
     * [bmm.BoringOAuthKeymaker](bmm_keymaker.md)
-    * [bmm.GithubKeymaker](bmm_keymaker_github.md)
-    * [bmm.GoogleKeymaker](bmm_keymaker_google.md)
-    * [bmm.TwitterKeymaker](bmm_keymaker_twitter.md)
 * [bmm.BoringShepherd](bmm_shepherd.md)
 * [bmm.BoringSheep](bmm_sheep.md)
-
-[Future Work and Ideas](future.md) (what's next for boring mind machine?)
-
-[Credits](credits.md)
 
 [Contributing](contributing.md)
 

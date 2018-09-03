@@ -1,5 +1,9 @@
 # Boring Sheep
 
+![the sheep](mind-machine-docs/img/sheep.jpg)
+
+**The mind machine sheep.**
+
 (TODO: Copy Sheep materials over, and copy Shepherd docs)
 
 (TODO: What are the most common ways to extend Sheep? essential methods/call
