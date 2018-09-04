@@ -23,7 +23,7 @@ class BoringSheep(object):
     def __init__(self):
         err = "BoringSheep Error: Sheep constructor initializes API instances "
         err += "and should therefore be defined by the derived class."
-        logging.error(err)
+        logging.error(err, exc_info=True)
         raise Exception(Err)
 
     def perform_action(self,action,**kwargs):
@@ -44,7 +44,7 @@ class BoringSheep(object):
             err = "BoringSheep Error: perform_action(): "
             err += "Sheep could not figure out how to perform action '{action}'"
             err = err.format(action=action)
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
     def tprint(self,*args):

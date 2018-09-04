@@ -5,7 +5,6 @@ import subprocess
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool 
 
-from .utils import eprint
 from .BoringSheep import BoringSheep
 
 
@@ -87,13 +86,13 @@ class BoringShepherd(object):
         elif not os.path.isdir(json_keys_dir):
             err = "BoringShepherd Error: create_flock(): You have specified a JSON keys directory %s "%(json_keys_dir)
             err += "that is not a directory!"
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         if len(glob.glob(os.path.join(json_keys_dir,'*.json')))==0:
             err = "BoringShepherd Error: create_flock(): You have specified a JSON keys directory %s "%(json_keys_dir)
             err += "that contains no .json files! Did you run your keymaker?"
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         for json_file in glob.glob(os.path.join(json_keys_dir,'*.json')):
@@ -104,8 +103,8 @@ class BoringShepherd(object):
                     bot_key = json.load(f)
                 logging.debug("BoringShepherd: create_flock(): Successfully loaded bot key %s"%(json_file))
             except ValueError:
-                err = "ERROR: Invalid JSON bot key in %s"%(json_file)
-                logging.error(err)
+                err = "BoringShepherd Error: Invalid JSON bot key in %s"%(json_file)
+                logging.error(err, exc_info=True)
                 raise Exception(err)
 
             # All kwargs should be added to the bot_key
@@ -137,7 +136,7 @@ class BoringShepherd(object):
         err += "Define a derived class that defines the following methods:\n"
         err += "    _validate_key(self,bot_key,**kwargs)\n"
         err += "    _create_sheep(self,bot_key,**kwargs)\n\n\n"
-        logging.error(err)
+        logging.error(err, exc_info=True)
         raise Exception(err)
 
 
@@ -152,7 +151,7 @@ class BoringShepherd(object):
         else:
             err = "BoringShepherd Error: perform_serial_action(): "
             err += "Tried to perform action, but the Shepherd has no Sheep!"
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
 
@@ -170,6 +169,6 @@ class BoringShepherd(object):
         else:
             err = "BoringShepherd Error: perform_parallel_action(): "
             err += "Tried to perform action, but the Shepherd has no Sheep!"
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
