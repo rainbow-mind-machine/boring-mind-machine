@@ -13,7 +13,7 @@ GithubKeymaker class; and so on.
 
 ## All the shields
 
-![latest prime number version](https://img.shields.io/badge/latest--prime--number--version-7-blue.svg)
+![latest prime number version](https://img.shields.io/badge/latest--prime--number--version-23-blue.svg)
 
 ![tests-passing](https://img.shields.io/badge/tests-passing-green.svg)
 [![works on my machine](https://img.shields.io/badge/works-on_my_machine-blue.svg)](https://img.shields.io/badge/works-on_my_machine-green.svg)
