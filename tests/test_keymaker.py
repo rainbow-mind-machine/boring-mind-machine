@@ -42,7 +42,7 @@ class TestBoringOAuthKeymaker(TestCase):
     token_var = 'token'
     secret_var = 'secret'
     keys_dir = tempfile.gettempdir()
-    keys_json = "fake_apikeys.json"
+    keys_json = "apikeys_fake.json"
 
     @classmethod
     def setUpClass(self):
