@@ -40,7 +40,7 @@ class BoringKeymaker(object):
         if not self.apikeys_set:
             err = "BoringKeymaker Error: make_keys_from_strings(): "
             err += "Could not make bot keys, no API keys set!"
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         for name in names:
@@ -66,7 +66,7 @@ class BoringKeymaker(object):
         if not self.apikeys_set:
             err = "BoringKeymaker Error: make_keys_from_dict():"
             err += "Could not make bot keys, no API keys set!"
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         for name in d.keys():
@@ -79,7 +79,7 @@ class BoringKeymaker(object):
         err = "BoringKeymaker Error: make_a_key(): this method is undefined"
         err += "for base Keymaker classes. Perhaps you created "
         err += "the wrong kind of Sheep.\n"
-        logging.error(err)
+        logging.error(err, exc_info=True)
         raise Exception(err)
 
 
@@ -128,7 +128,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
         except KeyError:
             err = "BoringOAuthKeymaker Error: set_apikeys_env(): environment variables %s and %s were not set."%(
                     token_var.upper(), secret_var.upper())
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         logging.debug("BoringOAuthKeymaker: set_apikeys_env(): Finished")
@@ -146,12 +146,12 @@ class BoringOAuthKeymaker(BoringKeymaker):
 
         if( not exists(f_apikeys) ):
             err = "BoringOAuthKeymaker Error: set_apikeys_file(): could not find specified API keys file %s"%(f_apikeys)
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         elif( not isfile(f_apikeys) ):
             err = "BoringOAuthKeymaker Error: set_apikeys_file(): specified API keys file %s is not a file"%(f_apikeys)
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         try:
@@ -159,7 +159,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
                 d = json.load(f)
         except ValueError:
             err = "BoringOAuthKeymaker Error: set_apikeys_file(): given API keys file %s is not valid JSON"%(f_apikeys)
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         self.set_apikeys_dict(d)
@@ -182,7 +182,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
                     ",".join(d_apikeys.keys()))
             err += "API keys file needs key set: %s\n"%(
                     ", ".join([token_var, secret_var]))
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         if secret_var not in d_apikeys.keys():
@@ -191,7 +191,7 @@ class BoringOAuthKeymaker(BoringKeymaker):
                     ", ".join(d_apikeys.keys()))
             err += "API keys file needs key set: %s\n"%(
                     ", ".join([token_var, secret_var]))
-            logging.error(err)
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         self.credentials = {}
