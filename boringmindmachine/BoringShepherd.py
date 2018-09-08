@@ -1,10 +1,10 @@
+import logging
 import glob, os, sys, json
 import subprocess
 
 from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool 
 
-from .utils import eprint
 from .BoringSheep import BoringSheep
 
 
@@ -77,30 +77,34 @@ class BoringShepherd(object):
         # These methods need to be defined by 
         # the derived class.
 
-        eprint("boring-mind-machine: BoringShepherd: About to initialize Sheep bot")
-        eprint("boring-mind-machine: BoringShepherd: Looking for bot keys in %s"%(json_keys_dir))
+        logging.debug("BoringShepherd: create_flock(): About to initialize Sheep bot")
+        logging.debug("BoringShepherd: create_flock(): Looking for bot keys in %s"%(json_keys_dir))
 
         if not os.path.exists(json_keys_dir):
             # keys dir does not exist, so make it
             subprocess.call(['mkdir','-p',json_keys_dir])
         elif not os.path.isdir(json_keys_dir):
-            err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
+            err = "BoringShepherd Error: create_flock(): You have specified a JSON keys directory %s "%(json_keys_dir)
             err += "that is not a directory!"
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         if len(glob.glob(os.path.join(json_keys_dir,'*.json')))==0:
-            err = "ERROR: You have specified a JSON keys directory %s "%(json_keys_dir)
+            err = "BoringShepherd Error: create_flock(): You have specified a JSON keys directory %s "%(json_keys_dir)
             err += "that contains no .json files! Did you run your keymaker?"
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
         for json_file in glob.glob(os.path.join(json_keys_dir,'*.json')):
             bot_key = {}
-            eprint("boring-mind-machine: BoringShepherd: Found bot key %s"%(json_file))
+            logging.debug("BoringShepherd: create_flock(): Found bot key %s"%(json_file))
             try:
                 with open(json_file,'r') as f:
                     bot_key = json.load(f)
+                logging.debug("BoringShepherd: create_flock(): Successfully loaded bot key %s"%(json_file))
             except ValueError:
-                err = "ERROR: Invalid JSON bot key in %s"%(json_file)
+                err = "BoringShepherd Error: Invalid JSON bot key in %s"%(json_file)
+                logging.error(err, exc_info=True)
                 raise Exception(err)
 
             # All kwargs should be added to the bot_key
@@ -110,9 +114,10 @@ class BoringShepherd(object):
 
             # This information might be useful to log
 
-            eprint("boring-mind-machine: BoringShepherd: Validating bot key")
+            logging.debug("BoringShepherd: create_flock(): Validating bot key")
             self._validate_key(bot_key, **kwargs)
-            eprint("boring-mind-machine: BoringShepherd: Creating sheep")
+
+            logging.debug("BoringShepherd: create_flock(): Creating sheep")
             self._create_sheep(bot_key, **kwargs)
 
 
@@ -127,10 +132,11 @@ class BoringShepherd(object):
 
 
     def virtual_method(self):
-        err = "ERROR: BoringShepherd is a virtual class and should not be used.\n"
+        err = "BoringShepherd Error: virtual_method called: this is a virtual class and should not be used.\n"
         err += "Define a derived class that defines the following methods:\n"
         err += "    _validate_key(self,bot_key,**kwargs)\n"
         err += "    _create_sheep(self,bot_key,**kwargs)\n\n\n"
+        logging.error(err, exc_info=True)
         raise Exception(err)
 
 
@@ -143,7 +149,9 @@ class BoringShepherd(object):
             for sheep in self.flock:
                 sheep.perform_action(action, **kwargs)
         else:
-            err = "ERROR: Tried to perform action, but the Shepherd has no Sheep!"
+            err = "BoringShepherd Error: perform_serial_action(): "
+            err += "Tried to perform action, but the Shepherd has no Sheep!"
+            logging.error(err, exc_info=True)
             raise Exception(err)
 
 
@@ -152,9 +160,15 @@ class BoringShepherd(object):
         Perform an action with each bot in parallel.
         Good for tweeting, searching, and continuous tasks.
         """
-        def do_it(sheep):
-            sheep.perform_action(action, **kwargs)
+        if len(self.flock)>0:
+            def do_it(sheep):
+                sheep.perform_action(action, **kwargs)
 
-        pool = ThreadPool(len(self.flock))
-        results = pool.map(do_it,self.flock)
+            pool = ThreadPool(len(self.flock))
+            results = pool.map(do_it,self.flock)
+        else:
+            err = "BoringShepherd Error: perform_parallel_action(): "
+            err += "Tried to perform action, but the Shepherd has no Sheep!"
+            logging.error(err, exc_info=True)
+            raise Exception(err)
 

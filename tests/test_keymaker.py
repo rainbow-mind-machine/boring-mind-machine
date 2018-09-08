@@ -30,7 +30,7 @@ class TestBoringKeymaker(TestCase):
         Running a test of the slugify function
         """
         bk = bmm.BoringKeymaker()
-        self.assertEquals("a-s-df",bk.slugify("a-?s-$!d(f"))
+        self.assertEqual("a-s-df",bk.slugify("a-?s-$!d(f"))
 
 
 class TestBoringOAuthKeymaker(TestCase):
@@ -42,7 +42,7 @@ class TestBoringOAuthKeymaker(TestCase):
     token_var = 'token'
     secret_var = 'secret'
     keys_dir = tempfile.gettempdir()
-    keys_json = "fake_apikeys.json"
+    keys_json = "apikeys_fake.json"
 
     @classmethod
     def setUpClass(self):
