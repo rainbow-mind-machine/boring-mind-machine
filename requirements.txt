@@ -3,4 +3,4 @@ simplejson>=3.13
 oauth2client>=3.0.0
 apiclient
 httplib2>=0.10.3
-requests>=1.0.0'
+requests>=1.0.0
