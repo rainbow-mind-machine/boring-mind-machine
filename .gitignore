@@ -22,10 +22,10 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-.eggs/
 lib/
 lib64/
 parts/
+.eggs
 sdist/
 var/
 *.egg-info/
